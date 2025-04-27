@@ -61,14 +61,12 @@
     var map_cities_svg = document.querySelector(ministrat.config.elements.map.map_cities_selector);
 
     map_elements_obj.all_map_elements = document.querySelectorAll(ministrat.config.elements.map.map_elements_selector);
-    map_cities_svg.addEventListener("load", function () {
-      map_elements_obj.cities_dom = map_cities_svg.contentDocument;
+    map_elements_obj.cities_dom = map_cities_svg;
 
-      setTimeout(function(){
-        loadMinistratCities();
-        loadMinistratUnits();
-      }, 1000);
-    });
+    setTimeout(function(){
+      loadMinistratCities();
+      loadMinistratUnits();
+    }, 1000);
 
     map_elements_obj.berlin_border_el = document.querySelector(ministrat.config.elements.map.berlin_border_selector);
     map_elements_obj.east_german_border_els = document.querySelectorAll(ministrat.config.elements.map.east_german_border_selectors);

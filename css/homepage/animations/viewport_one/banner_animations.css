@@ -1,0 +1,132 @@
+/* -- Homepage top banner animations -- */
+/* -- Caret blinking animation -- */
+@keyframes homepage-top-banner-caret-blinking-animation {
+  0% {
+    background-color: rgb(255, 255, 255);
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    background-color: rgb(150, 245, 245);
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    background-color: rgb(255, 255, 255);
+  }
+}
+@keyframes homepage-top-banner-fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none !important;
+  }
+}
+
+/* -- Homepage top banner footer animations -- */
+@keyframes homepage-top-banner-btn-hop-up {
+  0% {
+    transform: translateY(100vh);
+  }
+  50% {
+    transform: translateY(-4vh);
+  }
+  60% {
+    transform: translateY(-3vh);
+  }
+  80% {
+    transform: translateY(2vh);
+  }
+  100% {
+    transform: translateY(0vh);
+  }
+}
+@keyframes homepage-top-banner-btn-hop-down {
+  0% {
+    transform: translateY(0vh);
+  }
+  50% {
+    transform: translateY(2vh);
+  }
+  70% {
+    transform: translateY(-3vh);
+  }
+  80% {
+    transform: translateY(-4vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+@keyframes homepage-settings-btn-fade {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@keyframes homepage-settings-btn-roll {
+  0% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(270deg);
+  }
+  90% {
+    transform: rotate(380deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    margin-left: 44vw;
+    margin-top: 9vh;
+  }
+}
+@keyframes homepage-settings-btn-roll-back {
+  0% {
+    transform: rotate(360deg);
+    margin-left: 44vw;
+    margin-top: 9vh;
+  }
+  70% {
+    transform: rotate(90deg);
+  }
+  90% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes homepage-chevron-down {
+  0% {
+    opacity: 0;
+    transform: translateY(0vh);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0vh);
+  }
+  50% {
+    opacity: 0;
+  }
+  90% {
+    transform: translateY(10vh);
+  }
+  100% {
+    transform: translateY(5vh);
+  }
+}

@@ -1,0 +1,16 @@
+/* -- Hide default scrollbar -- */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* -- Other scrollbars -- */
+.scroll-container::-webkit-scrollbar, .parallax-item-content-panel:not(.shown.maximised) .content-wrapper::-webkit-scrollbar, .about-me-body-text::-webkit-scrollbar {
+	width: 0.2vw;
+}
+.scroll-container::-webkit-scrollbar-track, .parallax-item-content-panel:not(.maximised) .content-wrapper::-webkit-scrollbar-track, .about-me-body-text::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, 0);
+}
+.scroll-container::-webkit-scrollbar-thumb, .parallax-item-content-panel:not(.maximised) .content-wrapper::-webkit-scrollbar-thumb, .about-me-body-text::-webkit-scrollbar-thumb {
+	background-color: rgb(255, 255, 255);
+	border-radius: 0.05vw;
+}

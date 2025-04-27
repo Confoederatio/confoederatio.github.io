@@ -1,0 +1,238 @@
+/* -- Homepage top banner positional settings -- */
+.homepage-banner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+
+  overflow: hidden;
+  user-select: none;
+}
+.homepage-banner-centre-container {
+  width: 100vw;
+}
+.homepage-banner-video-bg, .homepage-banner-video-bg-misty-forest, .homepage-banner-triumph-and-tragedy-bg img, .homepage-banner-cleveland-national-forest-bg {
+  top: 0px;
+  left: 0px;
+  min-height: 100%;
+  min-width: 100%;
+}
+.homepage-banner-video-bg, .homepage-banner-video-bg-misty-forest {
+  position: fixed;
+}
+.homepage-banner-triumph-and-tragedy-bg img {
+  position: absolute;
+}
+.homepage-banner-video-bg {
+  filter: brightness(80%);
+}
+
+/* -- Homepage top banner plexus overlay -- */
+.homepage-banner-plexus-overlay-bg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  min-height: 100%;
+  min-width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+
+  filter: grayscale(100);
+  opacity: 0.15;
+}
+
+/* -- Homepage top banner - main title styling -- */
+/* -- Top banner title positioning -- */
+.homepage-banner-main-title {
+  top: 0vh;
+  height: 100vh;
+  width: 100vw;
+  margin: 0 auto;
+  position: absolute;
+  overflow: hidden;
+
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+[alignment="centre"] {
+  justify-content: center;
+  text-align: center;
+}
+[alignment="left"] {
+  position: absolute;
+
+  justify-content: left;
+  left: 2.5vw;
+  text-align: left;
+  width: 95vw;
+}
+[alignment="right"] {
+  justify-content: right;
+  right: 2.5vw;
+  text-align: right;
+  width: 95vw;
+}
+
+.homepage-banner-main-title[alignment="centre"] {
+  width: 80vw;
+  left: 10vw;
+}
+
+/* -- Top banner title formatting -- */
+.homepage-banner-main-title {
+  user-select: text;
+}
+.homepage-banner-main-title.finished-animation .homepage-banner-main-title-text {
+  max-height: 22vh;
+  overflow: hidden;
+}
+.homepage-banner-main-title-text {
+  font-family: "Bahnschrift";
+  font-size: 20vh;
+  font-stretch: semi-condensed;
+  font-weight: 700;
+  line-height: 1;
+
+  color: white;
+  text-transform: uppercase;
+
+  /* -- Prevent any text overflow from occurring -- */
+  white-space: nowrap;
+}
+.homepage-banner-text-subelement {
+  padding-left: 0.01vw;
+  padding-right: 0.01vw;
+}
+.homepage-banner-main-title-text span:last-child {
+  padding: 0vw;
+}
+.homepage-caret-container {
+  transition: all 0.5s ease;
+}
+.homepage-caret-spacer {
+  color: rgba(0, 0, 0, 0);
+  font-family: "Bahnschrift";
+  font-size: 20vh;
+  font-stretch: semi-condensed;
+  font-weight: 700;
+
+  margin-left: -0.2vw;
+  user-select: none;
+}
+#homepage-caret-wrapper {
+  display: inline-block;
+  position: sticky;
+
+  align-items: baseline;
+  white-space: nowrap;
+  right: 0;
+}
+
+/* -- Homepage banner footer -- */
+.homepage-banner-footer-container {
+  position: absolute;
+  top: 80%;
+  left: 0%;
+  width: 100%;
+  height: 15%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+}
+.homepage-banner-dots-container {
+  position: absolute;
+  top: 75%;
+  height: 12.5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* -- Homepage banner footer change background buttons -- */
+.homepage-banner-change-bg-btn {
+  width: 2vh;
+  height: 2vh;
+  border-radius: 50%;
+  border: 0.1vh solid white;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+
+  transition: background-color 0.5s;
+  transform: translateY(100vh);
+}
+.homepage-banner-change-bg-btn.active {
+  background-color: rgb(255, 255, 255);
+}
+.homepage-banner-change-bg-btn:hover {
+  cursor: pointer;
+}
+
+/* -- Auxiliary animation stuffs -- */
+.enlarged-slash {
+  font-size: 50vh !important;
+  overflow-y: visible;
+}
+.enlarged-text {
+  font-size: 30vh;
+}
+.enlarged-text-positioning {
+  top: 35%;
+  left: 0%;
+  width: 100%;
+  height: 35%;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+}
+.fade-out {
+  animation: homepage-top-banner-fadeout 3s forwards;
+}
+.homepage-banner-blinking-caret {
+  padding: 0.075em;
+  padding-top: 0vw;
+  padding-bottom: 0vw;
+
+  font-family: "Bahnschrift";
+  font-size: 20vh;
+  font-stretch: semi-condensed;
+  font-weight: 700;
+
+  animation: homepage-top-banner-caret-blinking-animation 6s infinite;
+}
+.slash-positioning {
+  top: 25%;
+  left: 0%;
+  width: 100%;
+  height: 50%;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+}
+.subenlarged-text-positioning {
+  top: 37.5%;
+  left: 0%;
+  width: 100%;
+  height: 25%;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+}
+
+/* -- Chevron -- */
+.homepage-banner-chevron-down {
+  position: absolute;
+  top: 96%;
+  height: 4%;
+  animation: homepage-chevron-down 4s infinite;
+  transition: all 2s ease;
+}
+.homepage-banner-chevron-down-icon {
+  height: 4vh;
+  width: 4vh;
+}

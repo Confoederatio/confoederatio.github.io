@@ -1,0 +1,136 @@
+/* -- Content panel wrapper styling -- */
+.parallax-panel-container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+
+  pointer-events: none;
+}
+.parallax-item-content-panel {
+  pointer-events: all;
+}
+.parallax-item-content-panel:not(.shown) {
+  pointer-events: none;
+}
+
+/* -- Artistic image styling -- */
+.preview-image-container {
+  overflow: hidden;
+}
+.preview-image {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 100%;
+
+  transition: all 2s ease;
+}
+.preview-image:not(.cursor-shown) {
+  cursor: none;
+}
+.image-magnifier-glass {
+  position: absolute;
+  border: 0.1vh solid white;
+
+  height: 12vh;
+  width: 16vh;
+  pointer-events: none;
+
+  transition: opacity 0.5s ease, width 2s ease, height 2s ease;
+}
+.parallax-item-content-panel.maximised .preview-image-container {
+  width: 80vh;
+}
+.parallax-item-content-panel.maximised .image-magnifier-glass {
+  height: 24vh;
+  width: 36vh;
+}
+
+/* -- Maximised content panel CSS -- */
+.parallax-item-content-panel.being-minimised {
+  transition: all 1s ease !important;
+}
+.parallax-item-content-panel.instant-minimisation {
+  height: 0px;
+  transition: height 0.5s ease !important;
+}
+.parallax-item-content-panel.maximised {
+  position: fixed;
+  top: -100vh !important;
+  left: 0px !important;
+
+  height: 100vh !important;
+  width: 100vw;
+
+  transition: all 2s ease !important;
+}
+.parallax-item-content-panel.maximised:not(.shown) {
+  pointer-events: none;
+}
+.parallax-item-content-panel.maximised:not(.shown) > .content-wrapper {
+  left: 0px;
+  margin-top: 50%;
+  max-height: 0vh;
+  opacity: 0;
+  transition: all 1s ease !important;
+}
+
+/* -- Maximisation formatting -- */
+.parallax-item-content-panel.maximised > .content-wrapper {
+  height: calc(100vh - 20vh);
+  width: 70%;
+  margin-left: calc(15% + 1.5vh);
+  margin-right: 25%;
+  margin-top: 10vh;
+
+  .parallax-item-content-panel-body-text {
+    margin-right: 11.5vh;
+  }
+}
+.parallax-item-content-panel.maximised > .content-wrapper, .parallax-item-content-panel.being-minimised > .content-wrapper {
+  transition: all 2s ease;
+}
+
+/* -- Maximised buttons -- */
+.parallax-item-content-panel.shown.maximised .content-panel-close-btn {
+  top: 9.5vh;
+  right: 15vw;
+
+  border-radius: 50%;
+  transform: rotateZ(180deg) scaleX(-1);
+}
+.parallax-item-content-panel.shown.maximised .content-panel-maximise-btn {
+  top: 9.5vh;
+  right: calc(15vw + 5.5vh);
+
+  border-radius: 50%;
+  transform: rotateZ(180deg) scaleX(-1);
+}
+.parallax-item-content-panel.shown.maximised .content-panel-preview-btn {
+  top: 9.5vh;
+  right: calc(15vw + 11vh);
+
+  border-radius: 50%;
+  transform: rotateZ(360deg) scaleX(-1);
+}
+.parallax-item-content-panel.maximised .content-panel-close-btn {
+  background-color: rgba(0, 0, 0, 0);
+  transition: all 1.25s ease 0.25s;
+}
+.parallax-item-content-panel.maximised .content-panel-maximise-btn {
+  background-color: rgba(0, 0, 0, 0);
+  transition: all 1.25s ease;
+}
+.parallax-item-content-panel.maximised .content-panel-preview-btn:not(.active) {
+  background-color: rgba(0, 0, 0, 0);
+  transition: all 1.25s ease;
+}
+
+.parallax-item-content-panel.shown.maximised .content-panel-close-btn:hover, .parallax-item-content-panel.shown.maximised .content-panel-maximise-btn:hover, .parallax-item-content-panel.shown.maximised .content-panel-preview-btn:not(.active):hover {
+  cursor: pointer;
+  border-radius: 50%;
+
+  background-color: rgba(235, 235, 235, 0.4);
+  transition-delay: 1ms;
+}

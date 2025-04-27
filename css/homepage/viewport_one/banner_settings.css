@@ -1,0 +1,444 @@
+/* -- External settings button -- */
+.settings-btn {
+  height: 4vh;
+  width: 4vh;
+}
+.settings-btn-container {
+  margin-top: 3.5vh;
+  height: 4vh;
+  width: 4vh;
+
+  transition: transform 0.5s;
+}
+.settings-btn-container.stationary:hover {
+  transform: rotate(20deg);
+}
+.settings-btn:hover, .settings-close-btn:hover, .settings-chevron-btn:hover, .change-bg-select-option-container:not(.selected):hover, .change-overlay-select-option-container:not(.selected):hover {
+  cursor: pointer;
+}
+
+/* -- Settings UI -- */
+/* -- Background containers and positioning -- */
+.homepage-banner-settings-container {
+  position: absolute;
+  bottom: 10vh;
+  right: 4.25vw;
+
+  height: 30vh;
+  width: 30vw;
+
+  transition: all 0.5s ease;
+}
+.homepage-banner-settings-title-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 5.5vh;
+
+  background-color: rgba(200, 60, 60, 0.9);
+}
+.homepage-banner-settings-body-container {
+  position: absolute;
+  top: 6vh;
+  left: 0px;
+  width: 100%;
+  height: calc(98% - 5.5vh);
+  max-height: calc(98% - 5.5vh);
+
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-y: auto;
+}
+
+/* -- Title UI elements -- */
+.homepage-banner-settings-title-text {
+  position: absolute;
+  margin-left: 1vw;
+  top: 0.75vh;
+
+  color: white;
+  font-family: "Barlow";
+  font-size: 3vh;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.settings-close-btn {
+  position: absolute;
+  right: 1vw;
+  top: 0.75vh;
+
+  height: 4vh;
+  width: 4vh;
+}
+.settings-chevron-btn {
+  position: absolute;
+  right: calc(1.5vw + 4vh);
+  top: 0.75vh;
+
+  height: 4vh;
+  width: 4vh;
+
+  transition: all 0.5s ease;
+}
+.minimised {
+  transform: rotate(180deg);
+}
+.settings-ruler {
+  margin-left: 1vw;
+  width: 2vw;
+  border: 0.05vh solid white;
+  background: none;
+}
+.settings-subtitle {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+
+  color: white;
+  font-family: "Barlow";
+  font-size: 1.5vh;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+/* -- Change background buttons -- */
+.change-bg-container {
+  display: flex;
+  flex-flow: row wrap;
+
+  height: 20vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+.change-bg-select-option-container {
+  height: 40%;
+  width: 30%;
+  margin-right: 3%;
+  margin-bottom: 5%;
+
+  border-radius: 0.25vh;
+  transition: border 0.5s;
+}
+.change-bg-select-option-container:hover {
+  box-sizing: border-box;
+  border: 0.1vh solid rgb(100, 100, 100);
+}
+.change-bg-select-option-container > .change-bg-select-option {
+  height: 100%;
+  width: 100%;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  border-radius: 0.25vh;
+  transition: filter 0.5s;
+}
+.change-bg-select-option-container > center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  bottom: calc(50% + 2vh);
+  height: 100%;
+  width: 100%;
+}
+.change-bg-select-option-container > center.text-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  bottom: calc(100% - 0.5vh);
+  height: 1vh;
+  width: 100%;
+}
+.change-bg-select-option-container > center > .checkmark {
+  height: 4vh;
+  width: 4vh;
+}
+.change-bg-select-option-container > center > .checkmark {
+  opacity: 0;
+}
+.change-bg-select-option-container > center.text-container > .change-bg-desc {
+  color: white;
+  font-family: "Quicksand";
+  font-size: 1vh;
+  font-weight: 300;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* -- Selected background buttons -- */
+.change-bg-select-option-container.selected {
+  box-sizing: border-box;
+  border: 0.1vh solid white;
+}
+.change-bg-select-option-container.selected > .change-bg-select-option {
+  filter: brightness(0.4);
+}
+.change-bg-select-option-container.selected > center > .checkmark {
+  opacity: 1;
+}
+.change-bg-select-option-container:hover > center.text-container > .change-bg-desc {
+  animation: homepage-banner-tooltip-fade 0.5s forwards;
+  pointer-events: none;
+}
+
+/* -- Change overlay buttons -- */
+.change-overlay-container {
+  display: flex;
+  flex-flow: row wrap;
+  overflow-y: auto;
+
+  height: 20vh;
+  max-height: 20vh;
+
+  margin-top: 2vh;
+  padding-bottom: 2vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+.change-overlay-select-option-container {
+  height: 40%;
+  width: 30%;
+  margin-right: 3%;
+  margin-top: 2%;
+  margin-bottom: 2.5%;
+
+  border-radius: 0.25vh;
+  transition: border 0.5s;
+}
+.change-overlay-select-option-container > .change-overlay-select-option {
+  height: 100%;
+  width: 100%;
+
+  transition: filter 0.5s;
+}
+.change-overlay-select-option-container > .change-overlay-select-option > .background {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.25vh;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.change-overlay-select-option-container > center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  bottom: calc(50% + 2vh);
+  height: 100%;
+  width: 100%;
+}
+.change-overlay-select-option-container > center.text-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  bottom: calc(100% - 0.5vh);
+  height: 1vh;
+  width: 100%;
+}
+.change-overlay-select-option-container > center > .checkmark {
+  height: 4vh;
+  width: 4vh;
+}
+.change-overlay-select-option-container > center > .checkmark {
+  opacity: 0;
+}
+.change-overlay-select-option-container > center.text-container > .change-overlay-desc {
+  color: white;
+  font-family: "Quicksand";
+  font-size: 1vh;
+  font-weight: 300;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* -- Selected overlay buttons -- */
+.change-overlay-select-option-container:hover {
+  box-sizing: border-box;
+  border: 0.1vh solid rgb(100, 100, 100);
+}
+.change-overlay-select-option-container.selected {
+  box-sizing: border-box;
+  border: 0.1vh solid white;
+}
+.change-overlay-select-option-container.selected > .change-overlay-select-option {
+  filter: brightness(0.4);
+}
+.change-overlay-select-option-container.selected > center > .checkmark {
+  opacity: 1;
+}
+.change-overlay-select-option-container:hover > center.text-container > .change-overlay-desc {
+  animation: homepage-banner-tooltip-fade 0.5s forwards;
+  pointer-events: none;
+}
+
+/* -- Other settings -- */
+.other-settings-container {
+  position: relative;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+.other-settings-container .settings-subtitle, .other-settings-container .settings-ruler {
+  margin-left: 0vw;
+}
+.range-input {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 0.1vh;
+  background: white;
+  opacity: 0.3;
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.range-input:hover {
+  opacity: 1;
+}
+.range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.5vw;
+  width: 0.5vw;
+  border-radius: 50%;
+
+  background: white;
+  cursor: grab;
+}
+.range-input::-moz-range-thumb {
+  height: 0.5vw;
+  width: 0.5vw;
+  border-radius: 50%;
+
+  background: white;
+  cursor: grab;
+}
+.added-margin {
+  margin-left: 0.5vw;
+}
+.default-margin {
+  margin-left: 1vw;
+}
+.settings-label {
+  color: white;
+  font-family: "Quicksand";
+  font-size: 1vh;
+  font-weight: 700;
+
+  margin-top: 2vh;
+  margin-left: 1vw;
+
+  position: relative;
+}
+.text-alignment-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 3px solid white;
+  padding: 0.5vh;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+
+  color: white;
+  font-family: "Quicksand";
+  font-weight: 300;
+
+  transition: all 0.5s ease;
+}
+.text-alignment-button:hover, .text-alignment-button.selected {
+  cursor: pointer;
+
+  background-color: white;
+  color: black;
+  font-weight: 400;
+}
+
+.ss-main.font-family-dropdown .ss-single-selected, .ss-main.font-family-dropdown, .ss-content {
+  font-weight: 400;
+  margin-left: 0.25vw !important;
+  width: 50% !important;
+}
+
+.form-switch {
+  display: inline-block;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.form-switch i {
+  position: relative;
+  display: inline-block;
+  margin-right: .5rem;
+  width: 3.45vh;
+  height: 1.95vh;
+  background-color: #e6e6e6;
+  border-radius: 1.725vh;
+  vertical-align: text-bottom;
+  transition: all 0.3s linear;
+}
+
+.form-switch i::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 3.15vh;
+  height: 1.65vh;
+  background-color: rgb(200, 60, 60);
+  border-radius: 0.825vh;
+  transform: translate3d(0.15vh, 0.15vh, 0) scale3d(1, 1, 1);
+  transition: all 0.25s linear;
+}
+
+.form-switch i::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1.65vh;
+  height: 1.65vh;
+  background-color: white;
+  border-radius: 0.825vh;
+  box-shadow: 0 0.15vh 0.15vh rgba(0, 0, 0, 0.24);
+  transform: translate3d(0.15vh, 0.15vh, 0);
+  transition: all 0.2s ease-in-out;
+}
+
+.form-switch:active i::after {
+  width: 2.1vh;
+  transform: translate3d(0.15vh, 0.15vh, 0);
+}
+
+.form-switch:active input:checked + i::after {
+  transform: translate3d(2.4vh, 0.3vh, 0);
+}
+
+.form-switch input {
+  opacity: 0;
+  width: 0px;
+}
+
+.form-switch input:checked + i {
+  background-color: #4BD763;
+}
+
+.form-switch input:checked + i::before {
+  transform: translate3d(1.65vh, 0.15vh, 0) scale3d(0, 1, 1);
+}
+
+.form-switch input:checked + i::after {
+  transform: translate3d(1.65vh, 0.15vh, 0);
+}
+
+/* -- Padded footer -- */
+.homepage-banner-settings-padded-footer {
+  height: 3vh;
+  width: 100%;
+}
+.homepage-banner-settings-padded-margin {
+  height: 1vh;
+  width: 100%;
+}

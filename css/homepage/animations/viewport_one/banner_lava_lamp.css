@@ -1,0 +1,46 @@
+/* -- Lava lamp parallax background -- */
+.homepage-banner-lava-lamp-bg {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+
+  background: red;
+  background: -webkit-linear-gradient(left top, #152a8e, #b1376c);
+  background: -o-linear-gradient(bottom right, #152a8e, #b1376c);
+  background: -moz-linear-gradient(bottom right, #152a8e, #b1376c);
+  background: linear-gradient(to bottom right, #152a8e, #b1376c);
+}
+.homepage-banner-lava-lamp-bg:before {
+ content: "";
+ position: absolute;
+
+ width: 100%;
+ height: 100%;
+ top: 0px;
+ left: 0px;
+
+ opacity: 0.05;
+ z-index: 0;
+}
+#lava-lamp-loader {
+	display: inline-block;
+	position: relative;
+
+  width: 100%;
+  height: 100%;
+}
+
+/* -- Blob styling -- */
+rect {
+ -webkit-transform-origin: 50% 50%;
+ transform-origin: 50% 50%;
+}
+.lava-lamp-blob-container {
+ -webkit-filter: url("#goo");
+ filter: url("#goo");
+}
+.lava-lamp-blob {
+	fill: white;
+}

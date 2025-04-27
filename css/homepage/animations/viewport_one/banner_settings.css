@@ -1,0 +1,62 @@
+/* -- Settings button animation classes -- */
+.settings-btn-animated-fade-in {
+  animation: homepage-banner-settings-btn-fade-in 1s forwards;
+  pointer-events: auto;
+}
+.settings-btn-animated-fade-out {
+  animation: homepage-banner-settings-btn-fade-in 1s forwards reverse;
+  pointer-events: none;
+}
+
+.settings-animated-close {
+  animation: homepage-banner-settings-close 0.2s forwards;
+  pointer-events: none;
+}
+.settings-animated-open {
+  animation: homepage-banner-settings-open 0.2s forwards;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* -- Actual animation defines -- */
+@keyframes homepage-banner-settings-btn-fade-in {
+  0% {
+    opacity: 0;
+    transform: rotate(-60deg);
+  }
+  90% {
+    transform: rotate(20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+@keyframes homepage-banner-settings-close {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes homepage-banner-settings-open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes homepage-banner-tooltip-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

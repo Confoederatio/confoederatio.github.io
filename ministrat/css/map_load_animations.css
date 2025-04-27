@@ -1,0 +1,177 @@
+/* -- Ministrat Animations: Map -- */
+@keyframes cities-fade-in {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  55% {
+    opacity: 0.2;
+  }
+  60% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes draw-blink {
+  80% {
+    opacity: 1;
+  }
+  83% {
+    opacity: 0;
+  }
+  84% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  91% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 0;
+  }
+  94% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 0;
+  }
+  97% {
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes map-rotate-animation {
+  0% {
+    transform: rotate(12.5deg);
+  }
+  100% {
+  }
+}
+
+/* -- Ministrat Button -- */
+.ministrat-map-btn:not(.expanded) svg {
+  position: relative;
+  height: 20vw;
+  left: 62.5vw;
+  top: 5vh;
+  transform: rotate(12.5deg);
+  width: 20vw;
+
+  pointer-events: auto;
+}
+.ministrat-map-btn:not(.expanded) svg:hover {
+  cursor: pointer;
+}
+
+/* -- Ministrat Container -- */
+.ministrat-container {
+  transition: all 2s ease;
+}
+.ministrat-container.expanded {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 1;
+
+  #main-map {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+  
+    transition: all 2s ease;
+    z-index: 2;
+  }
+  #main-map div, #main-map object, #main-map svg {
+    left: calc(-50% + (100% - 92vh/2));
+    transform-origin: calc(-50% + (100% - 92vh/2)) 0;
+    will-change: transform;
+  }
+}
+  /* -- Ministrat Map - Base -- */
+  .ministrat-map-btn.expanded svg {
+    position: fixed;
+  
+    height: 92vh;
+    width: 92vh;
+    transition: all 2s ease, transform 0.025s ease;
+    animation: map-rotate-animation 2s forwards;
+  }
+    /* -- Ministrat Map - Base: Animation -- */
+    #inner-german-border, #west-berlin-border {
+      stroke-dasharray: 1000 !important;
+      stroke-dashoffset: -385;
+    }
+    #inner-german-border.drawn, #west-berlin-border.drawn {
+      animation: draw 5s linear forwards;
+    }
+    .east-german-province {
+      stroke-dasharray: 1000 !important;
+      stroke-dashoffset: -300;
+    }
+    .east-german-province.drawn {
+      animation: draw-blink 6s ease forwards;
+    }
+    .german-border {
+      transition: all 2s ease;
+    }
+    .german-border.drawn, #west-berlin-border.drawn {
+      stroke-width: 1px !important;
+    }
+    .west-german-province {
+      stroke-dasharray: 1000 !important;
+      stroke-dashoffset: -300;
+    }
+    .west-german-province.drawn {
+      animation: draw-blink 5s ease forwards;
+    }
+  /* -- Ministrat Map - Cities -- */
+  .ministrat-container .ministrat-cities-overlay {
+    display: none;
+    opacity: 0;
+  }
+  .ministrat-container.expanded .ministrat-cities-overlay {
+    display: block;
+    height: 92vh;
+    position: fixed;
+    width: 92vh;
+
+    animation: cities-fade-in 10s ease 5s forwards;
+    transition: all 2s ease, transform 0.025s ease;
+  }
+  /* -- Ministrat Map - Overlay -- */
+  .ministrat-container:not(.expanded) .ministrat-map-overlay {
+    display: none;
+    opacity: 0;
+  }
+  .ministrat-container.expanded .ministrat-map-overlay {
+    display: block;
+    height: 92vh;
+    position: fixed;
+    width: 92vh;
+  }

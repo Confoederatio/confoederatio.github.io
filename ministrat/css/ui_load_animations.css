@@ -1,0 +1,30 @@
+@keyframes ministrat-topbar-load-animation {
+  0% {
+    transform: translateY(-20vh);
+  }
+  50% {
+    transform: translateY(-20vh);
+  }
+  70% {
+    transform: translateY(0vh);
+  }
+}
+@keyframes ministrat-topbar-time-controls-load-animation {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.ministrat-container.expanded #ministrat-topbar-container {
+  animation: ministrat-topbar-load-animation 10s forwards;
+
+  #ministrat-topbar-time-controls {
+    animation: ministrat-topbar-time-controls-load-animation 10s forwards;
+  }
+}

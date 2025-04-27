@@ -1,0 +1,31 @@
+/* -- Parallax on hover states -- */
+.parallax-item:hover {
+  cursor: pointer;
+  padding-left: 0.5vh;
+  padding-top: 0.5vh;
+  transform: translate(-0.25vh, -0.25vh);
+
+  background-color: rgba(120, 120, 120);
+  opacity: 1;
+  z-index: 3;
+  box-shadow: 0vh 0vh 2vh rgba(0, 0, 0, 0.7);
+}
+.parallax-item:hover > .parallax-item-colour-bg {
+  opacity: 0.5;
+}
+.parallax-item:hover > .parallax-item-bg {
+  opacity: 0.5;
+}
+
+/* -- Parallax Keyframes -- */
+[animation] {
+  transition: transform 0.75s ease, opacity 0.3s ease !important;
+}
+[animation*="-shown"] {
+  opacity: 1;
+  transform: translate(0vh, 0vh);
+}
+[animation]:not([animation*="-shown"]) {
+  opacity: 0;
+  pointer-events: none;
+}

@@ -1,0 +1,72 @@
+/* -- Bookmark UI animations -- */
+.bookmark-minimise-icon:hover {
+  cursor: pointer;
+}
+.bookmark-minimise-icon.minimised {
+  transform: rotateZ(-180deg);
+}
+.parallax-bookmark-container.minimised {
+  transform: translateY(31vh);
+}
+.parallax-bookmark-container.no-bookmarks.minimised {
+  transform: translateY(12vh);
+}
+.parallax-bookmark-dot:hover, .parallax-item-preview:hover {
+  cursor: pointer;
+}
+.parallax-bookmark-dot.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.show-animation:last-child {
+  animation: display-bookmark-preview 1s forwards;
+}
+
+/* -- Bookmark preview animations -- */
+@keyframes bookmark-dot-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bookmark-dot-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes display-bookmark-preview {
+  0% {
+    transform: translateY(-5vh) perspective(20vh) rotateY(-4deg);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0vh) perspective(20vh) rotateY(-4deg);
+  }
+}
+[item-state="hidden"] {
+  transition: all 0.5s ease, color 1ms linear;
+  top: -5vh !important;
+  opacity: -2;
+  min-width: 0vh !important;
+  width: 0vh;
+  min-height: 5vh !important;
+  height: 5vh;
+  pointer-events: none;
+}
+[item-state="hidden-last"] {
+  transition: all 0.5s ease;
+  top: -5vh !important;
+  opacity: 0;
+  pointer-events: none;
+}
+[item-state="hidden"] > span {
+  color: rgba(0, 0, 0, 0) !important;
+}

@@ -307,6 +307,11 @@
     );
   }
 
+  window.isMobileDevice = function () {
+    //Return statement
+    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
+
   /*
     objectToAttributes() - Converts a given object to a bunch of attributes in terms of key/value pairs.
     arg0_input_object: (Object) - The object to pass to the function.

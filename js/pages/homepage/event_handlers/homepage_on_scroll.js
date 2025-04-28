@@ -10,6 +10,7 @@ function initGlobalScrollEventHandler (e) {
   var vh_scroll = (window.scrollY/window.innerHeight)*100;
 
   //Event handler functions
+  fixMobileVh();
   parallaxLabelOnScroll();
   triumphAndTragedyOnScroll();
 

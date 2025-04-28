@@ -129,16 +129,17 @@
     // Handle touch start
     gallery_obj.parallax_body.addEventListener("touchstart", (e) => {
         if (e.touches.length == 1) {
-            touch_start_y = e.touches[0].clientY;
-            touch_start_scroll_x = gallery_obj.parallax_scroll_x;
+          touch_start_y = e.touches[0].clientY;
+          touch_start_scroll_x = gallery_obj.parallax_scroll_x;
         }
     });
 
     // Handle touch move
     gallery_obj.parallax_body.addEventListener("touchmove", (e) => {
+      console.log("touchmove fired", e.touches.length, e);
       if (e.touches.length == 1) {
         var touch = e.touches[0];
-        var delta_y = touch.clientY - touch_start_y;
+        var delta_y = (touch.clientY - touch_start_y)*-1;
 
         // Map vertical movement into horizontal scrolling
         var scroll_speed_modifier = 2; // tweak this number to adjust sensitivity
@@ -244,6 +245,7 @@
     //Parallax event listeners for scrolling/panning around
     {
       initGalleryDesktopEventHandlers();
+      initGalleryMobileEventHandlers();
     }
   
     //Parallax gallery logic

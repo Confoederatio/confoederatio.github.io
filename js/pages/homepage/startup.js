@@ -76,11 +76,15 @@ all_bodies[0].remove();
 
 //Mobile temporary fix
 if (isMobileDevice()) {
-  window.alert(`You are on a mobile device.\n\nThis website is currently unoptimised for mobile devices. Please use a desktop computer to view this website.`);
+  window.alert(`You are on a mobile device.\n\nThis website is currently unoptimised for mobile devices. Please use a desktop computer to view this website.\n\nExperimental Patch: 003`);
 
   document.getElementById("about-me-section").setAttribute("class",
     document.getElementById("about-me-section").getAttribute("class") + " display-none"
   );
+
+  setInterval(function () {
+    fixMobileVh();
+  }, 100);
 }
 
 //Hack fix for glitched elements

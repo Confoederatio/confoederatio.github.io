@@ -136,6 +136,11 @@
     return [aX, aY];
   }
 
+  window.fixMobileVh = function () {
+    var vh = window.innerHeight*0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
   /*
     hideElement() - Hides an HTML element. Appends a 'hidden' class.
     arg0_element: (HTMLElement) - The HTML element to pass.

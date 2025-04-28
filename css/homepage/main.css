@@ -18,19 +18,19 @@ body {
 
 .project-parallax-anchor {
   position: absolute;
-  top: 100vh;
+  top: 100dvh;
   left: 0px;
 }
 .ministrat-anchor {
   position: absolute;
-  top: 200vh;
+  top: 200dvh;
   left: 0px;
 }
 
 :root {
-  --parallax-offset-x: 0vh;
-  --parallax-offset-y: -2.5vh;
+  --parallax-offset-x: 0dvh;
+  --parallax-offset-y: -2.5dvh;
 
-  --content-panel-offset-x: -5vh;
-  --content-panel-offset-y: -125vh;
+  --content-panel-offset-x: -5dvh;
+  --content-panel-offset-y: -125dvh;
 }

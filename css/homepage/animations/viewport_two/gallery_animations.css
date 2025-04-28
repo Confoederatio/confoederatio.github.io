@@ -1,14 +1,14 @@
 /* -- Parallax on hover states -- */
 .parallax-item:hover {
   cursor: pointer;
-  padding-left: 0.5vh;
-  padding-top: 0.5vh;
-  transform: translate(-0.25vh, -0.25vh);
+  padding-left: 0.5dvh;
+  padding-top: 0.5dvh;
+  transform: translate(-0.25dvh, -0.25dvh);
 
   background-color: rgba(120, 120, 120);
   opacity: 1;
   z-index: 3;
-  box-shadow: 0vh 0vh 2vh rgba(0, 0, 0, 0.7);
+  box-shadow: 0dvh 0dvh 2dvh rgba(0, 0, 0, 0.7);
 }
 .parallax-item:hover > .parallax-item-colour-bg {
   opacity: 0.5;
@@ -23,7 +23,7 @@
 }
 [animation*="-shown"] {
   opacity: 1;
-  transform: translate(0vh, 0vh);
+  transform: translate(0dvh, 0dvh);
 }
 [animation]:not([animation*="-shown"]) {
   opacity: 0;

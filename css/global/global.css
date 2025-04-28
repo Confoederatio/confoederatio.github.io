@@ -168,8 +168,8 @@ select:-moz-focusring {
   font-size: 1vw;
   font-weight: 300;
 
-  padding-top: 0.25vh;
-  padding-bottom: 0.25vh;
+  padding-top: 0.25dvh;
+  padding-bottom: 0.25dvh;
   padding-left: 0.5vw;
   padding-right: 0.5vw;
 }
@@ -179,10 +179,10 @@ select:-moz-focusring {
 
 /* -- Tooltip placement -- */
 .tippy-box[data-placement="top"] {
-  margin-bottom: 1vh;
+  margin-bottom: 1dvh;
 }
 .tippy-box[data-placement="bottom"] {
-  margin-top: 1vh;
+  margin-top: 1dvh;
 }
 .tippy-box[data-placement="left"] {
   margin-right: 1vw;

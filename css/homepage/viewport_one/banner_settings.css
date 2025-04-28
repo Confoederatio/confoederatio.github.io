@@ -1,12 +1,12 @@
 /* -- External settings button -- */
 .settings-btn {
-  height: 4vh;
-  width: 4vh;
+  height: 4dvh;
+  width: 4dvh;
 }
 .settings-btn-container {
-  margin-top: 3.5vh;
-  height: 4vh;
-  width: 4vh;
+  margin-top: 3.5dvh;
+  height: 4dvh;
+  width: 4dvh;
 
   transition: transform 0.5s;
 }
@@ -21,10 +21,10 @@
 /* -- Background containers and positioning -- */
 .homepage-banner-settings-container {
   position: absolute;
-  bottom: 10vh;
+  bottom: 10dvh;
   right: 4.25vw;
 
-  height: 30vh;
+  height: 30dvh;
   width: 30vw;
 
   transition: all 0.5s ease;
@@ -34,17 +34,17 @@
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 5.5vh;
+  height: 5.5dvh;
 
   background-color: rgba(200, 60, 60, 0.9);
 }
 .homepage-banner-settings-body-container {
   position: absolute;
-  top: 6vh;
+  top: 6dvh;
   left: 0px;
   width: 100%;
-  height: calc(98% - 5.5vh);
-  max-height: calc(98% - 5.5vh);
+  height: calc(98% - 5.5dvh);
+  max-height: calc(98% - 5.5dvh);
 
   background-color: rgba(0, 0, 0, 0.9);
   overflow-y: auto;
@@ -54,29 +54,29 @@
 .homepage-banner-settings-title-text {
   position: absolute;
   margin-left: 1vw;
-  top: 0.75vh;
+  top: 0.75dvh;
 
   color: white;
   font-family: "Barlow";
-  font-size: 3vh;
+  font-size: 3dvh;
   font-weight: 700;
   text-transform: uppercase;
 }
 .settings-close-btn {
   position: absolute;
   right: 1vw;
-  top: 0.75vh;
+  top: 0.75dvh;
 
-  height: 4vh;
-  width: 4vh;
+  height: 4dvh;
+  width: 4dvh;
 }
 .settings-chevron-btn {
   position: absolute;
-  right: calc(1.5vw + 4vh);
-  top: 0.75vh;
+  right: calc(1.5vw + 4dvh);
+  top: 0.75dvh;
 
-  height: 4vh;
-  width: 4vh;
+  height: 4dvh;
+  width: 4dvh;
 
   transition: all 0.5s ease;
 }
@@ -86,18 +86,18 @@
 .settings-ruler {
   margin-left: 1vw;
   width: 2vw;
-  border: 0.05vh solid white;
+  border: 0.05dvh solid white;
   background: none;
 }
 .settings-subtitle {
-  margin-top: 1vh;
-  margin-bottom: 1vh;
+  margin-top: 1dvh;
+  margin-bottom: 1dvh;
   margin-left: 1vw;
   margin-right: 1vw;
 
   color: white;
   font-family: "Barlow";
-  font-size: 1.5vh;
+  font-size: 1.5dvh;
   font-weight: 100;
   text-transform: uppercase;
 }
@@ -107,9 +107,9 @@
   display: flex;
   flex-flow: row wrap;
 
-  height: 20vh;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+  height: 20dvh;
+  margin-top: 2dvh;
+  margin-bottom: 2dvh;
   margin-left: 1vw;
   margin-right: 1vw;
 }
@@ -119,12 +119,12 @@
   margin-right: 3%;
   margin-bottom: 5%;
 
-  border-radius: 0.25vh;
+  border-radius: 0.25dvh;
   transition: border 0.5s;
 }
 .change-bg-select-option-container:hover {
   box-sizing: border-box;
-  border: 0.1vh solid rgb(100, 100, 100);
+  border: 0.1dvh solid rgb(100, 100, 100);
 }
 .change-bg-select-option-container > .change-bg-select-option {
   height: 100%;
@@ -133,7 +133,7 @@
   background-size: cover;
   background-repeat: no-repeat;
 
-  border-radius: 0.25vh;
+  border-radius: 0.25dvh;
   transition: filter 0.5s;
 }
 .change-bg-select-option-container > center {
@@ -141,7 +141,7 @@
   display: flex;
   justify-content: center;
 
-  bottom: calc(50% + 2vh);
+  bottom: calc(50% + 2dvh);
   height: 100%;
   width: 100%;
 }
@@ -150,13 +150,13 @@
   display: flex;
   justify-content: center;
 
-  bottom: calc(100% - 0.5vh);
-  height: 1vh;
+  bottom: calc(100% - 0.5dvh);
+  height: 1dvh;
   width: 100%;
 }
 .change-bg-select-option-container > center > .checkmark {
-  height: 4vh;
-  width: 4vh;
+  height: 4dvh;
+  width: 4dvh;
 }
 .change-bg-select-option-container > center > .checkmark {
   opacity: 0;
@@ -164,7 +164,7 @@
 .change-bg-select-option-container > center.text-container > .change-bg-desc {
   color: white;
   font-family: "Quicksand";
-  font-size: 1vh;
+  font-size: 1dvh;
   font-weight: 300;
 
   opacity: 0;
@@ -174,7 +174,7 @@
 /* -- Selected background buttons -- */
 .change-bg-select-option-container.selected {
   box-sizing: border-box;
-  border: 0.1vh solid white;
+  border: 0.1dvh solid white;
 }
 .change-bg-select-option-container.selected > .change-bg-select-option {
   filter: brightness(0.4);
@@ -193,11 +193,11 @@
   flex-flow: row wrap;
   overflow-y: auto;
 
-  height: 20vh;
-  max-height: 20vh;
+  height: 20dvh;
+  max-height: 20dvh;
 
-  margin-top: 2vh;
-  padding-bottom: 2vh;
+  margin-top: 2dvh;
+  padding-bottom: 2dvh;
   margin-left: 1vw;
   margin-right: 1vw;
 }
@@ -208,7 +208,7 @@
   margin-top: 2%;
   margin-bottom: 2.5%;
 
-  border-radius: 0.25vh;
+  border-radius: 0.25dvh;
   transition: border 0.5s;
 }
 .change-overlay-select-option-container > .change-overlay-select-option {
@@ -220,7 +220,7 @@
 .change-overlay-select-option-container > .change-overlay-select-option > .background {
   height: 100%;
   width: 100%;
-  border-radius: 0.25vh;
+  border-radius: 0.25dvh;
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -230,7 +230,7 @@
   display: flex;
   justify-content: center;
 
-  bottom: calc(50% + 2vh);
+  bottom: calc(50% + 2dvh);
   height: 100%;
   width: 100%;
 }
@@ -239,13 +239,13 @@
   display: flex;
   justify-content: center;
 
-  bottom: calc(100% - 0.5vh);
-  height: 1vh;
+  bottom: calc(100% - 0.5dvh);
+  height: 1dvh;
   width: 100%;
 }
 .change-overlay-select-option-container > center > .checkmark {
-  height: 4vh;
-  width: 4vh;
+  height: 4dvh;
+  width: 4dvh;
 }
 .change-overlay-select-option-container > center > .checkmark {
   opacity: 0;
@@ -253,7 +253,7 @@
 .change-overlay-select-option-container > center.text-container > .change-overlay-desc {
   color: white;
   font-family: "Quicksand";
-  font-size: 1vh;
+  font-size: 1dvh;
   font-weight: 300;
 
   opacity: 0;
@@ -263,11 +263,11 @@
 /* -- Selected overlay buttons -- */
 .change-overlay-select-option-container:hover {
   box-sizing: border-box;
-  border: 0.1vh solid rgb(100, 100, 100);
+  border: 0.1dvh solid rgb(100, 100, 100);
 }
 .change-overlay-select-option-container.selected {
   box-sizing: border-box;
-  border: 0.1vh solid white;
+  border: 0.1dvh solid white;
 }
 .change-overlay-select-option-container.selected > .change-overlay-select-option {
   filter: brightness(0.4);
@@ -292,7 +292,7 @@
 .range-input {
   -webkit-appearance: none;
   width: 50%;
-  height: 0.1vh;
+  height: 0.1dvh;
   background: white;
   opacity: 0.3;
   outline: none;
@@ -329,10 +329,10 @@
 .settings-label {
   color: white;
   font-family: "Quicksand";
-  font-size: 1vh;
+  font-size: 1dvh;
   font-weight: 700;
 
-  margin-top: 2vh;
+  margin-top: 2dvh;
   margin-left: 1vw;
 
   position: relative;
@@ -340,7 +340,7 @@
 .text-alignment-button {
   background-color: rgba(0, 0, 0, 0);
   border: 3px solid white;
-  padding: 0.5vh;
+  padding: 0.5dvh;
   padding-left: 0.5vw;
   padding-right: 0.5vw;
 
@@ -374,10 +374,10 @@
   position: relative;
   display: inline-block;
   margin-right: .5rem;
-  width: 3.45vh;
-  height: 1.95vh;
+  width: 3.45dvh;
+  height: 1.95dvh;
   background-color: #e6e6e6;
-  border-radius: 1.725vh;
+  border-radius: 1.725dvh;
   vertical-align: text-bottom;
   transition: all 0.3s linear;
 }
@@ -386,11 +386,11 @@
   content: "";
   position: absolute;
   left: 0;
-  width: 3.15vh;
-  height: 1.65vh;
+  width: 3.15dvh;
+  height: 1.65dvh;
   background-color: rgb(200, 60, 60);
-  border-radius: 0.825vh;
-  transform: translate3d(0.15vh, 0.15vh, 0) scale3d(1, 1, 1);
+  border-radius: 0.825dvh;
+  transform: translate3d(0.15dvh, 0.15dvh, 0) scale3d(1, 1, 1);
   transition: all 0.25s linear;
 }
 
@@ -398,22 +398,22 @@
   content: "";
   position: absolute;
   left: 0;
-  width: 1.65vh;
-  height: 1.65vh;
+  width: 1.65dvh;
+  height: 1.65dvh;
   background-color: white;
-  border-radius: 0.825vh;
-  box-shadow: 0 0.15vh 0.15vh rgba(0, 0, 0, 0.24);
-  transform: translate3d(0.15vh, 0.15vh, 0);
+  border-radius: 0.825dvh;
+  box-shadow: 0 0.15dvh 0.15dvh rgba(0, 0, 0, 0.24);
+  transform: translate3d(0.15dvh, 0.15dvh, 0);
   transition: all 0.2s ease-in-out;
 }
 
 .form-switch:active i::after {
-  width: 2.1vh;
-  transform: translate3d(0.15vh, 0.15vh, 0);
+  width: 2.1dvh;
+  transform: translate3d(0.15dvh, 0.15dvh, 0);
 }
 
 .form-switch:active input:checked + i::after {
-  transform: translate3d(2.4vh, 0.3vh, 0);
+  transform: translate3d(2.4dvh, 0.3dvh, 0);
 }
 
 .form-switch input {
@@ -426,19 +426,19 @@
 }
 
 .form-switch input:checked + i::before {
-  transform: translate3d(1.65vh, 0.15vh, 0) scale3d(0, 1, 1);
+  transform: translate3d(1.65dvh, 0.15dvh, 0) scale3d(0, 1, 1);
 }
 
 .form-switch input:checked + i::after {
-  transform: translate3d(1.65vh, 0.15vh, 0);
+  transform: translate3d(1.65dvh, 0.15dvh, 0);
 }
 
 /* -- Padded footer -- */
 .homepage-banner-settings-padded-footer {
-  height: 3vh;
+  height: 3dvh;
   width: 100%;
 }
 .homepage-banner-settings-padded-margin {
-  height: 1vh;
+  height: 1dvh;
   width: 100%;
 }

@@ -13,9 +13,9 @@
 /* -- About Me/Contact section styling -- */
 .about-me-section-container {
   position: absolute;
-  top: 200vh;
+  top: 200dvh;
   left: 0px;
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
 
   background-attachment: fixed;
@@ -32,7 +32,7 @@
   position: absolute;
   top: 0px;
   left: 15vw;
-  height: 100vh;
+  height: 100dvh;
   width: 85vw;
 
   background-color: rgba(0, 0, 0, 0.975);
@@ -41,9 +41,9 @@
 
 .about-me-overlay-title {
   position: absolute;
-  top: -14vh;
+  top: -14dvh;
   left: -6vw;
-  font-size: 12vh;
+  font-size: 12dvh;
   letter-spacing: 1vw;
 
   color: white;
@@ -51,43 +51,43 @@
   font-weight: 700;
   text-transform: uppercase;
 
-  text-shadow: 0px 0px 4vh rgba(0, 0, 0, 0.4);
+  text-shadow: 0px 0px 4dvh rgba(0, 0, 0, 0.4);
 }
 .about-me-overlay-subtitle {
   position: absolute;
-  top: -26vh;
+  top: -26dvh;
   left: 3vw;
-  font-size: 3.5vh;
+  font-size: 3.5dvh;
   width: 40%;
 
   color: white;
   font-family: "Quicksand";
   font-weight: 500;
 
-  text-shadow: 0px 0px 4vh rgba(0, 0, 0, 0.4);
+  text-shadow: 0px 0px 4dvh rgba(0, 0, 0, 0.4);
 }
 .biography-overlay-subtitle {
   position: absolute;
-  top: -26vh;
+  top: -26dvh;
   left: calc(39vw + 0.5rem);
-  font-size: 3.5vh;
+  font-size: 3.5dvh;
   width: 25%;
 
   color: white;
   font-family: "Quicksand";
   font-weight: 500;
 
-  text-shadow: 0px 0px 4vh rgba(0, 0, 0, 0.4);
+  text-shadow: 0px 0px 4dvh rgba(0, 0, 0, 0.4);
 }
 .about-me-body-text {
   position: absolute;
-  top: -22vh;
+  top: -22dvh;
   left: 3vw;
-  font-size: 1vh;
+  font-size: 1dvh;
 
   color: white;
   font-family: "Fira Sans";
-  font-size: 1.5vh;
+  font-size: 1.5dvh;
   font-weight: 100;
   text-align: justify;
 
@@ -98,19 +98,19 @@
   overflow-y: scroll;
 
   .confoederatio-icon {
-    height: 8vh;
-    width: 8vh;
+    height: 8dvh;
+    width: 8dvh;
   }
 }
 .biography-body-text {
   position: absolute;
-  top: -22vh;
+  top: -22dvh;
   left: calc(39vw + 0.5rem);
-  font-size: 1vh;
+  font-size: 1dvh;
 
   color: white;
   font-family: "Fira Sans";
-  font-size: 1.5vh;
+  font-size: 1.5dvh;
   font-weight: 100;
   padding-right: 0.5rem;
   text-align: left;
@@ -122,11 +122,11 @@
 .about-me-divider {
 	background: transparent;
 	border: 0px solid white;
-	border-bottom: 0.2vh solid white;
+	border-bottom: 0.2dvh solid white;
 	width: 5vw;
 	left: 0.1vw;
 
   margin-right: 100%;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+  margin-top: 2dvh;
+  margin-bottom: 2dvh;
 }

@@ -1,34 +1,34 @@
 /* -- Parallax header positioning -- */
 .project-listings {
 	position: absolute;
-	top: calc(5vh + var(--parallax-offset-y));
+	top: calc(5dvh + var(--parallax-offset-y));
 	left: calc(5vw + var(--parallax-offset-x));
 }
 .ctd-header {
 	position: absolute;
-	top: calc(20vh + var(--parallax-offset-y));
+	top: calc(20dvh + var(--parallax-offset-y));
 	left: calc(7vw + var(--parallax-offset-x));
   width: max-content;
 }
 .crd-header {
 	position: absolute;
-	top: calc(20vh + var(--parallax-offset-y));
-	left: calc(23vw + 188vh + var(--parallax-offset-x));
+	top: calc(20dvh + var(--parallax-offset-y));
+	left: calc(23vw + 188dvh + var(--parallax-offset-x));
   width: max-content;
 }
 .cad-header {
 	position: absolute;
-	top: calc(20vh + var(--parallax-offset-y));
-	left: calc(23vw + 336vh + var(--parallax-offset-x));
+	top: calc(20dvh + var(--parallax-offset-y));
+	left: calc(23vw + 336dvh + var(--parallax-offset-x));
   width: max-content;
 }
 .preserves-header {
 	position: absolute;
-	top: calc(20vh + var(--parallax-offset-y));
-	left: calc(23vw + 468vh + var(--parallax-offset-x));
+	top: calc(20dvh + var(--parallax-offset-y));
+	left: calc(23vw + 468dvh + var(--parallax-offset-x));
   width: max-content;
 }
 .parallax-header.small {
-	font-size: 3vh;
-  margin-top: 1.5vh;
+	font-size: 3dvh;
+  margin-top: 1.5dvh;
 }

@@ -31,20 +31,20 @@
 }
 .image-magnifier-glass {
   position: absolute;
-  border: 0.1vh solid white;
+  border: 0.1dvh solid white;
 
-  height: 12vh;
-  width: 16vh;
+  height: 12dvh;
+  width: 16dvh;
   pointer-events: none;
 
   transition: opacity 0.5s ease, width 2s ease, height 2s ease;
 }
 .parallax-item-content-panel.maximised .preview-image-container {
-  width: 80vh;
+  width: 80dvh;
 }
 .parallax-item-content-panel.maximised .image-magnifier-glass {
-  height: 24vh;
-  width: 36vh;
+  height: 24dvh;
+  width: 36dvh;
 }
 
 /* -- Maximised content panel CSS -- */
@@ -57,10 +57,10 @@
 }
 .parallax-item-content-panel.maximised {
   position: fixed;
-  top: -100vh !important;
+  top: -100dvh !important;
   left: 0px !important;
 
-  height: 100vh !important;
+  height: 100dvh !important;
   width: 100vw;
 
   transition: all 2s ease !important;
@@ -71,21 +71,21 @@
 .parallax-item-content-panel.maximised:not(.shown) > .content-wrapper {
   left: 0px;
   margin-top: 50%;
-  max-height: 0vh;
+  max-height: 0dvh;
   opacity: 0;
   transition: all 1s ease !important;
 }
 
 /* -- Maximisation formatting -- */
 .parallax-item-content-panel.maximised > .content-wrapper {
-  height: calc(100vh - 20vh);
+  height: calc(100dvh - 20dvh);
   width: 70%;
-  margin-left: calc(15% + 1.5vh);
+  margin-left: calc(15% + 1.5dvh);
   margin-right: 25%;
-  margin-top: 10vh;
+  margin-top: 10dvh;
 
   .parallax-item-content-panel-body-text {
-    margin-right: 11.5vh;
+    margin-right: 11.5dvh;
   }
 }
 .parallax-item-content-panel.maximised > .content-wrapper, .parallax-item-content-panel.being-minimised > .content-wrapper {
@@ -94,22 +94,22 @@
 
 /* -- Maximised buttons -- */
 .parallax-item-content-panel.shown.maximised .content-panel-close-btn {
-  top: 9.5vh;
+  top: 9.5dvh;
   right: 15vw;
 
   border-radius: 50%;
   transform: rotateZ(180deg) scaleX(-1);
 }
 .parallax-item-content-panel.shown.maximised .content-panel-maximise-btn {
-  top: 9.5vh;
-  right: calc(15vw + 5.5vh);
+  top: 9.5dvh;
+  right: calc(15vw + 5.5dvh);
 
   border-radius: 50%;
   transform: rotateZ(180deg) scaleX(-1);
 }
 .parallax-item-content-panel.shown.maximised .content-panel-preview-btn {
-  top: 9.5vh;
-  right: calc(15vw + 11vh);
+  top: 9.5dvh;
+  right: calc(15vw + 11dvh);
 
   border-radius: 50%;
   transform: rotateZ(360deg) scaleX(-1);

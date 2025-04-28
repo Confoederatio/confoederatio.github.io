@@ -74,12 +74,12 @@
   width: 100%;
 }
 .parallax-bookmark-dot {
-  width: 2vh;
-  height: 2vh;
+  width: 2dvh;
+  height: 2dvh;
 
   border-radius: 50%;
-  border: 0.1vh solid white;
-  margin-left: 2vh;
+  border: 0.1dvh solid white;
+  margin-left: 2dvh;
 
   transition: all 1s ease;
 }
@@ -104,11 +104,11 @@
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
   font-family: "Barlow";
-  font-size: 3vh;
+  font-size: 3dvh;
   font-weight: 100;
   text-transform: uppercase;
 
-  padding: 0.5vh;
+  padding: 0.5dvh;
   padding-left: 1vw;
   padding-right: 1vw;
 
@@ -121,8 +121,8 @@
 .bookmark-text-icon, .bookmark-minimise-icon {
   position: relative;
   top: 10%;
-  height: 3vh;
-  width: 3vh;
+  height: 3dvh;
+  width: 3dvh;
 }
 .bookmark-minimise-icon {
   margin-left: 0.75vw;
@@ -141,19 +141,19 @@
 
   color: white;
   font-family: "Barlow";
-  font-size: 2.5vh;
+  font-size: 2.5dvh;
   font-weight: 100;
 
   justify-content: center;
-  margin: 0.5vh;
+  margin: 0.5dvh;
   transition: all 0.5s ease;
 }
 .project-parallax-no-bookmark-label-text.hidden {
   opacity: 0;
 }
 .no-bookmark-label-image-icon {
-  height: 2vh;
-  width: 2vh;
+  height: 2dvh;
+  width: 2dvh;
 }
 
 /* -- Actual item preview -- */
@@ -161,12 +161,12 @@
   position: relative;
   top: 0px;
   left: auto;
-  min-width: 24vh;
-  min-height: 24vh;
+  min-width: 24dvh;
+  min-height: 24dvh;
 
-  box-shadow: 0px 0px 4vh 0px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 4dvh 0px rgba(0, 0, 0, 0.8);
 
-  transform: perspective(20vh) rotateY(-4deg);
+  transform: perspective(20dvh) rotateY(-4deg);
   pointer-events: all;
 
   transition: all 0.5s ease, z-index 1ms linear !important;
@@ -190,11 +190,11 @@
   color: white;
 }
 .parallax-item-preview > .parallax-major-project-text {
-	font-size: 3vh;
+	font-size: 3dvh;
 
 	margin-left: 3.5vw;
-	right: 2vh;
-	bottom: 2vh;
+	right: 2dvh;
+	bottom: 2dvh;
 }
 
 /* -- Disable leftover buttons -- */

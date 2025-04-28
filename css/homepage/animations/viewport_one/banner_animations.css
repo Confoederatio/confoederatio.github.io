@@ -37,36 +37,36 @@
 /* -- Homepage top banner footer animations -- */
 @keyframes homepage-top-banner-btn-hop-up {
   0% {
-    transform: translateY(100vh);
+    transform: translateY(100dvh);
   }
   50% {
-    transform: translateY(-4vh);
+    transform: translateY(-4dvh);
   }
   60% {
-    transform: translateY(-3vh);
+    transform: translateY(-3dvh);
   }
   80% {
-    transform: translateY(2vh);
+    transform: translateY(2dvh);
   }
   100% {
-    transform: translateY(0vh);
+    transform: translateY(0dvh);
   }
 }
 @keyframes homepage-top-banner-btn-hop-down {
   0% {
-    transform: translateY(0vh);
+    transform: translateY(0dvh);
   }
   50% {
-    transform: translateY(2vh);
+    transform: translateY(2dvh);
   }
   70% {
-    transform: translateY(-3vh);
+    transform: translateY(-3dvh);
   }
   80% {
-    transform: translateY(-4vh);
+    transform: translateY(-4dvh);
   }
   100% {
-    transform: translateY(100vh);
+    transform: translateY(100dvh);
   }
 }
 @keyframes homepage-settings-btn-fade {
@@ -92,14 +92,14 @@
   100% {
     transform: rotate(360deg);
     margin-left: 44vw;
-    margin-top: 9vh;
+    margin-top: 9dvh;
   }
 }
 @keyframes homepage-settings-btn-roll-back {
   0% {
     transform: rotate(360deg);
     margin-left: 44vw;
-    margin-top: 9vh;
+    margin-top: 9dvh;
   }
   70% {
     transform: rotate(90deg);
@@ -114,19 +114,19 @@
 @keyframes homepage-chevron-down {
   0% {
     opacity: 0;
-    transform: translateY(0vh);
+    transform: translateY(0dvh);
   }
   10% {
     opacity: 1;
-    transform: translateY(0vh);
+    transform: translateY(0dvh);
   }
   50% {
     opacity: 0;
   }
   90% {
-    transform: translateY(10vh);
+    transform: translateY(10dvh);
   }
   100% {
-    transform: translateY(5vh);
+    transform: translateY(5dvh);
   }
 }

@@ -6,8 +6,8 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  box-shadow: -2vh 0 5vh rgba(0, 0, 0, 0.7),
-              -2vh 0 5vh rgba(0, 0, 0, 0.7);
+  box-shadow: -2dvh 0 5dvh rgba(0, 0, 0, 0.7),
+              -2dvh 0 5dvh rgba(0, 0, 0, 0.7);
   z-index: 2;
 }
 .project-parallax-container-gradient-bg {
@@ -45,29 +45,29 @@
 	transition: all 0.5s ease;
 }
 .parallax-content-container {
-  transform: translateY(-25vh);
+  transform: translateY(-25dvh);
 }
 
 /* -- Parallax header elements -- */
 .parallax-header {
 	color: white;
 	font-family: "Barlow";
-	font-size: 7vh;
+	font-size: 7dvh;
 	font-weight: 100;
 
 	text-transform: uppercase;
-	text-shadow: 0vh 0.2vh 0.2vh rgba(0, 0, 0, 0.7);
+	text-shadow: 0dvh 0.2dvh 0.2dvh rgba(0, 0, 0, 0.7);
 }
 .parallax-subheader {
 	color: white;
 	font-family: "Barlow";
-	font-size: 5vh;
+	font-size: 5dvh;
 	font-weight: 700;
 }
 .parallax-subheader-barlow {
 	color: white;
 	font-family: "Barlow";
-	font-size: 4vh;
+	font-size: 4dvh;
 	font-weight: 100;
 	text-transform: uppercase;
 }
@@ -75,7 +75,7 @@
 	position: absolute;
 	background: transparent;
 	border: 0px solid white;
-	border-bottom: 0.2vh solid white;
+	border-bottom: 0.2dvh solid white;
 	width: 5vw;
 	left: 0.1vw;
 }
@@ -99,68 +99,68 @@
 	opacity: 0.2;
 }
 .parallax-item.large-square {
-	height: 32vh;
-	width: 32vh;
-	box-shadow: 0px 0px 4vh rgba(0, 0, 0, 0.7);
+	height: 32dvh;
+	width: 32dvh;
+	box-shadow: 0px 0px 4dvh rgba(0, 0, 0, 0.7);
 }
 .parallax-item.sublarge-square {
-	height: 28vh;
-	width: 28vh;
+	height: 28dvh;
+	width: 28dvh;
 }
 .parallax-item.medium-square {
-	height: 24vh;
-	width: 24vh;
+	height: 24dvh;
+	width: 24dvh;
 }
 .parallax-item.submedium-square {
-	height: 18vh;
-	width: 18vh;
+	height: 18dvh;
+	width: 18dvh;
 }
 .parallax-item.small-square {
-	height: 16vh;
-	width: 16vh;
+	height: 16dvh;
+	width: 16dvh;
 }
 .parallax-item.tiny-square {
-	height: 12vh;
-	width: 12vh;
+	height: 12dvh;
+	width: 12dvh;
 }
 .parallax-item .parallax-group-text, .parallax-item-preview .parallax-group-text {
 	color: white;
 	font-family: "Raleway";
-	font-size: 6vh;
+	font-size: 6dvh;
 	font-weight: 700;
 	text-align: right;
 
 	position: absolute;
-	margin-left: 4vh;
-	right: 3vh;
-	bottom: 2vh;
+	margin-left: 4dvh;
+	right: 3dvh;
+	bottom: 2dvh;
 }
 .parallax-item-preview .parallax-group-text {
-  font-size: 4vh;
+  font-size: 4dvh;
 }
 .parallax-item .parallax-major-project-text, .parallax-item-preview .parallax-major-project-text {
 	color: white;
 	font-family: "Raleway";
-	font-size: 4vh;
+	font-size: 4dvh;
 	font-weight: 100;
 	text-align: right;
 
 	position: absolute;
-	margin-left: 4vh;
-	right: 3vh;
-	bottom: 2vh;
+	margin-left: 4dvh;
+	right: 3dvh;
+	bottom: 2dvh;
 }
 .parallax-item .parallax-minor-project-text, .parallax-item-preview .parallax-minor-project-text {
 	color: white;
 	font-family: "Raleway";
-	font-size: 2vh;
+	font-size: 2dvh;
 	font-weight: 100;
 	text-align: right;
 
 	position: absolute;
-	margin-left: 4vh;
-	right: 2vh;
-	bottom: 2vh;
+	margin-left: 4dvh;
+	right: 2dvh;
+	bottom: 2dvh;
 }
 
 /* -- Parallax item text positioning -- */
@@ -179,29 +179,29 @@
 	justify-content: center;
 }
 .parallax-item .top-left, .parallax-item-preview .top-left {
-	top: 2vh;
-	left: 2vh;
+	top: 2dvh;
+	left: 2dvh;
 	right: auto;
 	bottom: auto;
 
-	margin-left: 0vh !important;
-	margin-right: 2vh;
+	margin-left: 0dvh !important;
+	margin-right: 2dvh;
 	text-align: left;
 }
 .parallax-item .bottom-left, .parallax-item-preview .bottom-left {
 	top: auto;
-	left: 2vh;
+	left: 2dvh;
 	right: auto;
-	bottom: 2vh;
+	bottom: 2dvh;
 
-	margin-left: 0vh;
-	margin-right: 2vh;
+	margin-left: 0dvh;
+	margin-right: 2dvh;
 	text-align: left;
 }
 .parallax-item .bottom-right, .parallax-item-preview .bottom-right {
-	bottom: 1.5vh;
+	bottom: 1.5dvh;
 	left: auto;
-	right: 2.5vh;
+	right: 2.5dvh;
 	top: auto;
 }
 
@@ -275,65 +275,65 @@
 .parallax-item-content-panel {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.95);
-	box-shadow: 0px 0px 4vh rgba(0, 0, 0, 1);
+	box-shadow: 0px 0px 4dvh rgba(0, 0, 0, 1);
   opacity: 0;
   pointer-events: none;
 
   color: white;
   font-family: "Fira Sans";
-  font-size: 2vh;
+  font-size: 2dvh;
   font-weight: 300;
-  height: 0vh;
-  width: 32vh;
+  height: 0dvh;
+  width: 32dvh;
 
   transition: all 0.5s ease;
   z-index: 3;
 }
 .parallax-item-content-panel.shown {
-  height: 40vh;
-  padding-bottom: 0.5vh;
+  height: 40dvh;
+  padding-bottom: 0.5dvh;
 
   opacity: 1;
   pointer-events: all;
 }
 
 .parallax-item-content-panel > .content-wrapper {
-  margin: 1.5vh;
-  margin-right: 0vh;
-  max-height: calc(99% - 3vh);
+  margin: 1.5dvh;
+  margin-right: 0dvh;
+  max-height: calc(99% - 3dvh);
   overflow: auto;
 }
 .parallax-item-content-panel.maximised > .content-wrapper {
-  max-height: calc(100% - 20vh - 8px);
+  max-height: calc(100% - 20dvh - 8px);
 }
 .parallax-item-content-panel > .content-wrapper > .text-wrapper {
-  margin-right: 1.5vh;
+  margin-right: 1.5dvh;
 }
 
 /* -- Inside element styling -- */
 .parallax-item-content-panel-title {
   color: white;
   font-family: "Barlow";
-  font-size: 3vh;
+  font-size: 3dvh;
   font-weight: 700;
-  margin-right: 1.5vh;
+  margin-right: 1.5dvh;
 
   text-transform: uppercase;
 }
 .parallax-item-content-panel-divider {
   background-color: white;
-  margin-top: 1.5vh;
-  margin-bottom: 1.5vh;
+  margin-top: 1.5dvh;
+  margin-bottom: 1.5dvh;
   margin-right: 85%;
 }
 .parallax-item-content-panel-divider.added-margin {
-  margin-left: 0vh;
-  margin-top: 2vh;
+  margin-left: 0dvh;
+  margin-top: 2dvh;
 }
 .parallax-item-development-date {
-  margin-bottom: 0.5vh;
-  margin-left: 0.5vh;
-  font-size: 1.5vh;
+  margin-bottom: 0.5dvh;
+  margin-left: 0.5dvh;
+  font-size: 1.5dvh;
 }
 .parallax-item-content-panel-status-indicator.primary {
   font-weight: 400;
@@ -348,53 +348,53 @@
   font-weight: 100;
 }
 .parallax-item-content-panel-body-text {
-  margin-top: 1.5vh;
+  margin-top: 1.5dvh;
 
-  font-size: 1.6vh;
+  font-size: 1.6dvh;
   font-weight: 100;
 }
 
 /* -- Buttons -- */
 .parallax-item-content-panel:not(.maximised) .content-panel-close-btn:hover, .parallax-item-content-panel:not(.maximised) .content-panel-maximise-btn:hover, .parallax-item-content-panel:not(.maximised) .content-panel-preview-btn:hover, .content-panel-preview-btn.active {
-  box-shadow: 0px 0px 2vh rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 0px 2dvh rgba(0, 0, 0, 0.35);
   filter: invert(0.95);
 
   cursor: pointer;
 }
 .content-panel-close-btn {
   position: absolute;
-  top: 0vh;
-  right: -5.5vh;
-  height: 3vh;
-  width: 3vh;
+  top: 0dvh;
+  right: -5.5dvh;
+  height: 3dvh;
+  width: 3dvh;
 
   background-color: rgb(15, 15, 15);
-  box-shadow: 0px 0px 2vh rgba(0, 0, 0, 0.35);
-  padding: 1vh;
+  box-shadow: 0px 0px 2dvh rgba(0, 0, 0, 0.35);
+  padding: 1dvh;
 
   transition: all 0.5s ease;
 }
 .content-panel-maximise-btn {
   position: absolute;
-  top: 5.5vh;
-  right: -5.5vh;
-  height: 3vh;
-  width: 3vh;
+  top: 5.5dvh;
+  right: -5.5dvh;
+  height: 3dvh;
+  width: 3dvh;
 
   background-color: rgb(15, 15, 15);
-  padding: 1vh;
+  padding: 1dvh;
 
   transition: all 0.5s ease;
 }
 .content-panel-preview-btn {
   position: absolute;
-  top: 11vh;
-  right: -5.5vh;
-  height: 3vh;
-  width: 3vh;
+  top: 11dvh;
+  right: -5.5dvh;
+  height: 3dvh;
+  width: 3dvh;
 
   background-color: rgb(15, 15, 15);
-  padding: 1vh;
+  padding: 1dvh;
 
   transition: all 0.5s ease;
 }
@@ -479,10 +479,10 @@
 
 .project-parallax-scroll-indicator {
   position: absolute;
-  top: 99.5vh;
+  top: 99.5dvh;
   left: 0px;
 
-  height: 0.5vh;
+  height: 0.5dvh;
   width: 100%;
   z-index: 1;
 }

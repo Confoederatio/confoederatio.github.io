@@ -13,7 +13,7 @@ config.homepage.defines.common = {
     //Viewport 2
     viewport_two: {
       //Core elements
-      gallery_width: 480, //Gallery width in vh
+      gallery_width: 500, //Gallery width in vh
       scene: document.getElementById("scene"),
 
       //Bookmark selectors

@@ -7,7 +7,7 @@ var last_scroll_top = 0;
 window.onscroll = function (e) {
   //Declare local instance variables
   var delta_y = window.pageYOffset || document.documentElement.scrollTop;
-  var vh_scroll = window.scrollY/window.innerHeight;
+  var vh_scroll = (window.scrollY/window.innerHeight)*100;
 
   //Event handler functions
   parallaxLabelOnScroll();
@@ -20,24 +20,26 @@ window.onscroll = function (e) {
   //Initialise parallax_scroll_progress if not defined
   if (!window.parallax_scroll_progress) window.parallax_scroll_progress = 0;
 
-  //Lock to second viewport when scrollign the project gallery
+  //Lock to second viewport when scrolling the project gallery
   var scroll_position = Math.round(window.scrollY);
   var parallax_gallery_top = window.innerHeight;
   var parallax_gallery_bottom = window.innerHeight*2;
 
   var scroll_direction = (scroll_position > last_scroll_top) ? "down" : "up";
 
-  window.last_scroll_top = scroll_position
+  window.last_scroll_top = scroll_position;
+  
+  //Viewport 1 to Viewport 2 scroll handling
+  if (vh_scroll > 100)
+    if (parallax_scroll_progress <= 5)
+      if (scroll_direction == "down")
+        document.getElementById("project-parallax-anchor").scrollIntoView({
+          behavior: "instant"
+        });
 
-  if (scroll_position >= parallax_gallery_top) {
-    //Check if user has already scrolled to the very end
-    if (parallax_scroll_progress <= 100)
-      document.getElementById("project-parallax-anchor").scrollIntoView({
-        behavior: "instant"
-      });
-  }
-  if (scroll_position <= parallax_gallery_top)
-    if (parallax_scroll_progress >= 50)
+  //Viewport 2 to Viewport 3 scroll handling
+  if (vh_scroll < 100)
+    if (parallax_scroll_progress >= 95)
       if (scroll_direction == "up")
         document.getElementById("project-parallax-anchor").scrollIntoView({
           behavior: "instant"

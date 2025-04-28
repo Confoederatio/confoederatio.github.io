@@ -76,7 +76,7 @@ all_bodies[0].remove();
 
 //Mobile temporary fix
 if (isMobileDevice()) {
-  window.alert(`You are on a mobile device.\n\nThis website is currently unoptimised for mobile devices. Please use a desktop computer to view this website. Experimental Patch: 008`);
+  window.alert(`You are on a mobile device.\n\nThis website is currently unoptimised for mobile devices. Please use a desktop computer to view this website. Experimental Patch: 011`);
 
   document.getElementById("about-me-section").setAttribute("class",
     document.getElementById("about-me-section").getAttribute("class") + " display-none"

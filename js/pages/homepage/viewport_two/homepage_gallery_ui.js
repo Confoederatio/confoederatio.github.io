@@ -309,16 +309,9 @@
     var viewport_two_anchor_el = document.getElementById("project-parallax-anchor");
     var viewport_three_anchor_el = document.getElementById("ministrat-anchor");
 
-    if (!isMobileDevice()) {
-      document.getElementById("project-parallax-anchor").scrollIntoView({
-        behavior: "instant"
-      });
-    } else {
-      var mobile_vh = window.visualViewport.height/100;
-
-      viewport_two_anchor_el.style.top = `${mobile_vh*100}px`;
-      viewport_three_anchor_el.style.top = `${mobile_vh*200}px`;
-    }
+    document.getElementById("project-parallax-anchor").scrollIntoView({
+      behavior: "instant"
+    });
   }
   
   function updateContentPanelContainer () {

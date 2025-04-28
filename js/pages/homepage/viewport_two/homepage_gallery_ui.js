@@ -136,27 +136,56 @@
 
     // Handle touch move
     gallery_obj.parallax_body.addEventListener("touchmove", (e) => {
-      console.log("touchmove fired", e.touches.length, e);
-      if (e.touches.length == 1) {
-        var touch = e.touches[0];
-        var delta_y = (touch.clientY - touch_start_y)*-1;
-
-        // Map vertical movement into horizontal scrolling
-        var scroll_speed_modifier = 2; // tweak this number to adjust sensitivity
-        gallery_obj.parallax_scroll_x = touch_start_scroll_x - (delta_y / scroll_speed_modifier);
-
-        // Enforce scroll bounds
-        if (gallery_obj.parallax_scroll_x > 0) {
-          gallery_obj.parallax_scroll_x = 0;
-        }
-        if (gallery_obj.parallax_scroll_x * -1 > gallery_obj.gallery_width) {
-          gallery_obj.parallax_scroll_x = -gallery_obj.gallery_width;
-        }
-
-        // Update UI
-        gallery_obj.parallax_container.style.transform = `translateX(${gallery_obj.parallax_scroll_x}vh)`;
-
-        e.preventDefault();
+      if (e.touches.length === 1) {
+          var touch = e.touches[0];
+  
+          // Check if over panel
+          var is_over_panel_container = false;
+          var is_over_content_panel = false;
+  
+          for (var i = 0; i < gallery_obj.panel_id_patterns.length; i++) {
+              if (e.target.id && e.target.id.includes(gallery_obj.panel_id_patterns[i])) {
+                  is_over_panel_container = true;
+                  break;
+              }
+          }
+          is_over_content_panel = e.target.closest('.parallax-item-content-panel') !== null;
+  
+          if (is_over_panel_container || is_over_content_panel) {
+              return; // let content panel scroll normally
+          }
+  
+          // Calculate vertical swipe movement
+          var deltaY = ((touch.clientY - touch_start_y)*-1)/2.5;
+  
+          // Check if trying to scroll UP while already at start
+          var trying_to_scroll_down = (deltaY > 0);
+          var trying_to_scroll_up = (deltaY < 0);
+          var at_start_of_gallery = (Math.abs(gallery_obj.parallax_scroll_x) < 5);
+          var at_end_of_gallery = (Math.abs(gallery_obj.parallax_scroll_x) > gallery_obj.gallery_width - 5);
+          console.log(`End of gallery check: `, (trying_to_scroll_down && at_end_of_gallery));
+  
+          if (
+            (trying_to_scroll_up && at_start_of_gallery) ||
+            (trying_to_scroll_down && at_end_of_gallery)
+          ) {
+              // Allow the page to scroll upward normally
+              return;
+          }
+  
+          // Otherwise: scroll the gallery horizontally
+          var scroll_speed_modifier = 2;
+          gallery_obj.parallax_scroll_x = touch_start_scroll_x - (deltaY / scroll_speed_modifier);
+  
+          // Enforce bounds
+          if (gallery_obj.parallax_scroll_x > 0) gallery_obj.parallax_scroll_x = 0;
+          if (gallery_obj.parallax_scroll_x * -1 > gallery_obj.gallery_width) gallery_obj.parallax_scroll_x = -gallery_obj.gallery_width;
+  
+          gallery_obj.parallax_container.style.transform = `translateX(${gallery_obj.parallax_scroll_x}vh)`;
+          window.parallax_scroll_progress = Math.abs(gallery_obj.parallax_scroll_x*(100/gallery_obj.gallery_width));
+          gallery_obj.parallax_scroll_indicator.style.width = `${gallery_obj.parallax_scroll_x*(100/gallery_obj.gallery_width)*-1}vw`;
+  
+          e.preventDefault(); // Only prevent if scrolling gallery
       }
     }, { passive: false });
 

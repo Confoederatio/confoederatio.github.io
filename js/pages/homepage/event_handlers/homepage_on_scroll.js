@@ -33,14 +33,18 @@ function initGlobalScrollEventHandler (e) {
   //Viewport 1 to Viewport 2 scroll handling
   if (vh_scroll > 100)
     if (parallax_scroll_progress <= 5)
-      if (scroll_direction == "down")
+      if (scroll_direction == "down") {
+        console.log(`Gallery Scroll Case: 1`);
         scrollGalleryIntoView();
+      }
 
   //Viewport 2 to Viewport 3 scroll handling
   if (vh_scroll < 100)
     if (parallax_scroll_progress >= 95)
-      if (scroll_direction == "up")
+      if (scroll_direction == "up") {
+        console.log(`Gallery Scroll Case: 2`);
         scrollGalleryIntoView();
+      }
 }
 
 window.onscroll = function (e) {

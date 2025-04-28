@@ -121,66 +121,48 @@
     });
   }
 
-  function initGalleryMobileEventHandlers () {
-    //Declare local instance variables
+  function initGalleryMobileEventHandlers() {
     var gallery_obj = main.gallery;
-    var touch_start_x = 0;
+    var touch_start_y = 0;
     var touch_start_scroll_x = 0;
 
-    //Set event listeners
-    gallery_obj.parallax_body.addEventListener("touchmove", (e) => {
-      if (e.touches.length > 0) {
-        var half_height = gallery_obj.parallax_body.clientHeight/2;
-        var half_width = gallery_obj.parallax_body.clientWidth/2;
-        var touch = e.touches[0];
-        var mouse_x = half_width + gallery_obj.parallax_body.offsetLeft - touch.pageX;
-        var mouse_y = half_height + gallery_obj.parallax_body.offsetTop - touch.pageY;
+    // Handle touch start
+    gallery_obj.parallax_body.addEventListener("touchstart", (e) => {
+        if (e.touches.length == 1) {
+            touch_start_y = e.touches[0].clientY;
+            touch_start_scroll_x = gallery_obj.parallax_scroll_x;
+        }
+    });
 
-        if (gallery_obj.content_panel_update_paused) {
-          mouse_x = mouse_x/32;
-          mouse_y = mouse_y/32;
+    // Handle touch move
+    gallery_obj.parallax_body.addEventListener("touchmove", (e) => {
+      if (e.touches.length == 1) {
+        var touch = e.touches[0];
+        var delta_y = touch.clientY - touch_start_y;
+
+        // Map vertical movement into horizontal scrolling
+        var scroll_speed_modifier = 2; // tweak this number to adjust sensitivity
+        gallery_obj.parallax_scroll_x = touch_start_scroll_x - (delta_y / scroll_speed_modifier);
+
+        // Enforce scroll bounds
+        if (gallery_obj.parallax_scroll_x > 0) {
+          gallery_obj.parallax_scroll_x = 0;
+        }
+        if (gallery_obj.parallax_scroll_x * -1 > gallery_obj.gallery_width) {
+          gallery_obj.parallax_scroll_x = -gallery_obj.gallery_width;
         }
 
-        var maximum_x_degrees = 1.25;
-        var maximum_y_degrees = 1.25;
-        
-        window.perspective_deg_x = ((mouse_y/half_height)*maximum_x_degrees*-1)+(maximum_x_degrees/2) + "deg";
-        window.perspective_deg_y = ((mouse_x/half_width)*maximum_y_degrees*-1) + 2 + "deg";
-
-        window.perspective_string = `rotateX(${perspective_deg_x}) rotateY(${perspective_deg_y})`;
-        gallery_obj.scene.setAttribute(
-          "style",
-          `transform: perspective(20em) ${perspective_string};`
-        );
-      }
-
-      //Scroll behaviour
-      if (touch_start_x != null && e.touches.length == 1) {
-        var delta_x = e.touches[0].clientX - touch_start_x;
-
-        //Adjust sensitivity if needed (dividing delta_x)
-        gallery_obj.parallax_scroll_x = touch_start_scroll_x + (delta_x/5);
-
-        //Enforce scroll bounds
-        if (gallery_obj.parallax_scroll_x > 0) gallery_obj.parallax_scroll_x = 0;
-        if (gallery_obj.parallax_scroll_x*-1 > gallery_obj.gallery_width) gallery_obj.parallax_scroll_x = -gallery_obj.gallery_width;
-
-        //Update UI
+        // Update UI
         gallery_obj.parallax_container.style.transform = `translateX(${gallery_obj.parallax_scroll_x}vh)`;
+
         e.preventDefault();
       }
     }, { passive: false });
 
-    gallery_obj.parallax_body.addEventListener("touchstart", (e) => {
-      if (e.touches.length == 1) {
-        touch_start_x = e.touches[0].clientX;
-        touch_start_scroll_x = gallery_obj.parallax_scroll_x;
-      }
-    });
-
+    // Handle touch end
     gallery_obj.parallax_body.addEventListener("touchend", (e) => {
-      touch_start_x = null;
-      touch_start_scroll_x = null;
+        touch_start_y = 0;
+        touch_start_scroll_x = 0;
     });
   }
 

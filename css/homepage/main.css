@@ -10,7 +10,7 @@ body {
 
 /* -- Adjust other page wrappers/containers -- */
 .page-container {
-  height: 100%;
+  height: 100dvh;
   width: 100dvw;
   max-height: 100% !important;
   overflow-y: auto;
@@ -18,12 +18,12 @@ body {
 
 .project-parallax-anchor {
   position: absolute;
-  top: 100%;
+  top: 100dvh;
   left: 0px;
 }
 .ministrat-anchor {
   position: absolute;
-  top: 200%;
+  top: 200dvh;
   left: 0px;
 }
 

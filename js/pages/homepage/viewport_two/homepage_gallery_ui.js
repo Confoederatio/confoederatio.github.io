@@ -306,23 +306,18 @@
 
   function scrollGalleryIntoView () {
     //Declare local instance variables
-    var anchor_el = document.getElementById("project-parallax-anchor");
-    var y_position = anchor_el.getBoundingClientRect().top + window.pageYOffset;
+    var viewport_two_anchor_el = document.getElementById("project-parallax-anchor");
+    var viewport_three_anchor_el = document.getElementById("ministrat-anchor");
 
-    //Scroll gallery into view
-    /*window.scrollTo({
-      top: y_position,
-      behavior: "auto"
-    });
-    setTimeout(function(){
-      window.scrollTo({
-        top: y_position,
+    if (!isMobileDevice()) {
+      document.getElementById("project-parallax-anchor").scrollIntoView({
         behavior: "instant"
       });
-    }, 50);*/
-    document.getElementById("project-parallax-anchor").scrollIntoView({
-      behavior: "instant"
-    });
+    } else {
+      var mobile_vh = window.visualViewport.height/100;
+
+      viewport_two_anchor_el.style.top = `${mobile_vh*100}px`;
+      viewport_three_anchor_el.style.top = `${mobile_vh*200}px`;
   }
   
   function updateContentPanelContainer () {

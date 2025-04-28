@@ -169,7 +169,7 @@
         gallery_obj.parallax_container.style.transform = `translateX(${gallery_obj.parallax_scroll_x}vh)`;
         e.preventDefault();
       }
-    });
+    }, { passive: false });
 
     gallery_obj.parallax_body.addEventListener("touchstart", (e) => {
       if (e.touches.length == 1) {

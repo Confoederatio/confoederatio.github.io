@@ -185,6 +185,7 @@
           window.parallax_scroll_progress = Math.abs(gallery_obj.parallax_scroll_x*(100/gallery_obj.gallery_width));
           gallery_obj.parallax_scroll_indicator.style.width = `${gallery_obj.parallax_scroll_x*(100/gallery_obj.gallery_width)*-1}vw`;
   
+          scrollGalleryIntoView();
           e.preventDefault(); // Only prevent if scrolling gallery
       }
     }, { passive: false });

@@ -99,9 +99,7 @@
       if (scroll_enabled && window.scrollY <= window.innerHeight*2) {
         //Make sure 100% of the screen is occupied
         if (parallax_scroll_progress > 5)
-          document.getElementById("project-parallax-anchor").scrollIntoView({
-            behavior: "instant"
-          });
+          scrollGalleryIntoView();
 
         //Flip it around to maintain intuitive direction
         gallery_obj.parallax_current_scroll_x = gallery_obj.parallax_current_scroll_x*-1;
@@ -304,6 +302,18 @@
   
     //Initialise the gallery
     initGallery();
+  }
+
+  function scrollGalleryIntoView () {
+    //Declare local instance variables
+    var anchor_el = document.getElementById("project-parallax-anchor");
+    var y_position = anchor_el.getBoundingClientRect().top + window.pageYOffset;
+
+    //Scroll gallery into view
+    window.scrollTo({
+      top: y_position,
+      behavior: "auto"
+    })
   }
   
   function updateContentPanelContainer () {

@@ -96,7 +96,7 @@
         e.preventDefault();
       }
 
-      if (scroll_enabled && window.scrollY <= window.innerHeight*2) {
+      if (scroll_enabled && window.scrollY <= window.innerHeight*2.1) {
         //Make sure 100% of the screen is occupied
         if (parallax_scroll_progress > 5)
           scrollGalleryIntoView();
@@ -310,10 +310,19 @@
     var y_position = anchor_el.getBoundingClientRect().top + window.pageYOffset;
 
     //Scroll gallery into view
-    window.scrollTo({
+    /*window.scrollTo({
       top: y_position,
       behavior: "auto"
-    })
+    });
+    setTimeout(function(){
+      window.scrollTo({
+        top: y_position,
+        behavior: "instant"
+      });
+    }, 50);*/
+    document.getElementById("project-parallax-anchor").scrollIntoView({
+      behavior: "instant"
+    });
   }
   
   function updateContentPanelContainer () {

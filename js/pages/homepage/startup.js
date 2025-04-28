@@ -81,10 +81,6 @@ if (isMobileDevice()) {
   document.getElementById("about-me-section").setAttribute("class",
     document.getElementById("about-me-section").getAttribute("class") + " display-none"
   );
-
-  setInterval(function () {
-    fixMobileVh();
-  }, 100);
 }
 
 //Hack fix for glitched elements
@@ -104,6 +100,9 @@ setTimeout(function(){
 }, 1);
 
 setTimeout(function(){
+  //General fix
+  fixMobileVh();
+
   //Viewport 2
   //Initialise magnifiers for all .preview-image elements
   var all_art_preview_imgs = document.querySelectorAll(".preview-image-container");

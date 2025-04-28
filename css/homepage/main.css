@@ -10,20 +10,20 @@ body {
 
 /* -- Adjust other page wrappers/containers -- */
 .page-container {
-  height: 100dvh;
+  height: calc(var(--vh, 1vh)*100);
   width: 100dvw;
-  max-height: 100dvh !important;
+  max-height: calc(var(--vh, 1vh)*100) !important;
   overflow-y: auto;
 }
 
 .project-parallax-anchor {
   position: absolute;
-  top: 100dvh;
+  top: calc(var(--vh, 1vh)*100);
   left: 0px;
 }
 .ministrat-anchor {
   position: absolute;
-  top: 200dvh;
+  top: calc(var(--vh, 1vh)*200);
   left: 0px;
 }
 

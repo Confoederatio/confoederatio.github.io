@@ -10,9 +10,9 @@ body {
 
 /* -- Adjust other page wrappers/containers -- */
 .page-container {
-  height: 100%;
-  width: 100%;
-  max-height: 100% !important;
+  height: 100dvh;
+  width: 100dvw;
+  max-height: 100dvh !important;
   overflow-y: auto;
 }
 

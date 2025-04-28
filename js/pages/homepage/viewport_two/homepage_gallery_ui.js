@@ -318,6 +318,7 @@
 
       viewport_two_anchor_el.style.top = `${mobile_vh*100}px`;
       viewport_three_anchor_el.style.top = `${mobile_vh*200}px`;
+    }
   }
   
   function updateContentPanelContainer () {

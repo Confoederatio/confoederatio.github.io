@@ -2,7 +2,7 @@ Langues: [Allemand](https://github.com/Confoederatio/Confoederatio/blob/main/REA
 
 # Bonjour. Nous sommes Confoederatio.
 
-[📝 Documentation](https://confoederatiodocs.info)
+[📝 Documentation](https://confoederatiodocs.info) | [🌐 Website](https://confoederatio.org)
 
 Nous sommes un studio de R&D réformé qui se concentre principalement sur les outils scientifiques, l'infrastructure technique et les jeux de stratégie/simulation complexes. Comme la plupart d'entre nous sont à l'université, nous allons probablement réduire certains de nos projets actuels pour nous concentrer davantage sur les investissements futurs à long terme dans les cadres généraux, la géostatistique et le travail sur l'interface utilisateur.
 

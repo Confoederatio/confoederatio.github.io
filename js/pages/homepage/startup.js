@@ -112,4 +112,10 @@ setTimeout(function(){
     all_art_preview_imgs[i].querySelector("img"),
     3
   );
+
+  //Viewport 3 scroll handling
+  setInterval(function () {
+    var title_offset_y = document.getElementById("about-me-overlay").scrollTop*-1;
+    main.banner.about_me_overlay_title.style.top = `calc(-14dvh + ${title_offset_y}px)`;
+  }, 0);
 }, 650);

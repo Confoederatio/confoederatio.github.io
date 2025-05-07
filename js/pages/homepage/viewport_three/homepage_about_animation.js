@@ -22,10 +22,8 @@
       banner_obj.biography_overlay_subtitle.style.transform = `translateY(${(44.5/200)*scroll_vh}vh)`;
 
       //20vh offset
-      banner_obj.about_me_body_text.style.opacity = (1/80)*(scroll_vh - 80);
-      banner_obj.about_me_body_text.style.transform = `translateY(${((50)/200)*scroll_vh}vh)`;
-      banner_obj.biography_body_text.style.opacity = (1/80)*(scroll_vh - 80);
-      banner_obj.biography_body_text.style.transform = `translateY(${(50/200)*scroll_vh}vh)`;
+      banner_obj.about_body_container.style.opacity = (1/80)*(scroll_vh - 80);
+      banner_obj.about_body_container.style.transform = `translateY(${((50)/200)*scroll_vh}vh)`;
     } catch (e) {
       console.log(e);
     }

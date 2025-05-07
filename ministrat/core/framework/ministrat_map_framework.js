@@ -83,6 +83,12 @@
     //Declare local reference variables
     var map_elements_obj = ministrat.main.map_elements;
 
+    //Iterate over all map elements
+    var all_map_els = map_elements_obj.all_map_elements;
+
+    for (var i = 0; i < all_map_els.length; i++)
+      all_map_els[i].setAttribute("style", "");
+
     //Iterate over all german border elements
     for (var i = 0; i < map_elements_obj.german_border_els.length; i++)
       map_elements_obj.german_border_els[i].setAttribute("class", map_elements_obj.german_border_els[i].getAttribute("class").replace(" drawn", ""));

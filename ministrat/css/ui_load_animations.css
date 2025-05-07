@@ -1,12 +1,12 @@
 @keyframes ministrat-topbar-load-animation {
   0% {
-    transform: translateY(-20vh);
+    transform: translateY(-20dvh);
   }
   50% {
-    transform: translateY(-20vh);
+    transform: translateY(-20dvh);
   }
   70% {
-    transform: translateY(0vh);
+    transform: translateY(0dvh);
   }
 }
 @keyframes ministrat-topbar-time-controls-load-animation {

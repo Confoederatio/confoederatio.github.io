@@ -1,11 +1,11 @@
 /* -- Initialise functions -- */
 .ministrat-map-image {
   position: absolute;
-  top: 2vh;
-  left: 1vh;
+  top: 2dvh;
+  left: 1dvh;
 
-  height: 92vh;
-  width: 92vh;
+  height: 92dvh;
+  width: 92dvh;
 
   opacity: 0.2;
 }
@@ -15,8 +15,8 @@
   > canvas {
     position: absolute;
 
-    height: 94vh;
-    width: 92vh;
+    height: 94dvh;
+    width: 92dvh;
 
     opacity: 0.2; /* -- Temporary: debug attribute -- */
   }

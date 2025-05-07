@@ -3,10 +3,9 @@ config.homepage.defines.common = {
     //Viewport 1
     viewport_one: {
       //Element selectors
-      about_me_body_text: document.getElementById("about-me-body-text"),
+      about_body_container: document.getElementById("about-body-container"),
       about_me_overlay_title: document.getElementById("about-me-overlay-title"),
       about_me_overlay_subtitle: document.getElementById("about-me-overlay-subtitle"),
-      biography_body_text: document.getElementById("biography-body-text"),
       biography_overlay_subtitle: document.getElementById("biography-overlay-subtitle")
     },
 

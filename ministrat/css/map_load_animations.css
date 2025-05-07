@@ -75,7 +75,7 @@
   position: relative;
   height: 20vw;
   left: 62.5vw;
-  top: 5vh;
+  top: 5dvh;
   transform: rotate(12.5deg);
   width: 20vw;
 
@@ -101,15 +101,15 @@
 
   #main-map {
     position: fixed;
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
   
     transition: all 2s ease;
     z-index: 2;
   }
   #main-map div, #main-map object, #main-map svg {
-    left: calc(-50% + (100% - 92vh/2));
-    transform-origin: calc(-50% + (100% - 92vh/2)) 0;
+    left: calc(-50% + (100% - 92dvh/2));
+    transform-origin: calc(-50% + (100% - 92dvh/2)) 0;
     will-change: transform;
   }
 }
@@ -117,8 +117,8 @@
   .ministrat-map-btn.expanded svg {
     position: fixed;
   
-    height: 92vh;
-    width: 92vh;
+    height: 92dvh;
+    width: 92dvh;
     transition: all 2s ease, transform 0.025s ease;
     animation: map-rotate-animation 2s forwards;
   }
@@ -157,9 +157,9 @@
   }
   .ministrat-container.expanded .ministrat-cities-overlay {
     display: block;
-    height: 92vh;
+    height: 92dvh;
     position: fixed;
-    width: 92vh;
+    width: 92dvh;
 
     animation: cities-fade-in 10s ease 5s forwards;
     transition: all 2s ease, transform 0.025s ease;
@@ -171,7 +171,7 @@
   }
   .ministrat-container.expanded .ministrat-map-overlay {
     display: block;
-    height: 92vh;
+    height: 92dvh;
     position: fixed;
-    width: 92vh;
+    width: 92dvh;
   }

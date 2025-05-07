@@ -35,6 +35,9 @@
   height: 100dvh;
   width: 85vw;
 
+  max-height: 100dvh;
+  overflow-y: scroll;
+
   background-color: rgba(0, 0, 0, 0.975);
   box-shadow: 0px 0px 10vw rgba(0, 0, 0, 0.9);
 }
@@ -42,7 +45,7 @@
 .about-me-overlay-title {
   position: absolute;
   top: -14dvh;
-  left: -6vw;
+  left: 8vw;
   font-size: 12dvh;
   letter-spacing: 1vw;
 
@@ -52,6 +55,7 @@
   text-transform: uppercase;
 
   text-shadow: 0px 0px 4dvh rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 .about-me-overlay-subtitle {
   position: absolute;
@@ -79,9 +83,15 @@
 
   text-shadow: 0px 0px 4dvh rgba(0, 0, 0, 0.4);
 }
-.about-me-body-text {
+
+/* -- About Body Container -- */
+.about-body-container {
+  display: flex;
   position: absolute;
   top: -22dvh;
+  left: 3vw;
+}
+.about-me-body-text {
   left: 3vw;
   font-size: 1dvh;
 
@@ -102,9 +112,18 @@
     width: 8dvh;
   }
 }
+  .about-me-divider {
+    background: transparent;
+    border: 0px solid white;
+    border-bottom: 0.2dvh solid white;
+    width: 5vw;
+    left: 0.1vw;
+
+    margin-right: 100%;
+    margin-top: 2dvh;
+    margin-bottom: 2dvh;
+  }
 .biography-body-text {
-  position: absolute;
-  top: -22dvh;
   left: calc(39vw + 0.5rem);
   font-size: 1dvh;
 
@@ -112,21 +131,11 @@
   font-family: "Fira Sans";
   font-size: 1.5dvh;
   font-weight: 100;
+  margin-left: 2rem;
   padding-right: 0.5rem;
   text-align: left;
 
   width: 22.5vw;
   max-height: 67.5%;
   overflow-y: scroll;
-}
-.about-me-divider {
-	background: transparent;
-	border: 0px solid white;
-	border-bottom: 0.2dvh solid white;
-	width: 5vw;
-	left: 0.1vw;
-
-  margin-right: 100%;
-  margin-top: 2dvh;
-  margin-bottom: 2dvh;
 }

@@ -23,6 +23,7 @@
   background-image: url("../../../gfx/interface/snowcapped_mountain_bg.png");
   background-repeat: no-repeat;
   background-size: cover;
+  overflow-x: hidden;
   overflow-y: scroll;
 
   z-index: 1;
@@ -50,8 +51,6 @@
   left: 8vw;
   font-size: 12dvh;
   letter-spacing: 1vw;
-  max-width: 92vw;
-  overflow-x: clip;
 
   color: white;
   font-family: "Barlow";

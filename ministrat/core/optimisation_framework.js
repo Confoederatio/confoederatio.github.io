@@ -1,0 +1,6 @@
+//Initialise functions
+{
+  function initMinistratOptimisation () {
+
+  }
+}

@@ -46,6 +46,24 @@
 	};
 	
 	/**
+	 * Returns a safe number from a given variable.
+	 * @alias Math.returnSafeNumber
+	 *
+	 * @param {any} arg0_number
+	 * @param {number} [arg1_default=0]
+	 *
+	 * @returns {number}
+	 */
+	Math.returnSafeNumber = function (arg0_number, arg1_default) {
+		//Convert from parameters
+		let number = parseFloat(arg0_number);
+		let default_value = (arg1_default !== undefined) ? arg1_default : 0;
+		
+		//Return statement
+		return (!isNaN(number) && isFinite(number)) ? number : default_value;
+	};
+	
+	/**
 	 * Determines whether an object has all the keys mentioned.
 	 * @alias Object.hasKeys
 	 *
@@ -84,6 +102,125 @@
 		//Return statement
 		if (options.mode === "all") return has_all_keys;
 		if (options.mode === "any") return has_any_key;
+	};
+	
+	
+	
+	/**
+	 * Formats an array into a string.
+	 * @alias String.formatArray
+	 *
+	 * @param {Array} arg0_array
+	 *
+	 * @returns {string}
+	 */
+	String.formatArray = function (arg0_array) {
+		//Convert from parameters
+		let array = Array.toArray(arg0_array);
+		
+		//Declare local instance variables
+		let name_string = "";
+		
+		//Modify ending
+		if (array.length > 2) {
+			array[array.length - 1] = `and ${array[array.length - 1]}`;
+			name_string = array.join(", ");
+		} else if (array.length === 2) {
+			array[array.length - 1] = `and ${array[array.length - 1]}`;
+			name_string = array.join(" ");
+		} else {
+			name_string = array[0];
+		}
+		
+		//Return statement
+		return name_string;
+	};
+	
+	/**
+	 * Formats a Date object into a default string.
+	 * @alias String.formatDate
+	 *
+	 * @param {Object} [arg0_date]
+	 *
+	 * @returns {string}
+	 */
+	String.formatDate = function (arg0_date) {
+		//Convert from parameters
+		let date = (arg0_date) ? arg0_date : Date.getCurrentDate();
+		if (typeof date === "number") date = Date.convertTimestampToDate(date);
+		
+		//Declare local instance variables
+		let day_name = String.ordinalise(date.day);
+		let minute_name =  date.minute.toString().padStart(2, "0");
+		let month_name = Date.months[Object.keys(Date.months)[date.month - 1]].name;
+		let hour_name = date.hour.toString().padStart(2, "0");
+		
+		//Return statement
+		return `${day_name} ${month_name} ${Math.abs(date.year)}${(date.year >= 0) ? "AD" : "BC"} - ${hour_name}:${minute_name}`;
+	};
+	
+	/**
+	 * Formats an object as a given string.
+	 * @alias String.formatObject
+	 *
+	 * @param {Object} arg0_object
+	 *
+	 * @returns {string}
+	 */
+	String.formatObject = function (arg0_object) {
+		//Convert from parameters
+		let object = (arg0_object) ? arg0_object : {};
+		
+		//Internal guard clause if object is empty
+		if (Object.keys(object).length === 0) return "None";
+		
+		//Declare local instance variables
+		let string_array = [];
+		
+		//Iterate over object and parse it to a string
+		let all_keys = Object.keys(object);
+		
+		for (let i = 0; i < all_keys.length; i++) {
+			let local_value = object[all_keys[i]];
+			
+			if (typeof string_array === "object") {
+				string_array.push(`${all_keys[i]}: ${JSON.stringify(local_value)}`);
+			} else {
+				string_array.push(`${all_keys[i]}: ${local_value.toString()}`);
+			}
+		}
+		
+		//Return statement
+		return string_array.join(", ");
+	};
+	
+	
+	
+	/**
+	 * Ordinalises a given number and returns it as a string.
+	 * @alias String.ordinalise
+	 *
+	 * @param {number} arg0_number
+	 *
+	 * @returns {string}
+	 */
+	String.ordinalise = function (arg0_number) {
+		//Convert from parameters
+		let number = Math.returnSafeNumber(arg0_number);
+		
+		//Declare local instance variables
+		let negative_suffix = (number < 0) ? "-" : "";
+		number = Math.abs(number);
+		let n_a = number % 10, n_b = number % 100;
+		
+		//Return statement
+		if (n_a === 1 && n_b !== 11)
+			return `${negative_suffix}${number}st`;
+		if (n_a === 2 && n_b !== 12)
+			return `${negative_suffix}${number}nd`;
+		if (n_a === 3 && n_b !== 13)
+			return `${negative_suffix}${number}rd`;
+		return `${negative_suffix}${number}th`;
 	};
 }
 

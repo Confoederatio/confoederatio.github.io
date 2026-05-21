@@ -19,6 +19,7 @@ window.loadAtlas = async function () {
 			if (local_value.class_name === "GeometryPolygon") {
 				let geometry_obj = new GeometryPolygon(all_keys[i], local_value);
 				geometry_obj.history.fromJSON(local_value.history);
+				if (local_value.metadata) geometry_obj.metadata = local_value.metadata;
 				geometry_obj.draw();
 			}
 		}
@@ -29,8 +30,4 @@ window.loadAtlas = async function () {
 		//Return statement
 		return null;
 	}
-};
-
-window.setDate = function () {
-	
 };

@@ -11,7 +11,57 @@ class GeometryPolygon extends Geometry {
 		
 		//Declare local instance variables
 		Geometry.instances[key] = this;
-		this.history = new History({});
+		this.element = document.createElement("div");
+		this.history = new History({}, {
+			localisation_function: (new_keyframe, old_keyframe) => {
+				//Declare local instance variables
+				let return_string = [];
+				
+				try {
+					//[0] .geometry change
+					if (new_keyframe.value[0])
+						return_string.push(`Geometry changed`);
+					if (new_keyframe.value[0] === null)
+						return_string.push(`Geometry removed`);
+					
+					//[1] .symbol change
+					if (new_keyframe.value[1])
+						return_string.push(`Symbol changed to: ${String.formatObject(new_keyframe.value[1])}`);
+					
+					//[2] .properties change
+					if (new_keyframe.value[2]?.hidden === false)
+						return_string.push(`Geometry visible`);
+					if (new_keyframe.value[2]?.hidden === true)
+						return_string.push(`Geometry hidden`);
+					if (new_keyframe.value[2]?.label_geometries)
+						if (new_keyframe.value[2].label_geometries.length > 0)
+							return_string.push(`Set custom label geometries`);
+					if (new_keyframe.value[2]?.label_name)
+						return_string.push(`Label name changed to: ${new_keyframe.value[2].label_name}`);
+					if (new_keyframe.value[2]?.label_symbol)
+						return_string.push(`Label symbol changed to: ${String.formatObject(new_keyframe.value[2].label_symbol)}`);
+					if (new_keyframe.value[2]?.max_zoom !== undefined)
+						return_string.push(`Maximum zoom set to ${new_keyframe.value[2].max_zoom}`);
+					if (new_keyframe.value[2]?.min_zoom !== undefined)
+						return_string.push(`Minimum zoom set to ${new_keyframe.value[2].min_zoom}`);
+					if (new_keyframe.value[2]?.name)
+						return_string.push(`Name changed to ${new_keyframe.value[2].name}`);
+					if (new_keyframe.value[2]?.variables)
+						return_string.push(`Variables changed to: ${String.formatObject(new_keyframe.value[2].variables)}`);
+				} catch (e) {
+					try {
+						JSON.stringify(old_keyframe);
+						JSON.stringify(new_keyframe);
+					} catch (e) {
+						console.error(`Was a circular reference detected? If so, ensure that you are feeding in arg0_v, and not arg1_e for the property in question.`);
+					}
+					console.error(`new_keyframe:`, new_keyframe, `old_keyframe:`, old_keyframe, `Error:`, e);
+				}
+				
+				//Return statement
+				return String.formatArray(return_string);
+			}
+		});
 		this.id = key;
 		this.label_geometries = [];
 	}
@@ -48,6 +98,17 @@ class GeometryPolygon extends Geometry {
 					this.drawLabels();
 				}
 			} catch (e) { console.error(e); }
+			
+			//4. Set info window
+			this.geometry.setInfoWindow({
+				title: this.value[2].name,
+				content: this.element
+			});
+			this.geometry.addEventListener("click", (e) => {
+				this.history.getKeyframe({ refresh_localisation: true });
+				this.element.innerHTML = "";
+				this.element.appendChild(this.getElement());
+			})
 		}
 	}
 	
@@ -109,6 +170,62 @@ class GeometryPolygon extends Geometry {
 				local_label_geometry.addTo(main.layers.labels);
 			}
 		}
+	}
+	
+	getElement () {
+		//Declare local instance variables
+		let element = document.createElement("div");
+			//element.innerHTML = `<button onclick = "console.log(Geometry.instances['${this.id}']);">Debug</button><br><br>`
+		let table_el = document.createElement("table");
+		let tbody_el = document.createElement("tbody");
+		let keyframes_el = document.createElement("details");
+			{
+				let summary_el = document.createElement("summary");
+					summary_el.innerHTML = `Keyframes (${Object.keys(this.history.keyframes).length}):`;
+				
+				//Iterate over all this.history.keyframes
+				let all_keyframes = Object.keys(this.history.keyframes);
+					all_keyframes.sort((a, b) => parseInt(b) - parseInt(a));
+				
+				for (let i = 0; i < all_keyframes.length; i++) {
+					let local_keyframe = this.history.keyframes[all_keyframes[i]];
+					let local_tr = document.createElement("tr");
+					
+					let td_date_el = document.createElement("td");
+						td_date_el.innerHTML = String.formatDate(parseInt(all_keyframes[i]));
+					local_tr.appendChild(td_date_el);
+					
+					let td_description_el = document.createElement("td");
+						td_description_el.setAttribute("class", "keyframe-description");
+						td_description_el.innerHTML = (local_keyframe?.localisation) ? `<div>${local_keyframe?.localisation}</div>` : "";
+					local_tr.appendChild(td_description_el);
+					
+					let td_actions_el = document.createElement("td");
+						td_actions_el.style.whiteSpace = "nowrap";
+						td_actions_el.innerHTML = `<button onclick = "setDate(${all_keyframes[i]})">Jump To Date</button>`;
+					local_tr.appendChild(td_actions_el);
+					
+					tbody_el.appendChild(local_tr);
+				}
+				
+				keyframes_el.appendChild(summary_el);
+				
+				table_el.appendChild(tbody_el);
+				keyframes_el.appendChild(table_el);
+			}
+		
+		element.appendChild(keyframes_el);
+		
+		if (this?.metadata?.description?.length > 0) {
+			let description_el = document.createElement("span");
+				description_el.setAttribute("class", "description");
+				description_el.innerHTML = `<br><b>Description:</b><br>${this.metadata.description}<br><span style = "font-size:0.65rem; opacity:0.75;">Descriptions are currently temporary, and will be improved in the future.</span>`;
+			
+			element.appendChild(description_el);
+		}
+		
+		//Return statement
+		return element;
 	}
 }
 
@@ -199,6 +316,11 @@ class History {
 		for (let i = 0; i < all_keyframes.length; i++) {
 			let local_keyframe = this.keyframes[all_keyframes[i]];
 			
+			//Parse localisation first, then concatenate
+			if (options.refresh_localisation)
+				local_keyframe.localisation = (this.options.localisation_function) ?
+					this.options.localisation_function(local_keyframe, return_keyframe) : "";
+			
 			if (Date.convertTimestampToInt(all_keyframes[i]) <= Date.convertTimestampToInt(return_keyframe.timestamp)) {
 				for (let x = 0; x < local_keyframe.value.length; x++)
 					if (typeof local_keyframe.value[x] === "object" && local_keyframe.value[x] !== null) {
@@ -223,7 +345,7 @@ class History {
 						//If the value is null or a primitive, it overwrites the previous accumulated state
 						return_keyframe.value[x] = local_keyframe.value[x];
 					}
-			} else { break; }
+			} else { if (!options.refresh_localisation) break; }
 		}
 		
 		//Return statement

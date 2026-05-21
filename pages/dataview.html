@@ -137,7 +137,8 @@
 					let inputs = document.querySelectorAll("input, textarea, select");
 					
 					inputs.forEach((input) => {
-						input.addEventListener("blur", () => {
+						input.addEventListener("change", () => {
+							console.log(`Resetting view`);
 							// Scroll to the top-left to trigger a layout recalculation
 							window.scrollTo(0, 0);
 							

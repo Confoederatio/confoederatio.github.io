@@ -61,6 +61,13 @@
       </div>
     </div>
     
+    <div id = "bottombar">
+      <div data-component = "toast" class = "warn" id = "warning-one">
+        <icon style = "margin-right:var(--padding);">warning</icon> This dataset is currently a work-in-progress. Consider editing it yourself if you wish to improve it.
+        <button style = "margin-left: auto;" onclick = "document.querySelector('#warning-one').remove();">Understood</button>
+      </div>
+    </div>
+    
     <script src = "js/pages/dataview/atlas.js"></script>
     <script src = "js/pages/dataview/date_framework.js"></script>
     <script src = "js/pages/dataview/GeometryPolygon.js"></script>

@@ -109,6 +109,19 @@ tr { vertical-align: baseline; }
         padding: 0.5rem;
     }
 }
+[data-component="toast"] {
+    display: flex;
+    min-width: 20rem;
+    width: 40dvw;
+
+    align-items: center;
+    color: var(--body-colour);
+    font-size: var(--body-font-size);
+}
+[data-component="toast"].warn {
+    background-color: rgba(150, 120, 40, 0.85);
+    padding: var(--padding);
+}
 [component] {
     padding: var(--cell-padding);
 
@@ -165,6 +178,14 @@ tr { vertical-align: baseline; }
 }
 
 /* -- UI patterns -- */
+#bottombar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: calc(var(--padding));
+    width: 100dvw;
+}
 #topbar {
     position: fixed;
     top: calc(var(--navbar-height) + var(--padding));

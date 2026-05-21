@@ -34,13 +34,13 @@ html, head, body {
     font-size: 1rem;
 }
 
+a { color: var(--accent-secondary-colour); }
 #map { width: 100dvw; height: 100dvh; }
 
 /* -- Features -- */
 [data-component="window"] {
     background-color: var(--bg-primary-colour);
     color: var(--body-colour);
-    position: absolute;
     
     #feature-body {
         padding: 0.5rem;
@@ -107,8 +107,11 @@ html, head, body {
 }
 
 /* -- UI patterns -- */
-#date {
-    top: calc(var(--navbar-height) + 1rem);
-    right: 1rem;
+#topbar {
+    position: fixed;
+    top: calc(var(--navbar-height) + var(--padding));
+    right: var(--padding);
     width: 20rem;
+    
+    [data-component="window"] { margin-bottom: var(--padding); }
 }

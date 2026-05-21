@@ -133,7 +133,15 @@
           });
 					  document.querySelector(`#date > #feature-body`).appendChild(main.interfaces.date.element);
 					
-          //[WIP] - Temporary solution for mobile
+        }
+				
+				//Load Atlas
+				loadAtlas().then((v) => {
+					let timestamp = Date.getTimestamp({ year: 2014, month: 1, day: 1, hour: 0, minute: 1 });
+					
+					setDate(timestamp);
+					
+					//[WIP] - Temporary solution for mobile
 					let inputs = document.querySelectorAll("input, textarea, select");
 					
 					inputs.forEach((input) => {
@@ -149,13 +157,6 @@
 							}, 100);
 						});
 					});
-        }
-				
-				//Load Atlas
-				loadAtlas().then((v) => {
-					let timestamp = Date.getTimestamp({ year: 2014, month: 1, day: 1, hour: 0, minute: 1 });
-					
-					setDate(timestamp);
 				});
 				
 				ic.initialise();

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "UTF-8">
+    <base href = "../">
+    <title>Confoederatio Dataview</title>
+
+    <!-- Favicon -->
+    <link rel = "icon" type = "image/png" sizes = "16x16" href = "gfx/interface/logos/confoederatio_icon_16x16.png">
+    <link rel = "icon" type = "image/png" sizes = "32x32" href = "gfx/interface/logos/confoederatio_icon_32x32.png">
+    <link rel = "icon" type = "image/png" sizes = "48x48" href = "gfx/interface/logos/confoederatio_icon_48x48.png">
+    <link rel = "icon" type = "image/png" sizes = "64x64" href = "gfx/interface/logos/confoederatio_icon_64x64.png">
+    <link rel = "icon" type = "image/png" sizes = "96x96" href = "gfx/interface/logos/confoederatio_icon_96x96.png">
+    <link rel = "icon" type = "image/png" sizes = "128x128" href = "gfx/interface/logos/confoederatio_icon_128x128.png">
+    <link rel = "icon" type = "image/png" sizes = "256x256" href = "gfx/interface/logos/confoederatio_icon_256x256.png">
+    <link rel = "icon" type = "image/png" sizes = "512x512" href = "gfx/interface/logos/confoederatio_icon_512x512.png">
+    
+    <!-- Import fonts -->
+    <link rel = "stylesheet" href = "css/global/import_fonts.css">
+    <link rel = "stylesheet" href = "css/dataview/main.css">
+    
+    <!-- Maptalks -->
+    <link rel = "stylesheet" href = "css/libraries/maptalks.css">
+    <link rel = "stylesheet" href = "js/UF/icoemi/icoemi.css">
+    <script src = "js/libraries/maptalks.min.js"></script>
+  </head>
+  <body>
+    <ic-component src = "components/navbar.html"></ic-component>
+  
+    <div id = "map"></div>
+    
+    <div data-component = "window" id = "date">
+      <div id = "feature-header">Date</div>
+      <div id = "feature-body">
+      </div>
+    </div>
+    
+    <script src = "js/pages/dataview/atlas.js"></script>
+    <script src = "js/pages/dataview/date_framework.js"></script>
+    <script src = "js/pages/dataview/GeometryPolygon.js"></script>
+    <script src = "js/pages/dataview/UI_Date.js"></script>
+    <script type = "text/javascript" src = "js/UF/icoemi/icoemi.js"></script>
+    <script>
+      window.main = {
+				date: Date.getCurrentDate(),
+        timestamp: Date.getTimestamp(Date.getCurrentDate()),
+				
+        interfaces: {},
+        layers: {
+					labels: new maptalks.VectorLayer("label_layer", [], {
+						collision: true,
+						collisionDelay: 250,
+						forceRenderOnMoving: true,
+						forceRenderOnRotating: true,
+						forceRenderOnZooming: true,
+						
+						hitDetect: false,
+						interactive: false,
+						zIndex: 2
+					}),
+          entity_layer: new maptalks.VectorLayer("entity_layer", [], {
+						hitDetect: true,
+						interactive: true,
+						zIndex: 1
+					})
+        },
+        settings: {}
+      };
+      window.map = new maptalks.Map("map", {
+				baseLayer: new maptalks.TileLayer('base', {
+					urlTemplate: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+					subdomains: ["a","b","c","d"],
+					repeatWorld: false,
+				}),
+				center: [0, 40],
+				zoom: 4,
+      });
+			
+			function setDate (arg0_date) {
+				//Convert from parameters
+        let date = arg0_date;
+				
+				//Declare local instance evariables
+        main.date = Date.getDate(date);
+        main.timestamp = Date.getTimestamp(date);
+				
+				//Iterate over all GeometryPolygon instances and redraw them
+        let all_geometry_keys = Object.keys(Geometry.instances);
+				
+				for (let i = 0; i < all_geometry_keys.length; i++) {
+					let local_geometry = Geometry.instances[all_geometry_keys[i]];
+					  local_geometry.draw();
+        }
+      }
+			
+			function start () {
+        //Add all layers to map
+				let all_layer_keys = Object.keys(main.layers);
+				for (let i = 0; i < all_layer_keys.length; i++)
+					main.layers[all_layer_keys[i]].addTo(map);
+				
+				//Load interfaces
+				{
+					main.interfaces.date = new UI_Date(main.date, {
+						onuserchange: (v) => setDate(v)
+          });
+					  document.querySelector(`#date > #feature-body`).appendChild(main.interfaces.date.element);
+        }
+				
+				//Load Atlas
+				loadAtlas().then((v) => {
+					//console.log(`Loaded Atlas:`, v);
+				});
+				
+				ic.initialise();
+      }
+			
+			start();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+:root {
+    --navbar-height: 4rem;
+
+    --accent-primary-colour: rgba(200, 40, 40);
+    --accent-secondary-colour: rgba(240, 60, 60);
+    --accent-tertiary-colour: rgba(255, 255, 255, 0.15);
+    --bg-primary-colour: rgba(0, 0, 0, 0.85);
+    --bg-secondary-colour: rgba(35, 35, 35);
+    --hover-colour: rgba(255, 255, 255, 0.3);
+
+    --header-colour: white;
+    --header-font-family: "Karla", sans-serif;
+    --header-font-size: 1rem;
+    --header-font-weight: 700;
+    --image-filter: brightness(100);
+    --monospace-font-family: "Fira Code", monospace;
+
+    --body-colour: white;
+    --body-font-family: "Karla", sans-serif;
+    --body-font-size: 0.85rem;
+    --body-font-weight: 300;
+
+    --cell-padding: 0.25rem;
+    --default-width: 12rem;
+    --padding: 0.5rem;
+}
+
+html, head, body {
+    display: block;
+    margin: 0;
+    width: 100%;
+
+    font-family: "Karla", sans-serif;
+    font-size: 1rem;
+}
+
+#map { width: 100dvw; height: 100dvh; }
+
+/* -- Features -- */
+[data-component="window"] {
+    background-color: var(--bg-primary-colour);
+    color: var(--body-colour);
+    position: absolute;
+    
+    #feature-body {
+        padding: 0.5rem;
+    }
+    #feature-header {
+        color: var(--header-colour);
+        font-weight: 700;
+        padding: 0.5rem;
+    }
+}
+[component] {
+    padding: var(--cell-padding);
+
+    button {
+        background-color: var(--bg-secondary-colour);
+        border: 1px solid var(--bg-primary-colour);
+        border-radius: calc(var(--padding)*0.5);
+        color: var(--body-colour);
+        font-family: var(--body-font-family);
+        padding: calc(var(--padding)*0.5) calc(var(--padding)*1.5);
+        transition: all 0.5s ease;
+    }
+    button:hover {
+        background-color: var(--accent-primary-colour);
+        cursor: pointer;
+    }
+    input {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid var(--body-colour);
+        color: var(--body-colour);
+        font-family: var(--body-font-family);
+    }
+    input:not([type]) {
+        padding-bottom: 1.5px;
+    }
+    input[type="number"] {
+        min-width: calc(var(--default-width)/4);
+    }
+    select {
+        background-color: var(--bg-secondary-colour);
+        border: 1px solid var(--bg-primary-colour);
+        color: var(--body-colour);
+        font-family: var(--body-font-family);
+        margin-right: var(--padding);
+        padding: calc(var(--padding)*0.25) calc(var(--padding)*0.5);
+        transition: all 0.5s ease;
+    }
+    > ul {
+        padding-inline-start: 0;
+    }
+    ul {
+        padding-inline-start: 0.5rem;
+    }
+}
+
+/* -- Components -- */
+[component="ui-date"] {
+    #day { width: 2rem; }
+    #month { width: 5rem; }
+    #year { width: 3rem; }
+    
+    #hour { margin-left: var(--padding); }
+}
+
+/* -- UI patterns -- */
+#date {
+    top: calc(var(--navbar-height) + 1rem);
+    right: 1rem;
+    width: 20rem;
+}

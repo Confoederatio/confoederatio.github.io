@@ -1,0 +1,6 @@
+/* -- Karla -- */
+@font-face {
+    font-family: "Karla";
+    src: url("../../gfx/fonts/karla.ttf") format("truetype");
+    font-weight: 100 900;
+}

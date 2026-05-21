@@ -219,7 +219,7 @@ class GeometryPolygon extends Geometry {
 		if (this?.metadata?.description?.length > 0) {
 			let description_el = document.createElement("span");
 				description_el.setAttribute("class", "description");
-				description_el.innerHTML = `<br><b>Description:</b><br>${this.metadata.description}<br><span style = "font-size:0.65rem; opacity:0.75;">Descriptions are currently temporary, and will be improved in the future.</span>`;
+				description_el.innerHTML = `<br><b>Description:</b><br>${this.metadata.description}<div style = "font-size:0.65rem; opacity:0.75;"><br>Descriptions are currently temporary, and will be improved in the future.</div>`;
 			
 			element.appendChild(description_el);
 		}

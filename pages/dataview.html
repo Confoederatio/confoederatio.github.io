@@ -102,7 +102,9 @@
 				//Convert from parameters
         let date = arg0_date;
 				
-				//Declare local instance evariables
+				//Declare local instance variables
+        if (date.year < -10000) date.year = -10000;
+        if (date.year > 10000) date.year = 10000;
         main.date = Date.convertTimestampToDate(date);
         main.timestamp = Date.getTimestamp(date);
 				

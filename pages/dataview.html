@@ -102,7 +102,7 @@
         let date = arg0_date;
 				
 				//Declare local instance evariables
-        main.date = Date.getDate(date);
+        main.date = Date.convertTimestampToDate(date);
         main.timestamp = Date.getTimestamp(date);
 				
 				//Iterate over all GeometryPolygon instances and redraw them
@@ -112,6 +112,8 @@
 					let local_geometry = Geometry.instances[all_geometry_keys[i]];
 					  local_geometry.draw();
         }
+				
+				main.interfaces.date.v = main.date;
       }
 			
 			function start () {
@@ -130,12 +132,13 @@
 				
 				//Load Atlas
 				loadAtlas().then((v) => {
-					//console.log(`Loaded Atlas:`, v);
+					let timestamp = Date.getTimestamp({ year: 2014, month: 1, day: 1, hour: 0, minute: 1 });
+					
+					setDate(timestamp);
 				});
 				
 				ic.initialise();
       }
-			
 			start();
     </script>
   </body>

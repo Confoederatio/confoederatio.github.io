@@ -67,7 +67,7 @@ class UI_Date {
 	
 	set v (arg0_value) {
 		//Convert from parameters
-		let value = (arg0_value) ? Date.convertTimestampToDate(arg0_value) : Date.getCurrentDate();
+		let value = (arg0_value !== undefined) ? Date.convertTimestampToDate(arg0_value) : Date.getCurrentDate();
 		
 		//Declare local instance variables
 		let year_type_el = this.element.querySelector(`#year-type`);

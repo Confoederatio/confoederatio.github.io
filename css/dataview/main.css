@@ -36,7 +36,7 @@ html, head, body {
 
 a { color: var(--accent-secondary-colour); }
 #map { width: 100dvw; height: 100dvh; }
-.maptalks-attribution { display: none; }
+.maptalks-attribution { display: none !important; }
 
 /* -- Features -- */
 [data-component="window"] {

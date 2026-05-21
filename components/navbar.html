@@ -1,14 +1,14 @@
 <style>
     html {
-        font-size: 16px;
+        --navbar-rem: 16px;
     }
-    @media (max-width: 1200px) { html { font-size: 14px; } }
-    @media (max-width: 1000px) { html { font-size: 12px; } }
-    @media (max-width: 768px) { html { font-size: 10px; } }
+    @media (max-width: 1200px) { ic-navbar { --navbar-rem: 14px; } }
+    @media (max-width: 1000px) { ic-navbar { --navbar-rem: 12px; } }
+    @media (max-width: 768px) { ic-navbar { --navbar-rem: 10px; } }
     ic-navbar {
-        --height: 4rem;
-        --item-margin: 0.5rem;
-        --item-padding: 1rem;
+        --height: calc(4*var(--navbar-rem));
+        --item-margin: calc(0.5*var(--navbar-rem));
+        --item-padding: calc(var(--item-margin)*2);
         --bg-dropdown: rgba(255, 255, 255, 0.95);
         --text-dropdown: rgba(0, 0, 0, 0.85);
 
@@ -35,7 +35,7 @@
             list-style: none;
             margin: 0;
             padding: 0;
-            font-size: 1.5rem;
+            font-size: calc(1.5*var(--navbar-rem));
             font-weight: 100;
             text-transform: uppercase;
 
@@ -155,7 +155,7 @@
             padding: var(--item-padding);
             position: relative;
             display: block;
-            min-width: 10rem;
+            min-width: calc(10*var(--navbar-rem));
             width: 100%;
             box-sizing: border-box;
 
@@ -194,12 +194,12 @@
         /* Two-column layout class */
         ul li ul.two-col {
             grid-template-columns: repeat(2, max-content);
-            column-gap: 1rem;
+            column-gap: calc(var(--navbar-rem));
         }
 
         .logo {
-            height: 3rem;
-            width: 3rem;
+            height: calc(3*var(--navbar-rem));
+            width: calc(3*var(--navbar-rem));
             margin: var(--item-margin);
         }
         .logo:hover {

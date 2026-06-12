@@ -308,10 +308,7 @@ if (!window.ic) window.ic = {};
 			window.addEventListener(
 				"wheel",
 				(e) => {
-					if (shouldIgnoreEvent(e.target, e.deltaY)) {
-						console.trace("ic.shouldIgnoreEvent");
-						return;
-					}
+					if (shouldIgnoreEvent(e.target, e.deltaY)) return;
 					e.preventDefault();
 					updateTarget(e.deltaY);
 				},

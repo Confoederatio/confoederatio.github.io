@@ -40,7 +40,7 @@ config.homepage = {
     //Viewport 3
     "js/pages/homepage/viewport_3/homepage_about_animation.js",
     //Viewport 3 - Ministrat
-    "ministrat/map/map_svg.js",
+    /*"ministrat/map/map_svg.js",
     
     "ministrat/common/config_backend.js",
     "ministrat/common/cities/cities.js",
@@ -78,12 +78,12 @@ config.homepage = {
     "ministrat/core/ui/ministrat_ui_draw_loop.js",
     
     //Event handling
-    "js/pages/homepage/event_handlers.js",
+    "js/pages/homepage/event_handlers.js",*/
     
     //Config files
     "js/config/homepage/defines/common_defines.js",
     "js/config/homepage/gallery_tiles/gallery_tiles26.js",
-    "ministrat/core/startup.js",
+    //"ministrat/core/startup.js",
   ],
   
   defines: {},

@@ -290,8 +290,8 @@ window.HomepageBanner = class extends window.WebComponent {
 			</div>
 			
 			<div id = "homepage-banner-subtitle" class = "homepage-banner-subtitle hidden">
-				Data from<br>
-				the Neolithic to Now
+				Total data coverage<br>
+				from 10000BC to Now
 			</div>
 		</div>
 

@@ -173,7 +173,7 @@ if (!window.ic) window.ic = {};
 		//Declare local instance variables
 		let style = window.getComputedStyle(element);
 		
-		let can_scroll = (element.scrollHeight > element.clientHeight);
+		let can_scroll = (element.scrollHeight - element.clientHeight > 1);
 		let overflow_y = style.getPropertyValue("overflow-y");
 		let is_scrollable_type = (overflow_y === "auto" || overflow_y === "scroll");
 		
@@ -251,7 +251,7 @@ if (!window.ic) window.ic = {};
 			
 			let scroll_obj = ic._smooth_scroll;
 			
-			const animate = () => {
+			let animate = () => {
 				let diff = scroll_obj.scroll_target - scroll_obj.scroll_current;
 				scroll_obj.scroll_current += diff * scroll_obj.lerp_amount;
 				
@@ -273,22 +273,30 @@ if (!window.ic) window.ic = {};
 				}
 			};
 			
-			const shouldIgnoreEvent = (target) => {
+			let shouldIgnoreEvent = (target, delta_y) => {
 				let curr = target;
 				while (curr && curr !== document.body) {
-					if (ic.isElementScrollable(curr)) return true;
+					if (ic.isElementScrollable(curr)) {
+						if (delta_y === undefined) return true;
+						
+						// If scrolling up & nested viewport can scroll up
+						if (delta_y < 0 && curr.scrollTop > 1) return true;
+						
+						// If scrolling down & nested viewport can scroll down
+						if (delta_y > 0 && curr.scrollHeight - curr.scrollTop - curr.clientHeight > 1) return true;
+					}
 					curr = curr.parentElement;
 				}
 				return false;
 			};
 			
-			const updateTarget = (delta) => {
+			let updateTarget = (delta) => {
 				scroll_obj.scroll_target += delta;
-				const maxScroll =
+				let max_scroll =
 					document.documentElement.scrollHeight - window.innerHeight;
 				scroll_obj.scroll_target = Math.max(
 					0,
-					Math.min(scroll_obj.scroll_target, maxScroll),
+					Math.min(scroll_obj.scroll_target, max_scroll),
 				);
 				
 				if (!scroll_obj.is_animating) {
@@ -300,7 +308,10 @@ if (!window.ic) window.ic = {};
 			window.addEventListener(
 				"wheel",
 				(e) => {
-					if (shouldIgnoreEvent(e.target)) return;
+					if (shouldIgnoreEvent(e.target, e.deltaY)) {
+						console.trace("ic.shouldIgnoreEvent");
+						return;
+					}
 					e.preventDefault();
 					updateTarget(e.deltaY);
 				},
@@ -319,12 +330,15 @@ if (!window.ic) window.ic = {};
 			window.addEventListener(
 				"touchmove",
 				(e) => {
-					if (shouldIgnoreEvent(e.target)) return;
+					let current_y = e.touches[0].pageY;
+					let movement = scroll_obj.last_touch_y - current_y;
+					if (shouldIgnoreEvent(e.target, movement)) {
+						scroll_obj.last_touch_y = current_y;
+						return;
+					}
 					e.preventDefault();
-					const currentY = e.touches[0].pageY;
-					const movement = scroll_obj.last_touch_y - currentY;
 					updateTarget(movement * 2);
-					scroll_obj.last_touch_y = currentY;
+					scroll_obj.last_touch_y = current_y;
 				},
 				{ passive: false },
 			);

@@ -59,10 +59,6 @@ window.HomepageGallery = class extends window.WebComponent {
 								<div class = "ctd-header"><span class = "parallax-subheader">Technical (CTD).</span></div>
 								<div class = "crd-header"><span class = "parallax-subheader">Research (CRD).</span></div>
 								<div class = "cad-header"><span class = "parallax-subheader">Artistic (CAD).</span></div>
-								<!--<div class = "preserves-header">
-									<span class = "parallax-subheader">Preservés</span><br>
-									<div class = "parallax-header small">des Confoederatio</div>
-								</div>-->
 							</div>
 						</div>
 					</div>

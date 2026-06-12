@@ -39,46 +39,6 @@ config.homepage = {
     
     //Viewport 3
     "js/pages/homepage/viewport_3/homepage_about_animation.js",
-    //Viewport 3 - Ministrat
-    /*"ministrat/map/map_svg.js",
-    
-    "ministrat/common/config_backend.js",
-    "ministrat/common/cities/cities.js",
-    "ministrat/common/defines/ai_defines.js",
-    "ministrat/common/defines/common_defines.js",
-    "ministrat/common/defines/map_defines.js",
-    "ministrat/common/elements/map_elements.js",
-    "ministrat/common/elements/topbar_elements.js",
-    "ministrat/common/elements/ui_elements.js",
-    "ministrat/common/history/countries/countries.js",
-    "ministrat/common/history/teams/teams.js",
-    "ministrat/common/locations/unit_locations.js",
-    "ministrat/common/orbats/brd_orbat.js",
-    "ministrat/common/orbats/nato_orbat.js",
-    "ministrat/common/orbats/ddr_orbat.js",
-    "ministrat/common/orbats/wto_orbat.js",
-    "ministrat/common/terrain/terrain.js",
-    "ministrat/common/units/units.js",
-    
-    "ministrat/core/event_handlers/on_click_handler.js",
-    "ministrat/core/event_handlers/on_drag_handler.js",
-    "ministrat/core/event_handlers/on_scroll_handler.js",
-    
-    "ministrat/core/framework/ministrat_city_framework.js",
-    "ministrat/core/framework/ministrat_country_framework.js",
-    "ministrat/core/framework/ministrat_debug_framework.js",
-    "ministrat/core/framework/ministrat_elements_framework.js",
-    "ministrat/core/framework/ministrat_load_framework.js",
-    "ministrat/core/framework/ministrat_map_framework.js",
-    "ministrat/core/framework/ministrat_raster_framework.js",
-    "ministrat/core/framework/ministrat_terrain_framework.js",
-    "ministrat/core/framework/ministrat_unit_framework.js",
-    
-    "ministrat/core/ui/ministrat_topbar.js",
-    "ministrat/core/ui/ministrat_ui_draw_loop.js",
-    
-    //Event handling
-    "js/pages/homepage/event_handlers.js",*/
     
     //Config files
     "js/config/homepage/defines/common_defines.js",

@@ -25,7 +25,6 @@ function initEventHandlers () {
 		
 		//Parallax scrolling for other labels
 		homepageAboutOnScroll();
-		if (ministratMapScrollHandler(e)) return;
 	}
 }
 initEventHandlers();

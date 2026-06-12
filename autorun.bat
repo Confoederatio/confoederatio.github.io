@@ -1,1 +1,1 @@
-"C:\Program Files\Google\Chrome\Application\chrome.exe" --allow-file-access-from-files "D:\Project 0758 - Confoederatio Public Website\pages\index.html"
+"C:\Program Files\Google\Chrome\Application\chrome.exe" --allow-file-access-from-files "D:\Project 0758 - Confoederatio Public Website\index.html"

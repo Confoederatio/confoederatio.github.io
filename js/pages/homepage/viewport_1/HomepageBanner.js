@@ -945,9 +945,8 @@ window.HomepageBanner = class extends window.WebComponent {
 		};
 		
 		setInterval(() => {
-			this.banner_settings.text_selected =
-				document.activeElement.getAttribute("id") ==
-				this.banner_title_text.getAttribute("id");
+			if (document.activeElement && this.banner_title_text)
+				this.banner_settings.text_selected = (document.activeElement.getAttribute("id") === this.banner_title_text.getAttribute("id"));
 			
 			if (this.banner_settings.text_selected) {
 				if (!this.banner_selected_once) this.homepageBannerCentreAlign();

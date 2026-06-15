@@ -72,6 +72,7 @@
     height: 32dvh;
     width: 32dvh;
     box-shadow: 0px 0px 4dvh rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
 .parallax-item.sublarge-square {
     height: 28dvh;

@@ -231,6 +231,12 @@ if (!window.ic) window.ic = {};
 	 * @param {Object} [arg0_options]
 	 *  @param {boolean} [arg0_options.smooth_scroll=false]
 	 */
+	/**
+	 * Initialises Icoemi.
+	 *
+	 * @param {Object} [arg0_options]
+	 *  @param {boolean} [arg0_options.smooth_scroll=false]
+	 */
 	ic.initialise = function (arg0_options) {
 		let options = arg0_options ? arg0_options : {};
 		
@@ -245,7 +251,9 @@ if (!window.ic) window.ic = {};
 				
 				// Method to allow components to add their own scroll logic
 				addUpdateListener: function (fn) {
-					if (typeof fn === "function") this.update_functions.push(fn);
+					if (typeof fn === "function") {
+						this.update_functions.push(fn);
+					}
 				},
 			};
 			
@@ -283,7 +291,9 @@ if (!window.ic) window.ic = {};
 						if (delta_y < 0 && curr.scrollTop > 1) return true;
 						
 						// If scrolling down & nested viewport can scroll down
-						if (delta_y > 0 && curr.scrollHeight - curr.scrollTop - curr.clientHeight > 1) return true;
+						let max_sub_scroll =
+							curr.scrollHeight - curr.scrollTop - curr.clientHeight;
+						if (delta_y > 0 && max_sub_scroll > 1) return true;
 					}
 					curr = curr.parentElement;
 				}
@@ -292,7 +302,8 @@ if (!window.ic) window.ic = {};
 			
 			let updateTarget = (delta) => {
 				scroll_obj.scroll_target += delta;
-				let max_scroll = (document.documentElement.scrollHeight - window.innerHeight);
+				let max_scroll =
+					document.documentElement.scrollHeight - window.innerHeight;
 				scroll_obj.scroll_target = Math.max(
 					0,
 					Math.min(scroll_obj.scroll_target, max_scroll),
@@ -318,7 +329,8 @@ if (!window.ic) window.ic = {};
 				"touchstart",
 				(e) => {
 					if (shouldIgnoreEvent(e.target)) return;
-					scroll_obj.last_touch_y = e.touches[0].pageY;
+					// Track clientY instead of pageY to ignore page offset shifting
+					scroll_obj.last_touch_y = e.touches[0].clientY;
 				},
 				{ passive: true },
 			);
@@ -326,14 +338,16 @@ if (!window.ic) window.ic = {};
 			window.addEventListener(
 				"touchmove",
 				(e) => {
-					let current_y = e.touches[0].pageY;
+					// Track clientY instead of pageY to ignore page offset shifting
+					let current_y = e.touches[0].clientY;
 					let movement = scroll_obj.last_touch_y - current_y;
 					if (shouldIgnoreEvent(e.target, movement)) {
 						scroll_obj.last_touch_y = current_y;
 						return;
 					}
 					e.preventDefault();
-					updateTarget(movement*(options.mobile_scroll_sensitivity || 2));
+					let multiplier = options.mobile_scroll_sensitivity || 2;
+					updateTarget(movement * multiplier);
 					scroll_obj.last_touch_y = current_y;
 				},
 				{ passive: false },

@@ -293,7 +293,7 @@ if (!window.ic) window.ic = {};
 			let updateTarget = (delta) => {
 				scroll_obj.scroll_target += delta;
 				let max_scroll =
-					document.documentElement.scrollHeight - window.innerHeight;
+					(document.documentElement.scrollHeight - window.innerHeight)*2;
 				scroll_obj.scroll_target = Math.max(
 					0,
 					Math.min(scroll_obj.scroll_target, max_scroll),
@@ -334,7 +334,7 @@ if (!window.ic) window.ic = {};
 						return;
 					}
 					e.preventDefault();
-					updateTarget(movement * 2);
+					updateTarget(movement*(options.mobile_scroll_sensitivity || 2));
 					scroll_obj.last_touch_y = current_y;
 				},
 				{ passive: false },
@@ -348,5 +348,6 @@ if (!window.ic) window.ic = {};
 }
 
 ic.initialise({ 
+	mobile_scroll_sensitivity: 16,
 	smooth_scroll: true 
 });

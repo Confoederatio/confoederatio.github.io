@@ -272,6 +272,7 @@ if (!window.ic) window.ic = {};
 				for (let i = 0; i < scroll_obj.update_functions.length; i++) {
 					scroll_obj.update_functions[i](scroll_obj.scroll_current);
 				}
+				if (options.onscroll) options.onscroll();
 				
 				if (Math.abs(diff) > 0.1) {
 					requestAnimationFrame(animate);
@@ -319,7 +320,6 @@ if (!window.ic) window.ic = {};
 				"wheel",
 				(e) => {
 					if (shouldIgnoreEvent(e.target, e.deltaY)) return;
-					if (options.onscroll) options.onscroll();
 					e.preventDefault();
 					updateTarget(e.deltaY);
 				},

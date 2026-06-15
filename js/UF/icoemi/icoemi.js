@@ -292,7 +292,7 @@ if (!window.ic) window.ic = {};
 			
 			let updateTarget = (delta) => {
 				scroll_obj.scroll_target += delta;
-				let max_scroll = (document.documentElement.scrollHeight - window.innerHeight)*2;
+				let max_scroll = (document.documentElement.scrollHeight - window.innerHeight);
 				scroll_obj.scroll_target = Math.max(
 					0,
 					Math.min(scroll_obj.scroll_target, max_scroll),

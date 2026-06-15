@@ -193,7 +193,7 @@ window.HomepageGallery = class extends window.WebComponent {
 		for (let i = 0; i < all_bookmarks.length; i++) {
 			all_bookmarks[i].setAttribute(
 				"style",
-				`left: calc(50% - 12vh - ${i * 12}vh); z-index: ${all_bookmarks.length - 1 - i};`,
+				`left: calc(50% - 12dvh - ${i * 12}dvh); z-index: ${all_bookmarks.length - 1 - i};`,
 			);
 		}
 		// FIX: Use insertAdjacentHTML instead of innerHTML +=
@@ -207,7 +207,7 @@ window.HomepageGallery = class extends window.WebComponent {
 		};
 		bookmark_el.setAttribute(
 			"style",
-			`left: calc(50% - 12vh - ${all_bookmarks.length * 12}vh); z-index: -1;`,
+			`left: calc(50% - 12dvh - ${all_bookmarks.length * 12}dvh); z-index: -1;`,
 		);
 		setTimeout(() => {
 			var new_bookmark_el = this.element.querySelector(
@@ -353,7 +353,7 @@ window.HomepageGallery = class extends window.WebComponent {
 		if (options.background_image)
 			background_style = ` style = "background-image: url(${options.background_image}); opacity: ${options.background_opacity};"`;
 		var tile_element = `
-			<div id = "${tile_id}" class = "parallax-item ${size_dict[options.size]} ${options.colour}" style = "position: absolute; top: calc(${options.y}vh + var(--parallax-offset-y)); left: calc(23vw + ${options.x}vh + var(--parallax-offset-x));">
+			<div id = "${tile_id}" class = "parallax-item ${size_dict[options.size]} ${options.colour}" style = "position: absolute; top: calc(${options.y}dvh + var(--parallax-offset-y)); left: calc(23vw + ${options.x}vh + var(--parallax-offset-x));">
 				<div class = "parallax-item-colour-bg"></div>
 				<div class = "parallax-item-bg"${background_style}></div>
 				<span class = "${font_size_dict[options.font_size]} ${options.font_position}" style = "font-weight: ${options.font_weight}" >${options.name}</span>
@@ -362,7 +362,7 @@ window.HomepageGallery = class extends window.WebComponent {
 		parallax_tile_container_el.innerHTML += tile_element;
 		if (options.content) {
 			var panel_element = `
-				<div id = "${tile_id}-content-panel" class = "parallax-item-content-panel ${options.animation}-panel" style = "top: calc(${options.y}vh - 40dvh + ${size_vh_dict[options.size]}vh/2); left: calc(23vw + ${options.x}vh + ${size_vh_dict[options.size]}vh + 8vh + var(--parallax-offset-x) + var(--content-panel-offset-x));">
+				<div id = "${tile_id}-content-panel" class = "parallax-item-content-panel ${options.animation}-panel" style = "top: calc(${options.y}dvh - 40dvh + ${size_vh_dict[options.size]}dvh/2); left: calc(23vw + ${options.x}dvh + ${size_vh_dict[options.size]}dvh + 8dvh + var(--parallax-offset-x) + var(--content-panel-offset-x));">
 					<div id = "${tile_id}-content-wrapper" class = "content-wrapper">
 						<div id = "${tile_id}-text-wrapper" class = "text-wrapper">
 							${options.content}
@@ -958,14 +958,14 @@ window.HomepageGallery = class extends window.WebComponent {
 			);
 			if (local_el) local_el.classList.add("filled");
 			gallery_obj.bookmark_selected = arg0_element_id;
-			gallery_obj.bookmark_preview_container.style.left = `${local_index * -12}vh`;
+			gallery_obj.bookmark_preview_container.style.left = `${local_index * -12}dvh`;
 			var all_bookmarks = this.element.querySelectorAll(
 				".parallax-item-preview",
 			);
 			for (let i = 0; i < all_bookmarks.length; i++) {
 				all_bookmarks[i].setAttribute(
 					"style",
-					`left: calc(50% - 12vh - ${i * 12}vh); z-index: ${i < local_index ? i : all_bookmarks.length - i};`,
+					`left: calc(50% - 12dvh - ${i * 12}dvh); z-index: ${i < local_index ? i : all_bookmarks.length - i};`,
 				);
 				all_bookmarks[i].classList.remove("selected");
 			}
@@ -1088,7 +1088,7 @@ window.HomepageGallery = class extends window.WebComponent {
 			// 1. Horizontal Scroll (gallery_obj.parallax_scroll_x in vh)
 			// 2. Vertical Parallax displacement (translate_y in pixels)
 			gallery_obj.content_panel_scroll_container.style.transform =
-				`translateX(calc(${gallery_obj.parallax_scroll_x}vh + ${translate_x}px)) translateY(${translate_y}px)`;
+				`translateX(calc(${gallery_obj.parallax_scroll_x}dvh + ${translate_x}px)) translateY(${translate_y}px)`;
 		}
 	}
 	
@@ -1187,7 +1187,7 @@ window.HomepageGallery = class extends window.WebComponent {
 			gallery_obj.parallax_scroll_x = progress * gallery_obj.gallery_width * -1;
 			
 			// Apply both X and Y to the underlay
-			gallery_obj.parallax_container.style.transform = `translateX(${gallery_obj.parallax_scroll_x}vh)`;
+			gallery_obj.parallax_container.style.transform = `translateX(${gallery_obj.parallax_scroll_x}dvh)`;
 			
 			if (gallery_obj.parallax_scroll_indicator)
 				gallery_obj.parallax_scroll_indicator.style.width = `${progress * 100}vw`;

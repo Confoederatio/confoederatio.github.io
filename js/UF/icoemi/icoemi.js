@@ -319,6 +319,7 @@ if (!window.ic) window.ic = {};
 				"wheel",
 				(e) => {
 					if (shouldIgnoreEvent(e.target, e.deltaY)) return;
+					if (options.onscroll) options.onscroll();
 					e.preventDefault();
 					updateTarget(e.deltaY);
 				},
@@ -361,6 +362,11 @@ if (!window.ic) window.ic = {};
 }
 
 ic.initialise({ 
+	onscroll: () => {
+		try { 
+			viewport_one.triumphAndTragedyOnScroll();
+		} catch (e) { console.log(e); }
+	},
 	mobile_scroll_sensitivity: 4,
 	smooth_scroll: true 
 });

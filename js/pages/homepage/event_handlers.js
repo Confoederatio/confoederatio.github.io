@@ -21,7 +21,6 @@ function initEventHandlers () {
 		
 		//Event handler functions
 		viewport_one.homepageBannerTitleAdjustPosition();
-		viewport_one.triumphAndTragedyOnScroll();
 		
 		//Parallax scrolling for other labels
 		homepageAboutOnScroll();

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "UTF-8">
+    
+    <!-- Discord Embed -->
+    <meta property = "og:site_name" content = "Confoederatio">
+    <meta name = "theme-color" content = "#2f45bf">
+    
+    <meta property = "og:title" content = "Confoederatio Dataview">
+    <meta property = "og:description" content = "Online data portal for polities from 3300BC-2014AD.">
+    <meta property = "og:image" content = "https://i.postimg.cc/HTmRMdRJ/naissance-1-8b.png">
+    <meta property = "og:url" content = "https://confoederatio.org">
+    <meta name = "twitter:card" content = "summary_large_image">
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href = "../">
+    <title>Confoederatio Dataview</title>
+
+    <!-- Favicon -->
+    <link rel = "icon" type = "image/png" sizes = "16x16" href = "gfx/interface/logos/confoederatio_icon_16x16.png">
+    <link rel = "icon" type = "image/png" sizes = "32x32" href = "gfx/interface/logos/confoederatio_icon_32x32.png">
+    <link rel = "icon" type = "image/png" sizes = "48x48" href = "gfx/interface/logos/confoederatio_icon_48x48.png">
+    <link rel = "icon" type = "image/png" sizes = "64x64" href = "gfx/interface/logos/confoederatio_icon_64x64.png">
+    <link rel = "icon" type = "image/png" sizes = "96x96" href = "gfx/interface/logos/confoederatio_icon_96x96.png">
+    <link rel = "icon" type = "image/png" sizes = "128x128" href = "gfx/interface/logos/confoederatio_icon_128x128.png">
+    <link rel = "icon" type = "image/png" sizes = "256x256" href = "gfx/interface/logos/confoederatio_icon_256x256.png">
+    <link rel = "icon" type = "image/png" sizes = "512x512" href = "gfx/interface/logos/confoederatio_icon_512x512.png">
+    
+    <!-- Import fonts -->
+    <link rel = "stylesheet" href = "css/global/import_fonts.css">
+    <link rel = "stylesheet" href = "css/dataview/main.css">
+    <link rel = "stylesheet" href = "css/unitel/main.css">
+    
+    <!-- Maptalks -->
+    <link rel = "stylesheet" href = "js/libraries/maptalks.css">
+    <link rel = "stylesheet" href = "js/UF/icoemi/icoemi.css">
+    
+    <script type = "text/javascript" src = "js/libraries/Tippy.min.js"></script>
+    <script src = "js/libraries/maptalks.min.js"></script>
+  </head>
+  <body>
+    <ic-component src = "components/navbar.html"></ic-component>
+    <div class="homepage-banner-lava-lamp-bg">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" id="lava-lamp-loader">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="15" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+            <feBlend in2="goo" in="SourceGraphic" result="mix" />
+          </filter>
+
+          <linearGradient id="lava-lamp-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="2%" stop-color="#40204c" />
+            <stop offset="10%" stop-color="#a3225c" />
+            <stop offset="15%" stop-color="#f06f51" />
+            <stop offset="50%" stop-color="#ed691c" />
+            <stop offset="65%" stop-color="#e24926" />
+          </linearGradient>
+
+          <mask id="lava-lamp-mask-container">
+            <g class="lava-lamp-blob-container">
+              <!-- Main blobs with specific coordinates from your class -->
+              <circle class="lava-lamp-blob" cx="0%" cy="0%" r="20%" />
+              <circle class="lava-lamp-blob" cx="20%" cy="15%" r="3%" />
+              <circle class="lava-lamp-blob" cx="44%" cy="25%" r="3%" />
+              <circle class="lava-lamp-blob" cx="50%" cy="32%" r="7%" />
+              <circle class="lava-lamp-blob" cx="54%" cy="22%" r="5%" />
+              <circle class="lava-lamp-blob" cx="30%" cy="39%" r="4%" />
+              <circle class="lava-lamp-blob" cx="35%" cy="45%" r="6%" />
+              <circle class="lava-lamp-blob" cx="24%" cy="67%" r="2.5%" />
+              <circle class="lava-lamp-blob" cx="67%" cy="62%" r="8%" />
+              <circle class="lava-lamp-blob" cx="47%" cy="45%" r="2%" />
+              <circle class="lava-lamp-blob" cx="57%" cy="45%" r="4%" />
+              <circle class="lava-lamp-blob" cx="72%" cy="45%" r="6%" />
+              <circle class="lava-lamp-blob" cx="87%" cy="85%" r="8%" />
+            </g>
+          </mask>
+        </defs>
+
+        <!-- This rect is the actual visible element, masked by the blobs above -->
+        <rect x="0" y="0" width="100%" height="100%" mask="url(#lava-lamp-mask-container)" fill="url(#lava-lamp-gradient)" />
+      </svg>
+    </div>
+    
+    <div id = "body-container">
+      <div id = "hero-banner">
+        <img src = "gfx/interface/logos/unitel_ctd_logo.png">
+      </div>
+      <div id = "contents">
+        <div class = "header">Your home for Confoederatio Services.</div>
+        <div class = "body"></div>
+      </div>
+    </div>
+    
+    <script type = "text/javascript" src = "js/UF/icoemi/icoemi.js"></script>
+    <script>
+      let body_container_el = document.getElementById("body-container");
+      
+			function start () {
+				ic.initialise();
+				
+				let init_loop = setInterval(() => {
+					try {
+						let navbar_el = document.querySelector("ic-navbar");
+						
+						body_container_el.style.top = `${navbar_el.offsetHeight}px`;
+						body_container_el.style.height = `calc(100dvh - ${navbar_el.offsetHeight}px)`;
+          } catch (e) {}
+        }, 100);
+      }
+			start();
+    </script>
+  </body>
+</html>

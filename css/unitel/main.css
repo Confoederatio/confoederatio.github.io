@@ -1,0 +1,95 @@
+html, head, body {
+    height: 100%;
+    margin: 0;
+    overflow: clip;
+}
+#body-container {
+    overflow-y: auto;
+    position: fixed;
+    width: 100dvw;
+    
+    #hero-banner {
+        display: flex;
+        justify-content: center;
+        
+        > img {
+            margin-top: 1rem;
+            max-width: 800px;
+            width: 50dvw;
+        }
+    }
+    
+    #contents {
+        color: white;
+        margin: 1rem;
+        
+        .header {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 1rem;
+        }
+        .body {
+            background-color: rgba(0, 0, 0, 0.75);
+            min-height: 400px;
+            padding: 1rem;
+        }
+    }
+}
+
+/* -- [QUARANTINE] -- */
+/* -- Lava Lamp Execution -- */
+.homepage-banner-lava-lamp-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    /* Original background gradient provided in your CSS */
+    background: linear-gradient(to bottom right, #152a8e, #b1376c);
+    overflow: hidden;
+}
+
+#lava-lamp-loader {
+    width: 100%;
+    height: 100%;
+}
+
+.lava-lamp-blob-container {
+    filter: url("#goo");
+}
+
+.lava-lamp-blob {
+    fill: white; /* Required for the mask to be visible */
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+/* Specific blob animations to mimic the orbital stagger */
+.lava-lamp-blob:nth-child(odd) {
+    animation: lava-lamp-orbit-clockwise 20s infinite linear;
+}
+
+.lava-lamp-blob:nth-child(even) {
+    animation: lava-lamp-orbit-counter-clockwise 25s infinite linear;
+}
+
+/* Vary durations and delays to look organic */
+.lava-lamp-blob:nth-child(3n) { animation-duration: 30s; animation-delay: -2s; }
+.lava-lamp-blob:nth-child(4n) { animation-duration: 15s; animation-delay: -5s; }
+
+@keyframes lava-lamp-orbit-clockwise {
+    from {
+        transform: rotate(0deg) translateX(30px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(30px) rotate(-360deg);
+    }
+}
+
+@keyframes lava-lamp-orbit-counter-clockwise {
+    from {
+        transform: rotate(360deg) translateX(45px) rotate(-360deg);
+    }
+    to {
+        transform: rotate(0deg) translateX(45px) rotate(0deg);
+    }
+}

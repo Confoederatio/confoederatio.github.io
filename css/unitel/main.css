@@ -1,3 +1,31 @@
+/* -- Vercengen themes -- */
+:root {
+    --navbar-height: 2rem;
+
+    --accent-primary-colour: rgba(200, 40, 40);
+    --accent-secondary-colour: rgba(240, 60, 60);
+    --accent-tertiary-colour: rgba(255, 255, 255, 0.15);
+    --bg-primary-colour: rgba(0, 0, 0, 0.85);
+    --bg-secondary-colour: rgba(35, 35, 35);
+    --bg-tertiary-colour: rgba(0, 0, 0, 0.75);
+    --hover-colour: rgba(255, 255, 255, 0.3);
+
+    --header-colour: white;
+    --header-font-family: "Karla";
+    --header-font-size: 1rem;
+    --header-font-weight: 700;
+    --image-filter: brightness(100);
+    --monospace-font-family: "Fira Code";
+
+    --body-colour: white;
+    --body-font-family: "Karla";
+    --body-font-size: 0.85rem;
+    --body-font-weight: 300;
+
+    --cell-padding: 0.25rem;
+    --default-width: 12rem;
+    --padding: 0.5rem;
+}
 html, head, body {
     height: 100%;
     margin: 0;
@@ -20,18 +48,46 @@ html, head, body {
     }
     
     #contents {
-        color: white;
+        color: var(--body-colour);
         margin: 1rem;
         
         .header {
-            background-color: rgba(0, 0, 0, 0.85);
+            background-color: var(--bg-primary-colour);
             padding: 1rem;
         }
         .body {
-            background-color: rgba(0, 0, 0, 0.75);
+            background-color: var(--bg-tertiary-colour);
             min-height: 400px;
             padding: 1rem;
         }
+    }
+}
+
+/* -- Vercengen Components -- */
+[component="ve-page-menu"] {
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: calc(var(--padding)*0.5);
+        position: relative;
+        padding-bottom: var(--padding);
+    }
+    .tab {
+        color: var(--header-colour);
+        padding: var(--padding);
+        transition: background-color 0.3s;
+    }
+    .tab:hover {
+        cursor: pointer;
+    }
+    .underline {
+        background-color: var(--accent-secondary-colour);
+        border-radius: calc(var(--cell-padding)/2);
+        height: var(--cell-padding);
+        position: absolute;
+        pointer-events: none;
+
+        transition: left 0.5s ease, width 0.5s ease;
     }
 }
 

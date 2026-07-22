@@ -98,7 +98,7 @@ details {
         .body {
             background-color: var(--bg-tertiary-colour);
             padding: 1rem;
-            word-wrap: break-word;
+            word-break: break-word;
         }
     }
     

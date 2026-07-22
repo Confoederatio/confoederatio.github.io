@@ -28,6 +28,7 @@
     <link rel = "icon" type = "image/png" sizes = "512x512" href = "gfx/interface/logos/confoederatio_icon_512x512.png">
     
     <!-- Import fonts -->
+    <link rel = "stylesheet" href = "css/global/global.css">
     <link rel = "stylesheet" href = "css/global/import_fonts.css">
     <link rel = "stylesheet" href = "css/dataview/main.css">
     <link rel = "stylesheet" href = "css/unitel/main.css">
@@ -35,7 +36,8 @@
     <!-- Maptalks -->
     <link rel = "stylesheet" href = "js/libraries/maptalks.css">
     <link rel = "stylesheet" href = "js/UF/icoemi/icoemi.css">
-    
+
+    <script type = "text/javascript" src = "js/libraries/popper.min.js"></script>
     <script type = "text/javascript" src = "js/libraries/Tippy.min.js"></script>
     <script src = "js/libraries/maptalks.min.js"></script>
   </head>
@@ -87,10 +89,37 @@
       <div id = "hero-banner">
         <img src = "gfx/interface/logos/unitel_ctd_logo.png">
       </div>
-      <div id = "contents">
-        <div class = "header">Your home for Confoederatio Services.</div>
+      <div class = "contents directory">
+        <div class = "header">Your home for independent software. Maintained by CTD.</div>
         <div class = "body"></div>
       </div>
+      <details class = "contents">
+        <summary class = "header"><b>About</b></summary>
+        <div class = "body">
+          To manage server footprints, registrations are managed separately per service. If you are facing technical/registration issues, privately message a staff member on Confoederatio Element/Discord.
+          <br><br>
+          Maintained with care by <b>Confoederatio, Technical Division (CTD).</b>
+        </div>
+      </details>
+      <details class = "contents">
+        <summary class = "header"><b>Onions</b></summary>
+        <div class = "body">
+          Onions are available for most Confoederatio services. You must use <b><a href = "https://www.torproject.org/">Tor</a></b> or an equivalent service to access them. They will not work on regular browsers.
+          <ul>
+            <li>Confoederatio Element: <a href = "http://rrqaziswwxa2kuv5qxiyuwfhr6u6p3ohly3ig7lmgrve3juyyhcvq2yd.onion/">http://rrqaziswwxa2kuv5qxiyuwfhr6u6p3ohly3ig7lmgrve3juyyhcvq2yd.onion/</a></li>
+            <li>Confoederatio Datavault: <a href = "http://ctmf5faphedoiqbfrm5vzmmdyz5ytboorjwh4fjltpt2kf5ttfywpjad.onion/">http://ctmf5faphedoiqbfrm5vzmmdyz5ytboorjwh4fjltpt2kf5ttfywpjad.onion/</a></li>
+            <li>Confoederatio Projects: <a href = "http://vzpjzneuwmznlb35nyu3uak5nnzme5cm3c2njksymu5oepiaei25cdyd.onion/">http://vzpjzneuwmznlb35nyu3uak5nnzme5cm3c2njksymu5oepiaei25cdyd.onion/</a></li>
+            <li>Confoederatio Webstudio: <a href = "http://gfhfkmbnh652ve7wx5vqej2wsabvotum5vclnqzw5vgkqlrhtg6lzlad.onion/">http://gfhfkmbnh652ve7wx5vqej2wsabvotum5vclnqzw5vgkqlrhtg6lzlad.onion/</a></li>
+          </ul>
+          Since dynamic services over Onions can be slow, they should be seen as secure backups rather than primary links.
+        </div>
+      </details>
+      <details class = "contents">
+        <summary class = "header"><b>Uptime</b></summary>
+        <div class = "body">
+          Uptime information is available on our <a href = "https://discord.gg/9KKgZgpGHM" target = "_blank">Discord</a> or <a href = "https://matrix.to/#/#confoederatio:matrix.confoederatio.org" target = "_blank">Matrix Element</a>.
+        </div>
+      </details>
     </div>
     
     <script type = "text/javascript" src = "js/UF/icoemi/icoemi.js"></script>
@@ -101,12 +130,120 @@
 			function start () {
 				ic.initialise();
 				
+				window.unitel_menu = new ve.PageMenu({
+          apps: {
+						name: "Apps",
+            html: `
+            <div class = "apps">
+              <div class = "card" 
+              onclick = "window.location = 'https://bridge.confoederatio.org/';"
+              data-tippy-content = "Bridges between Discord and Element Matrix."
+              >
+                <img src = "gfx/interface/logos/bridge_square_logo.png">
+                <div class = "card-title">Confoederatio Bridge</div>
+              </div>
+              <div class = "card"
+              onclick = "window.location = 'https://element.confoederatio.org/';"
+              data-tippy-content = "End-to-end encrypted chat and messaging platform."
+              >
+                <img src = "gfx/interface/logos/element_square_logo.png">
+                <div class = "card-title">Confoederatio Element</div>
+              </div>
+              <div class = "card"
+              onclick = "window.location = 'https://datavault.confoederatio.org/';"
+              data-tippy-content = "Secure data storage and sharing platform."
+              >
+                <img src = "gfx/interface/logos/nextcloud_square_logo.png">
+                <div class = "card-title">Confoederatio Datavault</div>
+              </div>
+              <div class = "card"
+              onclick = "window.location = 'https://projects.confoederatio.org/';"
+              data-tippy-content = "Hosts Git projects for Confoederatio members."
+              >
+                <img src = "gfx/interface/logos/projects_square_logo.png">
+                <div class = "card-title">Confoederatio Projects</div>
+              </div>
+              <div class = "card"
+              onclick = "window.location = 'https://sites.confoederatio.org/';"
+              data-tippy-content = "Website builder and hosting."
+              >
+                <img src = "gfx/interface/logos/webstudio_square_logo.png">
+                <div class = "card-title">Confoederatio Webstudio</div>
+              </div>
+            </div>
+            `
+          },
+          datasets: {
+						name: "Datasets",
+            html: `
+            <table class = "datasets">
+              <tr>
+                <td style = "padding:0;border:0;" width = "50%"><a href = "https://docs.confoederatio.org/en/Atlas"><img src = "gfx/interface/banners/crd_atlas.png"></a></td>
+                <td style = "padding:0;border:0;padding-left: var(--cell-padding);" width = "50%"><a href = "https://docs.confoederatio.org/en/Collation"><img src = "gfx/interface/banners/crd_collation.png"></a></td>
+              </tr>
+              <tr>
+                <td style = "padding:0;border:0;" width = "50%"><a href = "https://docs.confoederatio.org/Eoscala"><img src = "gfx/interface/banners/crd_eoscala.png"></a></td>
+                <td style = "padding:0;border:0;padding-left: var(--cell-padding);" width = "50%"><a href = "https://docs.confoederatio.org/Stadester"><img src = "gfx/interface/banners/crd_stadester.png"></a></td>
+              </tr>
+              <tr>
+                <td style = "padding:0;border:0;" width = "50%"><a href = "https://docs.confoederatio.org/Velkscala"><img src = "gfx/interface/banners/crd_velkscala.png"></a></td>
+                <td style = "padding:0;border:0;padding-left: var(--cell-padding);" width = "50"><img src = "gfx/interface/banners/placeholder.png"></td>
+              </tr>
+            </table>
+            <br>
+            Click on a <b>Database</b> of your choice for more information and available <span style = "font-weight:500;">Download</span> options.
+            `
+          },
+          engines: {
+						name: "Software",
+            html: `
+            <div class = "apps">
+              <div class = "card" 
+              onclick = "window.location = 'https://confoederatio.org/Vercengen';"
+              data-tippy-content = "Software engine for rapid application development."
+              >
+                  <img src = "gfx/interface/logos/vercengen_square_logo.png">
+                  <div class = "card-title">Vercengen</div>
+              </div>
+              <div class = "card" 
+              onclick = "window.location = 'https://docs.confoederatio.org/Naissance';"
+              data-tippy-content = "4D GIS for all types of spatial data editing."
+              >
+                <img src = "gfx/interface/logos/naissance_square_logo.png">
+                <div class = "card-title">Naissance GIS</div>
+              </div>
+              <div class = "card" 
+              onclick = "window.unitel_menu.v = 'datasets';"
+              data-tippy-content = "Long-run multivariate datasets for borders, cities, economics, populations, and OSINT."
+              >
+                <img src = "gfx/interface/logos/collation_square_logo.png">
+                <div class = "card-title">Naissance World Model</div>
+              </div>
+            </div>
+            `
+          },
+          policy: {
+						name: "Policy",
+            html: ``
+          }
+        }, {
+					starting_page: "apps"
+        });
+				
+				body_container_el.querySelectorAll(`.contents .body`)[0].appendChild(unitel_menu.element);
+				tippy('[data-tippy-content]', {
+					followCursor: true,
+          offset: [16, 16],
+          placement: "bottom-end"
+        });
+				
+				//Init loop for drawing the Unitel window
 				let init_loop = setInterval(() => {
 					try {
 						let navbar_el = document.querySelector("ic-navbar");
 						
 						body_container_el.style.top = `${navbar_el.offsetHeight}px`;
-						body_container_el.style.height = `calc(100dvh - ${navbar_el.offsetHeight}px)`;
+						body_container_el.style.height = `calc(100dvh - ${navbar_el.offsetHeight}px - 1rem)`;
           } catch (e) {}
         }, 100);
       }

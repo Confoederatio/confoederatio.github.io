@@ -364,7 +364,8 @@ if (!window.ic) window.ic = {};
 ic.initialise({ 
 	onscroll: () => {
 		try { 
-			viewport_one.triumphAndTragedyOnScroll();
+			if (window.viewport_one)
+				viewport_one.triumphAndTragedyOnScroll();
 		} catch (e) { console.log(e); }
 	},
 	mobile_scroll_sensitivity: 4,

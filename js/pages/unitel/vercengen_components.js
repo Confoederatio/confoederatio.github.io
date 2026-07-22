@@ -9,7 +9,6 @@ ve.PageMenu = class {
 		//Initialise options
 		options.attributes = (options.attributes) ? options.attributes : {};
 		options.do_not_wrap = (options.do_not_wrap) ? options.do_not_wrap : false;
-		options.retain = (options.retain) ? options.retain : false;
 		options.starting_page = (options.starting_page) ? options.starting_page : Object.keys(page_obj)[0];
 		
 		//Declare local instance variables
@@ -57,6 +56,12 @@ ve.PageMenu = class {
 			this.interface_el = document.createElement("div");
 			this.interface_el.id = "component-body";
 			
+			//Append all pages once; visibility is toggled via display
+			Object.keys(this.interfaces_obj).forEach((local_key) => {
+				this.interfaces_obj[local_key].style.display = "none";
+				this.interface_el.appendChild(this.interfaces_obj[local_key]);
+			});
+			
 			this.element.append(this.navbar_el, this.interface_el);
 			
 			let all_tabs = this.navbar_el.querySelectorAll(".tab");
@@ -99,21 +104,10 @@ ve.PageMenu = class {
 			return;
 		}
 		
-		//Switch interface to selected page
-		if (this.options.retain) {
-			Object.keys(this.interfaces_obj).forEach((local_key) => {
-				let local_page_el = this.interfaces_obj[local_key];
-				if (local_page_el.parentElement === this.interface_el)
-					local_page_el.style.display = "none";
-			});
-			let target_el = this.interfaces_obj[page_key];
-			if (!this.interface_el.contains(target_el))
-				this.interface_el.appendChild(target_el);
-			target_el.style.display = "";
-		} else {
-			this.interface_el.innerHTML = "";
-			this.interface_el.appendChild(this.interfaces_obj[page_key]);
-		}
+		//Switch interface to selected page by toggling visibility
+		Object.keys(this.interfaces_obj).forEach((local_key) => {
+			this.interfaces_obj[local_key].style.display = (local_key === page_key) ? "" : "none";
+		});
 		setTimeout(() => {
 			this.updateUnderline();
 		}, 100);

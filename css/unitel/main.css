@@ -101,9 +101,6 @@ details {
             word-break: break-word;
         }
     }
-    
-    .contents.directory {
-    }
 }
 
 /* -- Apps Directory -- */
@@ -198,18 +195,30 @@ details {
     left: 0;
     width: 100dvw;
     height: 100dvh;
-    /* Original background gradient provided in your CSS */
     background: linear-gradient(to bottom right, #152a8e, #b1376c);
     overflow: hidden;
+    /* Force a new stacking context for the entire background */
+    transform: translateZ(0);
+}
+
+.lava-lamp-blob-container {
+    filter: url("#goo");
+    /* Help Firefox offload the filtered container to the GPU */
+    will-change: transform, filter;
+    transform: translateZ(0);
+}
+
+.lava-lamp-blob {
+    fill: white;
+    transform-box: fill-box;
+    transform-origin: center;
+    /* Reduce repaint overhead by hinting the transform */
+    will-change: transform;
 }
 
 #lava-lamp-loader {
     width: 100%;
     height: 100%;
-}
-
-.lava-lamp-blob-container {
-    filter: url("#goo");
 }
 
 .lava-lamp-blob {

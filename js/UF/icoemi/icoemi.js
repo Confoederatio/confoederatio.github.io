@@ -243,7 +243,7 @@ if (!window.ic) window.ic = {};
 		if (options.smooth_scroll) {
 			ic._smooth_scroll = {
 				last_touch_y: 0,
-				lerp_amount: 0.1,
+				lerp_amount: 0.15,
 				is_animating: false,
 				scroll_current: window.scrollY,
 				scroll_target: window.scrollY,

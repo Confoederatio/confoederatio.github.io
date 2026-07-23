@@ -197,11 +197,13 @@ details {
     height: 100dvh;
     background: linear-gradient(to bottom right, #152a8e, #b1376c);
     overflow: hidden;
+    /* Force a new stacking context for the entire background */
     transform: translateZ(0);
 }
 
 .lava-lamp-blob-container {
     filter: url("#goo");
+    /* Help Firefox offload the filtered container to the GPU */
     will-change: transform, filter;
     transform: translateZ(0);
 }
@@ -210,6 +212,7 @@ details {
     fill: white;
     transform-box: fill-box;
     transform-origin: center;
+    /* Reduce repaint overhead by hinting the transform */
     will-change: transform;
 }
 
@@ -226,7 +229,10 @@ details {
 /* Detect Firefox and disable the expensive filter */
 @supports (-moz-appearance: none) {
     @media (pointer: coarse) {
-        .lava-lamp-blob-container { filter: none; } }
+        .lava-lamp-blob-container {
+            filter: none;
+        }
+    }
 }
 
 /* Specific blob animations to mimic the orbital stagger */

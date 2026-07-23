@@ -66,8 +66,9 @@ details {
     align-items: center;
     display: flex;
     flex-direction: column;
-    
+    flex: 1;
     overflow-y: auto;
+    padding-bottom: var(--padding);
     position: absolute;
     left: 0;
     top: 0;
@@ -191,7 +192,7 @@ details {
 /* -- [QUARANTINE] -- */
 /* -- Lava Lamp Execution -- */
 .homepage-banner-lava-lamp-bg {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100dvw;

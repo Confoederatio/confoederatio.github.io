@@ -27,7 +27,6 @@
     --padding: 0.5rem;
 }
 html, head, body {
-    height: 100%;
     margin: 0;
     overflow: clip;
 }
@@ -69,7 +68,9 @@ details {
     flex-direction: column;
     
     overflow-y: auto;
-    position: fixed;
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100dvw;
     
     #hero-banner {
@@ -190,7 +191,7 @@ details {
 /* -- [QUARANTINE] -- */
 /* -- Lava Lamp Execution -- */
 .homepage-banner-lava-lamp-bg {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100dvw;

@@ -228,8 +228,10 @@ details {
 }
 /* Detect Firefox and disable the expensive filter */
 @supports (-moz-appearance: none) {
-    .lava-lamp-blob-container {
-        filter: none !important;
+    @media (pointer: coarse) {
+        .lava-lamp-blob-container {
+            filter: none;
+        }
     }
 }
 

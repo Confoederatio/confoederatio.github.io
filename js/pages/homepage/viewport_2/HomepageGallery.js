@@ -729,6 +729,7 @@ window.HomepageGallery = class extends window.WebComponent {
 				current_zoom = Math.min(Math.max(1.25, current_zoom), 10);
 				this.zoom_states[element_id] = current_zoom;
 				e.preventDefault();
+				e.stopPropagation();
 			});
 			setInterval(() => {
 				let is_hovered =

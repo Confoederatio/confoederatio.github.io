@@ -70,6 +70,14 @@ config.homepage.gallery.tiles = {
     name: "Histmap",
     
     animation: "histmap",
+    content: `<div class = "title">Histmap</div>
+    <hr class = "divider">
+    <div class = "contents">
+      <b>Histmap(s)</b> refer to datasets that are not real-time/OSINT-focused in nature, and more so focused on digital huamnities work. These are typically long-run, global-extent datasets meant to preserve data continuity and deep time analysis.
+      <br><br>
+      These datasets currently include Atlas for borders, Eoscala for economic data, Velkscala for historical demographics, and Stadestér for cities and urban growth/population.
+    </div>
+    `,
     default_pin: true,
     font_position: "centre",
     font_size: 2,
@@ -91,6 +99,9 @@ config.homepage.gallery.tiles = {
     content: `<div id = "georeferencer-content-wrapper" class = "title">Livemap/Collation</div>
     <hr class = "divider">
     <div class = "contents">
+      <div id = "collation-preview" class = "preview-image-container">
+        <img src = "https://docs.confoederatio.org/crd/collation/collation.jpg" class = "preview-image" id = "collation">
+      </div>
       <div id = "georeferencer-preview" class = "preview-image-container">
         <img src = "gfx/interface/tiles/31.georeferencer.jpg" class = "preview-image" id = "georeferencer">
       </div>

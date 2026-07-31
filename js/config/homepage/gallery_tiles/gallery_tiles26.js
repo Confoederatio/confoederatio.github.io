@@ -109,7 +109,7 @@ config.homepage.gallery.tiles = {
   },
   
   software_and_tooling_crd: {
-    name: "Software & Tooling",
+    name: "Research Software",
     
     animation: "crd-software-and-tooling",
     font_position: "bottom-right",
@@ -557,8 +557,25 @@ config.homepage.gallery.tiles = {
       "blacktraffic",
       "geospatiale",
       "forse_scriptly_ide",
+      "unitel",
       "universal_framework",
     ],
+  },
+  unitel: {
+    name: "Unitel",
+    animation: "unitel",
+    background_image: `gfx/interface/logos/unitel_logo.png`,
+    background_opacity: 0.2,
+    default_bookmark: true,
+    default_pin: true,
+    font_position: "top-left",
+    font_size: 1,
+    font_weight: 700,
+    size: 4,
+    x: 206,
+    y: 60,
+    
+    colour: "blue"
   },
   eleven_fiftynine: {
     name: "",

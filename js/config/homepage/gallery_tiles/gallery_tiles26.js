@@ -14,13 +14,13 @@ config.homepage.gallery.tiles = {
     
     colour: "light-blue",
     content: `<div class = "parallax-item-content-panel-title">CRD</div>
-    <hr class = "parallax-item-content-panel-divider">
-    <div class = "parallax-item-content-panel-body-text">
+    <hr class = "divider">
+    <div class = "contents">
       <b>Confoederatio, Research Division</b>, also known as <u>CRD</u>, works on academic datasets and tooling for their maintenance and production. Most tasks are applied, typically to spatiotemporal data and social systems or simulations. It is directly analogous to the Research Divisions of other data science studios.
       <br><br>
       All work produced by CRD, like any other division of Confoederatio, are MIT licenced for use, including accessible datasets. 
       <br><br>
-      <hr class = "parallax-item-content-panel-divider">
+      <hr class = "divider">
       <br>
       <img src = "gfx/interface/logos/crd_coat_of_arms_logo.png" width = "100%">
     </div>
@@ -42,8 +42,8 @@ config.homepage.gallery.tiles = {
     
     colour: "light-grey",
     content: `<div class = "parallax-item-content-panel-title">Datasets</div>
-    <hr class = "parallax-item-content-panel-divider">
-    <div class = "parallax-item-content-panel-body-text">
+    <hr class = "divider">
+    <div class = "contents">
       Open-access datasets from Confoederatio typically focus on long-term spatiotemporal data such as estimated GDP PPP, population, urban growth, etc. with coverage from 10000BC up until the present day at standard, structured resolution for both academic researchers and data scientists.
       <br><br>
       Datasets are typically classified as either <b>Histmap</b> in that they contain long-run historical data, or <b>Livemap</b>, which is updated in real time and focuses mainly on OSINT.
@@ -89,8 +89,8 @@ config.homepage.gallery.tiles = {
     background_image: "gfx/interface/tiles/livemap_collation.png",
     background_opacity: 0.3,
     content: `<div id = "georeferencer-content-wrapper" class = "parallax-item-content-panel-title">Livemap/Collation</div>
-    <hr class = "parallax-item-content-panel-divider">
-    <div class = "parallax-item-content-panel-body-text">
+    <hr class = "divider">
+    <div class = "contents">
       <div id = "georeferencer-preview" class = "preview-image-container">
         <img src = "gfx/interface/tiles/31.georeferencer.jpg" class = "preview-image" id = "georeferencer">
       </div>
@@ -140,15 +140,15 @@ config.homepage.gallery.tiles = {
     
     colour: "bright-yellow",
     content: `<div class = "parallax-item-content-panel-title">Naissance GIS</div>
-    <hr class = "parallax-item-content-panel-divider">
+    <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-beta">Beta (Ongoing)</span>,<br>
-    <span class = "parallax-item-development-date">6 April 2023 -</span><br>
-    <b>Status:</b> <span class = "parallax-item-content-panel-status-indicator primary">Primary Project</span>
-    <div class = "parallax-item-content-panel-body-text">
+    <span class = "date">6 April 2023 -</span><br>
+    <b>Status:</b> <span class = "status primary">Primary Project</span>
+    <div class = "contents">
       Naissance is an open-source historical 3D GIS built for proxy modelling, raster input and wrangling, simulation and statistical analysis with undo/redo trees and version control with user-first UI design. We aim to eventually enable modernised data visualisation and mapmaking to create interactive atlases, different mapmodes, and 3/video export options, alongside full-spectrum gridmap editing.
       <br><br>
       All generated files by Naissance are currently stored in JSON, with GeoJSON beeing supported for import. Saved Naissance files may be found in ./saves/. A default initialisation file, ./saves/autosave.js, is loaded for compatibility testing in non-release versions.
-      <hr class = "parallax-item-content-panel-divider">
+      <hr class = "divider">
       <b>Links:</b> <a href = "https://github.com/Confoederatio/Naissance/archive/refs/heads/master.zip">Download</a></li> | <a href = "https://github.com/Confoederatio/Naissance">GitHub</a></li>
       <b>Releases:</b>
       <ul>
@@ -174,15 +174,15 @@ config.homepage.gallery.tiles = {
     
     colour: "dark-grey",
     content: `<div class = "parallax-item-content-panel-title">Eoscala</div>
-    <hr class = "parallax-item-content-panel-divider">
+    <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-complete">Complete (Ongoing)</span>,<br>
-    <span class = "parallax-item-development-date">1 March 2025 -</span><br>
-    <b>Status:</b> <span class = "parallax-item-content-panel-status-indicator primary">Primary Project</span>
-    <div class = "parallax-item-content-panel-body-text">
+    <span class = "date">1 March 2025 -</span><br>
+    <b>Status:</b> <span class = "status primary">Primary Project</span>
+    <div class = "contents">
       Gridded economic statistics from 10000BC to the present. Time intervals are provided at 1000-year intervals from 10000BC to 1AD, at 100-year intervals from 1AD to 1700AD, at 10-year intervals from 1700AD to 1950AD, and at 1-year intervals from 1950AD onwards. All data is provided at 5-arcminute resolution on WGS84 Equirectangular.
       <br><br>
       Eoscala is currently operable, with future routine updates to improve model and data accuracy alongside ease of reproducibility. Base Eoscala data are used to support the expansion of economic data and fidelity into the deep past. Since 2024, Eoscala has been managed by CRD.
-      <hr class = "parallax-item-content-panel-divider">
+      <hr class = "divider">
       <b>Releases:</b>
       <ul>
         <li>Eoscala 1.0 | <a href = "https://github.com/Confoederatio/Eoscala-Velkscala/archive/refs/tags/eoscala-1.0-velkscala-0.5.zip">Download</a> | <a href = "https://github.com/Confoederatio/Eoscala-Velkscala/tree/main">GitHub</a></li>
@@ -221,15 +221,15 @@ config.homepage.gallery.tiles = {
     
     colour: "salmon",
     content: `<div class = "parallax-item-content-panel-title">Velkscala</div>
-    <hr class = "parallax-item-content-panel-divider">
+    <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-beta">Beta (Ongoing)</span>,<br>
-    <span class = "parallax-item-development-date">1 March 2025 -</span><br>
-    <b>Status:</b> <span class = "parallax-item-content-panel-status-indicator primary">Primary Project</span>
-    <div class = "parallax-item-content-panel-body-text">
+    <span class = "date">1 March 2025 -</span><br>
+    <b>Status:</b> <span class = "status primary">Primary Project</span>
+    <div class = "contents">
       Gridded population and demographic statistics from 10000BC to the present. Time intervals are provided at 1000-year intervals from 10000BC to 1AD, at 100-year intervals from 1AD to 1700AD, at 10-year intervals from 1700AD to 1950AD, and at 1-year intervals from 1950AD onwards. All data is provided at 5-arcminute resolution on WGS84 Equirectangular.
       <br><br>
       Velkscala should be approached with caution in its current state. Its data is inherently scalable, but there may exist datapoint anomalies, especially regarding past urban settlements. We intend to resolve these issues following a general-purpose refactor and revamped methodology. Since 2024, Velkscala has been managed by CRD. Velkscala currently relies on hybridised HYDE3.3/McEvedy data.
-      <hr class = "parallax-item-content-panel-divider">
+      <hr class = "divider">
       <b>Releases:</b>
       <ul>
         <li>Velkscala 0.5 | <a href = "https://github.com/Confoederatio/Eoscala-Velkscala/archive/refs/tags/eoscala-1.0-velkscala-0.5.zip">Download</a> | <a href = "https://github.com/Confoederatio/Eoscala-Velkscala/tree/main">GitHub</a></li>
@@ -303,13 +303,13 @@ config.homepage.gallery.tiles = {
     background_opacity: 0.15,
     colour: "dark-grey",
     content: `<div class = "parallax-item-content-panel-title">Analytical Engine</div>
-    <hr class = "parallax-item-content-panel-divider">
+    <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-beta-ongoing">Beta (Ongoing)</span>,<br>
-    <span class = "parallax-item-development-date">27 October 2024 -</span><br>
-    <b>Status:</b> <span class = "parallax-item-content-panel-status-indicator primary">Primary Project</span>
-    <div class = "parallax-item-content-panel-body-text">
+    <span class = "date">27 October 2024 -</span><br>
+    <b>Status:</b> <span class = "status primary">Primary Project</span>
+    <div class = "contents">
       AnalyticalEngine (also known as <b>Project Orion</b>) is a development effort to open-source the entire core binary code of AOC3 and improve moddability by allowing for a custom NashornJS scripts in mods by providing an API for Event Conditions, Effects, Game Scopes, Modded Multiplayer (MP) support, as well as Custom Mapmodes and Custom UIs.
-      <hr class = "parallax-item-content-panel-divider">
+      <hr class = "divider">
       <b>Documentation:</b> <a href = "https://confoederatiodocs.info/CTD/AnalyticalEngine">Confoederatio Docs</a>
       <b>Links:</b> <a href = "http://www.ageofcivilizationsgame.com/topic/252006-analyticalengine-custom-uis-mapmodes-event-scripting-modded-multiplayer-and-tooltips/">Forums</a> | <a href = "https://github.com/Confoederatio/AnalyticalEngine">GitHub</a> | <a href = "https://steamcommunity.com/sharedfiles/filedetails/?id=3429582135&searchtext=analyticalengine">Steam</a>
       <b>Releases:</b>
@@ -340,11 +340,11 @@ config.homepage.gallery.tiles = {
     background_opacity: 0.4,
     colour: "mauve",
     content: `<div class = "parallax-item-content-panel-title">Triumph & Tragedy I</div>
-    <hr class = "parallax-item-content-panel-divider">
+    <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-complete">Complete</span>,<br>
-    <span class = "parallax-item-development-date">22 April 2020 - 1 September 2021</span><br>
-    <b>Status:</b> <span class = "parallax-item-content-panel-status-indicator secondary">Secondary Project</span>
-    <div class = "parallax-item-content-panel-body-text">
+    <span class = "date">22 April 2020 - 1 September 2021</span><br>
+    <b>Status:</b> <span class = "status secondary">Secondary Project</span>
+    <div class = "contents">
       <b>'Civilisation in a Bot'.</b> A full desktop experience disguised as a Discord bot, Triumph & Tragedy I offers you the chance to found your very own nation and take it through the ages: expand sprawling urban settlements - experience the tumult of the Industrial Revolution - and stand by the sidelines or duke it out in massive world wars. How you lead your nation is up to you.
       <br><br>
       <b>From Research and Economies to Combat.</b> Through the Renaissance to the Digital Age, Triumph & Tragedy I is an all-encompassing game with everything from submarine warfare to the housing and infrastructure of your cities. Explore hundreds of technologies, units, and buildings, and unlock new mechanics to play with in an ever-changing world - all underneath a single Discord bot.
@@ -352,7 +352,7 @@ config.homepage.gallery.tiles = {
       <b>Huge World Maps.</b> Armies, cities, goods, and colonists are no longer tied to numerical abstractions, but actual objects on a map that spans the globe and over 14.000 provinces. From the Siberian Wastes to the depths of the Amazon to fictional planets, each new map is guaranteed to bring with it new memories and scenarios.
       <br><br>
       <b>Modding Compatibility.</b> With an in-depth backend JSON-based modding API allowing for the customisation of buildings, units, governments, laws, events and technologies, building what may seem like an entirely new game is never more than a few lines of text away.
-      <hr class = "parallax-item-content-panel-divider">
+      <hr class = "divider">
       <b>Releases:</b>
       <ul>
         <li>RP5.2 | <a href = "https://github.com/Confoederatio/RP5.2/releases">Download</a> | <a href = "https://github.com/Confoederatio/RP5.2">GitHub</a></li>
@@ -392,13 +392,13 @@ config.homepage.gallery.tiles = {
     background_opacity: 0.4,
     colour: "salmon",
     content: `<div class = "parallax-item-content-panel-title">Triumph & Tragedy II</div>
-    <hr class = "parallax-item-content-panel-divider">
+    <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-complete">Complete (Ongoing)</span>,<br>
-    <span class = "parallax-item-development-date">22 April 2021 -</span><br>
-    <b>Status:</b> <span class = "parallax-item-content-panel-status-indicator primary">Primary Project</span>
-    <div class = "parallax-item-content-panel-body-text">
+    <span class = "date">22 April 2021 -</span><br>
+    <b>Status:</b> <span class = "status primary">Primary Project</span>
+    <div class = "contents">
       An ambitious sequel to the original game, T&T II simulates hundreds of millions of people on the individual-level from the bottom up to create complex economic chains and societal mechanics capable of driving entire nations. From world-spanning supply chains to the military logistics of a single company, to the biodiversity of a province and everything in between, Triumph & Tragedy II will be a game that holds no bars.
-      <hr class = "parallax-item-content-panel-divider">
+      <hr class = "divider">
       <b>AI.</b> Treated as part of the core game, managing and creating your own AI bureaucrats in order to oversee mechanics for you in this vast simulation is absolutely essential to the continued survival of your nation-state. But watch out! You might not be the only one able to set mandates for your 'governors' and 'ministers' ..
       <br><br>
       <b>Creative Freedom.</b> Adjust the uniforms of your army to perfection, construct monuments that stand the test of time, or choose the staple crops of your people: Triumph & Tragedy II will offer unparalleled freedom in a sandbox-like environment. Choose what mechanics you want to play with, and leave the rest to your AI bureaucracy.
@@ -406,7 +406,7 @@ config.homepage.gallery.tiles = {
       <b>Gamechanger.</b> From the Seven Years' War to the Rise of Rome, Triumph & Tragedy II will offer the ability to recreate historical, alt-history, and even entirely fictional scenarios without having to edit a single file. Create mos from the comfort of Discord with a built-in editor and preview your work in real time. We give the tools for you to create.
       <br><br>
       <b>Simulate Everything.</b> From the biodiversity of the Great Plains during the High Renaissance all the way to the highest echelons of government, it doesn't matter in Triumph & Tragedy II - everything is simulated at the most granular level possible to provide depth and engineer an experience unlike any other.
-      <hr class = "parallax-item-content-panel-divider">
+      <hr class = "divider">
       <b>Releases:</b>
       <ul>
         <li>1.3.3 Lazytrisk | <a href = "#">Download</a> | <a href = "#">GitHub</a></li>
@@ -437,9 +437,9 @@ config.homepage.gallery.tiles = {
     colour: "yellow",
     content: `<div class = "parallax-item-content-panel-title">System Dynamics</div>
     <b>Development:</b> <span class = "parallax-item-complete">Complete</span>,<br>
-    <span class = "parallax-item-development-date">10 June 2021 - 28 April 2023</span><br>
-    <b>Status:</b> <span class = "parallax-item-content-panel-status-indicator secondary">Secondary Project</span>
-    <div class = "parallax-item-content-panel-body-text">
+    <span class = "date">10 June 2021 - 28 April 2023</span><br>
+    <b>Status:</b> <span class = "status secondary">Secondary Project</span>
+    <div class = "contents">
       System Dynamics is a ground-up refactor and reconstruction of Triumph & Tragedy I on a new modular grand-strategy engine, Gamechanger, to lead T&T II development into the future. Interact with your nation in private game channels, set up custom game scenarios, install Triumph & Tragedy II for your own server, and modify it as you wish. 
       <br><br>
       System Dynamics is designed for customisability and long-term support.
@@ -459,11 +459,11 @@ config.homepage.gallery.tiles = {
     colour: "orange",
     content: `<div class = "parallax-item-content-panel-title">Into Modernity</div>
     <b>Development:</b> <span class = "parallax-item-complete">Complete (Ongoing)</span>,<br>
-    <span class = "parallax-item-development-date">28 April 2023 -</span><br>
-    <b>Status:</b> <span class = "parallax-item-content-panel-status-indicator secondary">Secondary Project</span>
-    <div class = "parallax-item-content-panel-body-text">
+    <span class = "date">28 April 2023 -</span><br>
+    <b>Status:</b> <span class = "status secondary">Secondary Project</span>
+    <div class = "contents">
       A complete overhaul of T&T II's economy, labour markets, consumer psychology, spending, and global value and production chains are rendered in stoichiometric and terrain-specific detail. Specialise in goods and resources, manage trade routes, and build amenities for your citizenry.
-      <hr class = "parallax-item-content-panel-divider">
+      <hr class = "divider">
       <b>Detailed Demography.</b> Into Modernity scraps previous population figures by replacing them with a detailed Leslie Matrix/Migration Gravity Model system of demography with full age, gender, and TFR modelling. Pops are split up into Wealth Pools which hold the same job in the same building, from which their wages, wealth, savings/investment, and spending are calculated.
       <br><br>
       <b>Full Military Logistics.</b> Provide full-spectrum logistics to your units and their necessary production chains or lose the war. Into Modernity provides total ORBAT and backline/frontline modelling for combat in addition to introducing more granular air warfare and movement speeds.
@@ -487,8 +487,8 @@ config.homepage.gallery.tiles = {
     colour: "blue",
     content: `<div class = "parallax-item-content-panel-title">Proxy Cables</div>
     <b>Development:</b> <span class = "parallax-item-in-planning">In Planning</span>,<br>
-    <b>Status:</b> <span class = "parallax-item-content-panel-status-indicator tertiary">Tertiary Project</span>
-    <div class = "parallax-item-content-panel-body-text">
+    <b>Status:</b> <span class = "status tertiary">Tertiary Project</span>
+    <div class = "contents">
       Storytelling has always been a critical element to Triumph & Tragedy II, and we aim to enrich that experience through the introduction of Proxy Cables. Decisions, modular governments, more events, and dynamic political parties and scenes will help bring your governance to life alongside overhauled diplomatic UIs, a new espionage mechanic, influence, and modern era mechanics, with a particular focus on the Cold War.
     </div>`,
   },
@@ -506,8 +506,8 @@ config.homepage.gallery.tiles = {
     colour: "dark-grey",
     content: `<div class = "parallax-item-content-panel-title">Last Man Standing</div>
     <b>Development:</b> <span class = "parallax-item-in-planning">In Planning</span>,<br>
-    <b>Status:</b> <span class = "parallax-item-content-panel-status-indicator tertiary">Tertiary Project</span>
-    <div class = "parallax-item-content-panel-body-text">
+    <b>Status:</b> <span class = "status tertiary">Tertiary Project</span>
+    <div class = "contents">
       The final redefinition of warfare in all its logistical intricacy, Last Man Standing attempts to offer maximum flexibility whilst stripping away micromanagement through the use of new battleplans, officer corps, and other mechanics whilst allowing for fine adjustments at the most granular levels of detail. Combat will move along a Levies > Set-Piece Battles > Rapid Manoeuvre > Frontline > Contemporary Warfare System, whilst unit customisation, equipment designers, and military production chains will be added alongside special abilities for units and modder-friendly APIs.
       <br><br>
       AIs will now control other nations as part of Last Man Standing, and the mod-creator will be flushed out to full WYSIWYG capability to reflect the final update and release of Triumph & Tragedy II alongside Singleplayer (SP) campaigns.
@@ -529,9 +529,9 @@ config.homepage.gallery.tiles = {
     colour: "dark-blurple",
     content: `<div class = "parallax-item-content-panel-title">System Dynamics</div>
     <b>Development:</b> <span class = "parallax-item-complete">Complete</span>,<br>
-    <span class = "parallax-item-development-date">10 June 2021 - 28 April 2023</span><br>
-    <b>Status:</b> <span class = "parallax-item-content-panel-status-indicator secondary">Secondary Project</span>
-    <div class = "parallax-item-content-panel-body-text">
+    <span class = "date">10 June 2021 - 28 April 2023</span><br>
+    <b>Status:</b> <span class = "status secondary">Secondary Project</span>
+    <div class = "contents">
       System Dynamics is a ground-up refactor and reconstruction of Triumph & Tragedy I on a new modular grand-strategy engine, Gamechanger, to lead T&T II development into the future. Interact with your nation in private game channels, set up custom game scenarios, install Triumph & Tragedy II for your own server, and modify it as you wish. 
       <br><br>
       System Dynamics is designed for customisability and long-term support.
@@ -592,16 +592,16 @@ config.homepage.gallery.tiles = {
     background_opacity: 0.4,
     colour: "midnight-blue",
     content: `<div class = "parallax-item-content-panel-title">11:59</div>
-    <hr class = "parallax-item-content-panel-divider">
+    <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-complete">Complete</span>,<br>
-    <span class = "parallax-item-development-date">22 November 2018 - 17 March 2020</span><br>
-    <b>Status:</b> <span class = "parallax-item-content-panel-status-indicator tertiary">Tertiary Project</span>
-    <div class = "parallax-item-content-panel-body-text">
+    <span class = "date">22 November 2018 - 17 March 2020</span><br>
+    <b>Status:</b> <span class = "status tertiary">Tertiary Project</span>
+    <div class = "contents">
       <b>AOC2:</b><br><br>
       Formerly developed for the mobile grand-strategy game Age of Civilisations II, 11:59 seeks to bring the pivotal events of the Cold War to the game using a Paradox modding paradigm. Due to game limitations, and the eventual abandonment of AOC2 itself, development was suspended in 2020.
       <br><br>
       All 11:59 mod work has since been moved to AOC3/AnalyticalEngine to better support 11:59 in the future.
-      <hr class = "parallax-item-content-panel-divider">
+      <hr class = "divider">
       <b>Links:</b> <a href = "http://www.ageofcivilizationsgame.com/topic/5090-1159-a-cold-war-mod/">Forums</a> | <a href = "https://www.moddb.com/mods/1159-a-cold-war-mod">ModDB</a>
       <b>Releases:</b>
       <ul>
@@ -610,7 +610,7 @@ config.homepage.gallery.tiles = {
       <br>
       <b>AOC3:</b><br><br>
       Built on top of a new open-source injection engine (AnalyticalEngine) for Age of Civilisations III, 11:59 brings the economic and political intrigue of the First and Second Cold Wars to AOC3 between 1946-2092. Development of the mod has been handed over to Confoederatio Technical Division, and it is also used as an example for other game mods developed using AnalyticalEngine.
-      <hr class = "parallax-item-content-panel-divider">
+      <hr class = "divider">
       <b>Links:</b> <a href = "https://github.com/Confoederatio/AnalyticalEngine/tree/main/src/mods/11.59">GitHub</a>
     </div>`,
   },
@@ -653,11 +653,11 @@ config.homepage.gallery.tiles = {
     
     colour: "copper",
     content: `<div class = "parallax-item-content-panel-title">Universal Framework</div>
-    <hr class = "parallax-item-content-panel-divider">
+    <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-complete">Complete, Ongoing</span>,<br>
-    <span class = "parallax-item-development-date">15 March 2024 -</span><br>
-    <b>Status:</b> <span class = "parallax-item-content-panel-status-indicator secondary">Secondary  Project</span>
-    <div class = "parallax-item-content-panel-body-text">
+    <span class = "date">15 March 2024 -</span><br>
+    <b>Status:</b> <span class = "status secondary">Secondary  Project</span>
+    <div class = "contents">
       The bedrock of future Confoederatio development, Universal Framework is designed as a modular JS library and software engine for developer quality-of-life and ease of use, with a particular focus towards UI, maths, and statistics. These modules are split up as follows:
       <ul>
         <li>ABRS (Automated Backup and Recovery System)</li>
@@ -675,7 +675,7 @@ config.homepage.gallery.tiles = {
         <li>Pathfinding</li>
         <li>Strings (NLP, Markdown Formatting)</li>
       </ul>
-      <hr class = "parallax-item-content-panel-divider">
+      <hr class = "divider">
       <b>Links:</b> <a href = "https://github.com/Confoederatio/UniversalFramework/tree/main/Browser%20UF">GitHub (Browser)</a> | <a href = "https://github.com/Confoederatio/UniversalFramework/tree/main/Electron%20UF">GitHub (Electron)</a> | <a href = "https://github.com/Confoederatio/UniversalFramework/tree/main/Nashorn%20UF">GitHub (Nashorn)</a> | <a href = "https://github.com/Confoederatio/UniversalFramework/tree/main/Node%20UF">GitHub (Node)</a><br>
       <b>Releases:</b>
       <ul>
@@ -704,13 +704,13 @@ config.homepage.gallery.tiles = {
     
     colour: "light-purple",
     content: `<div class = "parallax-item-content-panel-title">Scriptly</div>
-    <hr class = "parallax-item-content-panel-divider">
+    <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-complete">Complete (Ongoing)</span>,<br>
-    <span class = "parallax-item-development-date">5 November 2024</span><br>
-    <b>Status:</b> <span class = "parallax-item-content-panel-status-indicator secondary">Secondary Project</span>
-    <div class = "parallax-item-content-panel-body-text">
+    <span class = "date">5 November 2024</span><br>
+    <b>Status:</b> <span class = "status secondary">Secondary Project</span>
+    <div class = "contents">
       Scriptly provides both CLI/GUI-application templates that utilise Universal Framework to be built on top of, functioning as a bootstrap software engine for rapid iteration. Used for everything from raster/research-level modelling to quick I/O tasks, Scriptly's main use-case is to serve as a stopgap for more complex programmes that may still be in the development pipeline.
-      <hr class = "parallax-item-content-panel-divider">
+      <hr class = "divider">
       <b>Releases:</b>
       <ul>
         <li>1.0 Scriptly | <a href = "https://github.com/Confoederatio/Scriptly">GitHub</a>
@@ -803,10 +803,10 @@ config.homepage.gallery.tiles = {
     colour: "yellow",
     content: `
     <div class = "parallax-item-content-panel-title">Physical Holdings</div>
-    <hr class = "parallax-item-content-panel-divider">
-    <div class = "parallax-item-content-panel-body-text">
+    <hr class = "divider">
+    <div class = "contents">
       The Physical Holdings of the Preservés are held in physical edition by the Preservés des Confoederatio. They are available by private inquiry if needed, with current digitisation and translation efforts working on bringing these collections to the Digital Preservés.
-      <hr class = "parallax-item-content-panel-divider">
+      <hr class = "divider">
       <b>World Atlases:</b> Sorted by <u>[Period Covered] - Name, Year of Publication - Quality. Language.</u>
       <ul>
         <li>Westermann 1972 - [590000BC-1972AD] - Westermann Großer Atlas zur Weltgeschichte, 1972 - Q-HIGH. German. | Preservés | Discord | Gdrive</li>
@@ -873,8 +873,8 @@ config.homepage.gallery.tiles = {
     colour: "light-grey",
     content: `
     <div class = "parallax-item-content-panel-title">Digital Preservés</div>
-    <hr class = "parallax-item-content-panel-divider">
-    <div class = "parallax-item-content-panel-body-text">
+    <hr class = "divider">
+    <div class = "contents">
       The Digital Preservés refer to the digital holdings of the Preservés des Confoederatio, typically backed up on multiple mirrors and fully available for download and viewing. You can access the Digital Preservés either through Confoederatio Docs, on Discord, or on Gdrive as backup mirrors.
       <br><br>
       <b>World Atlases:</b> Sorted by <u>[Period Covered] - Name, Year of Publication - Quality. Language.</u>

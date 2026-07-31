@@ -99,55 +99,56 @@ section#scene {
   max-height: calc(100% - 20dvh - 8px);
 }
 .parallax-item-content-panel > .content-wrapper > .text-wrapper {
-    margin-right: 2rem;
-    max-width: 40rem;
-}
+  margin-right: 2rem;
+  max-width: 40rem;
 
-    /* -- Inside element styling -- */
-.parallax-item-content-panel-title {
-  color: white;
-  font-family: var(--website-primary-font), sans-serif;
-  font-size: 3dvh;
-  font-weight: 700;
+  /* -- Inside element styling -- */
+  .contents {
+    margin-top: 1rem;
+
+    font-size: 1.25rem;
+    font-weight: 100;
+
+    b { font-weight: 700; }
+  }
+  .title {
+    color: white;
+    font-family: var(--website-primary-font), sans-serif;
+    font-size: 3dvh;
+    font-weight: 700;
     margin-bottom: 1rem;
-  margin-right: 1.5dvh;
+    margin-right: 1.5dvh;
 
-  text-transform: uppercase;
-}
-.parallax-item-content-panel-divider {
-  background-color: white;
-  margin-top: 1.5dvh;
-  margin-bottom: 1.5dvh;
-  margin-right: 85%;
-}
-.parallax-item-content-panel-divider.added-margin {
-  margin-left: 0dvh;
-  margin-top: 2dvh;
-}
-.parallax-item-development-date {
-  margin-bottom: 0.5dvh;
-  margin-left: 0.5dvh;
-  font-size: 1.5dvh;
-}
-.parallax-item-content-panel-status-indicator.primary {
-  font-weight: 400;
-}
-.parallax-item-content-panel-status-indicator.secondary {
-  font-weight: 300;
-}
-.parallax-item-content-panel-status-indicator.tertiary {
-  font-weight: 200;
-}
-.parallax-item-content-panel-status-indicator.suspended {
-  font-weight: 100;
-}
-.parallax-item-content-panel-body-text {
-  margin-top: 1rem;
-
-  font-size: 1.25rem;
-  font-weight: 100;
+    text-transform: uppercase;
+  }
   
-  b { font-weight: 700; }
+  .divider {
+    background-color: white;
+    margin-top: 1.5dvh;
+    margin-bottom: 1.5dvh;
+    margin-right: 85%;
+  }
+  .divider.added-margin {
+    margin-left: 0dvh;
+    margin-top: 2dvh;
+  }
+  .date {
+    margin-bottom: 0.5dvh;
+    margin-left: 0.5dvh;
+    font-size: 1.5dvh;
+  }
+  .status.primary {
+    font-weight: 400;
+  }
+  .status.secondary {
+    font-weight: 300;
+  }
+  .status.tertiary {
+    font-weight: 200;
+  }
+  .status.suspended {
+    font-weight: 100;
+  }
 }
 
 /* -- Buttons -- */

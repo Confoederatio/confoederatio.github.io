@@ -556,7 +556,7 @@ window.HomepageGallery = class extends window.WebComponent {
 			let all_panels = this.element.querySelectorAll(".content-wrapper");
 			for (let i = 0; i < all_panels.length; i++) {
 				let title = all_panels[i].querySelector(
-					".parallax-item-content-panel-title",
+					".title",
 				);
 				if (!title) continue;
 				let id = all_panels[i].id

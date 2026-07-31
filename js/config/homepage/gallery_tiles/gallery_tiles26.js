@@ -13,7 +13,7 @@ config.homepage.gallery.tiles = {
     y: 28,
     
     colour: "light-blue",
-    content: `<div class = "parallax-item-content-panel-title">CRD</div>
+    content: `<div class = "title">CRD</div>
     <hr class = "divider">
     <div class = "contents">
       <b>Confoederatio, Research Division</b>, also known as <u>CRD</u>, works on academic datasets and tooling for their maintenance and production. Most tasks are applied, typically to spatiotemporal data and social systems or simulations. It is directly analogous to the Research Divisions of other data science studios.
@@ -41,7 +41,7 @@ config.homepage.gallery.tiles = {
     y: 32,
     
     colour: "light-grey",
-    content: `<div class = "parallax-item-content-panel-title">Datasets</div>
+    content: `<div class = "title">Datasets</div>
     <hr class = "divider">
     <div class = "contents">
       Open-access datasets from Confoederatio typically focus on long-term spatiotemporal data such as estimated GDP PPP, population, urban growth, etc. with coverage from 10000BC up until the present day at standard, structured resolution for both academic researchers and data scientists.
@@ -88,7 +88,7 @@ config.homepage.gallery.tiles = {
     animation: "livemap-collation",
     background_image: "gfx/interface/tiles/livemap_collation.png",
     background_opacity: 0.3,
-    content: `<div id = "georeferencer-content-wrapper" class = "parallax-item-content-panel-title">Livemap/Collation</div>
+    content: `<div id = "georeferencer-content-wrapper" class = "title">Livemap/Collation</div>
     <hr class = "divider">
     <div class = "contents">
       <div id = "georeferencer-preview" class = "preview-image-container">
@@ -139,7 +139,7 @@ config.homepage.gallery.tiles = {
     y: 68,
     
     colour: "bright-yellow",
-    content: `<div class = "parallax-item-content-panel-title">Naissance GIS</div>
+    content: `<div class = "title">Naissance GIS</div>
     <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-beta">Beta (Ongoing)</span>,<br>
     <span class = "date">6 April 2023 -</span><br>
@@ -173,7 +173,7 @@ config.homepage.gallery.tiles = {
     y: 32,
     
     colour: "dark-grey",
-    content: `<div class = "parallax-item-content-panel-title">Eoscala</div>
+    content: `<div class = "title">Eoscala</div>
     <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-complete">Complete (Ongoing)</span>,<br>
     <span class = "date">1 March 2025 -</span><br>
@@ -220,7 +220,7 @@ config.homepage.gallery.tiles = {
     y: 16,
     
     colour: "salmon",
-    content: `<div class = "parallax-item-content-panel-title">Velkscala</div>
+    content: `<div class = "title">Velkscala</div>
     <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-beta">Beta (Ongoing)</span>,<br>
     <span class = "date">1 March 2025 -</span><br>
@@ -267,6 +267,18 @@ config.homepage.gallery.tiles = {
     y: 28,
     
     colour: "forest-green",
+    content: `<div class = "title">CTD</div>
+    <hr class = "divider">
+    <div class = "contents">
+      <b>Confoederatio, Technical Division</b>, also known as <u>CTD</u>, services technical infrastructure and internal tools, such as software engines/IDEs, in addition to networking and documentation. Unlike <u>CRD</u>, its research is mostly focussed on computer science.
+      <br><br>
+      CTDs flagship products are <b>Vercengen</b>, its primary software engine, and <b>Unitel</b>, which functions as a replacement for traditional Big Tech services inside Confoederatio.
+      <br><br>
+      <hr class = "divider">
+      <br>
+      <img src = "gfx/interface/logos/ctd_coat_of_arms_logo.png" width = "100%">
+    </div>
+    `
   },
   ctd_games: {
     name: "CTD<br>Games",
@@ -302,7 +314,7 @@ config.homepage.gallery.tiles = {
     background_image: `gfx/interface/tiles/analytical_engine_tile.png`,
     background_opacity: 0.15,
     colour: "dark-grey",
-    content: `<div class = "parallax-item-content-panel-title">Analytical Engine</div>
+    content: `<div class = "title">Analytical Engine</div>
     <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-beta-ongoing">Beta (Ongoing)</span>,<br>
     <span class = "date">27 October 2024 -</span><br>
@@ -339,7 +351,7 @@ config.homepage.gallery.tiles = {
     background_image: `gfx/interface/tiles/triumph_and_tragedy_icon_no_text.png`,
     background_opacity: 0.4,
     colour: "mauve",
-    content: `<div class = "parallax-item-content-panel-title">Triumph & Tragedy I</div>
+    content: `<div class = "title">Triumph & Tragedy I</div>
     <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-complete">Complete</span>,<br>
     <span class = "date">22 April 2020 - 1 September 2021</span><br>
@@ -391,7 +403,7 @@ config.homepage.gallery.tiles = {
     background_image: `gfx/interface/tiles/battle_of_the_leyte_gulf.png`,
     background_opacity: 0.4,
     colour: "salmon",
-    content: `<div class = "parallax-item-content-panel-title">Triumph & Tragedy II</div>
+    content: `<div class = "title">Triumph & Tragedy II</div>
     <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-complete">Complete (Ongoing)</span>,<br>
     <span class = "date">22 April 2021 -</span><br>
@@ -435,7 +447,7 @@ config.homepage.gallery.tiles = {
     y: 84,
     
     colour: "yellow",
-    content: `<div class = "parallax-item-content-panel-title">System Dynamics</div>
+    content: `<div class = "title">System Dynamics</div>
     <b>Development:</b> <span class = "parallax-item-complete">Complete</span>,<br>
     <span class = "date">10 June 2021 - 28 April 2023</span><br>
     <b>Status:</b> <span class = "status secondary">Secondary Project</span>
@@ -457,7 +469,7 @@ config.homepage.gallery.tiles = {
     y: 84,
     
     colour: "orange",
-    content: `<div class = "parallax-item-content-panel-title">Into Modernity</div>
+    content: `<div class = "title">Into Modernity</div>
     <b>Development:</b> <span class = "parallax-item-complete">Complete (Ongoing)</span>,<br>
     <span class = "date">28 April 2023 -</span><br>
     <b>Status:</b> <span class = "status secondary">Secondary Project</span>
@@ -485,7 +497,7 @@ config.homepage.gallery.tiles = {
     y: 68,
     
     colour: "blue",
-    content: `<div class = "parallax-item-content-panel-title">Proxy Cables</div>
+    content: `<div class = "title">Proxy Cables</div>
     <b>Development:</b> <span class = "parallax-item-in-planning">In Planning</span>,<br>
     <b>Status:</b> <span class = "status tertiary">Tertiary Project</span>
     <div class = "contents">
@@ -504,7 +516,7 @@ config.homepage.gallery.tiles = {
     y: 52,
     
     colour: "dark-grey",
-    content: `<div class = "parallax-item-content-panel-title">Last Man Standing</div>
+    content: `<div class = "title">Last Man Standing</div>
     <b>Development:</b> <span class = "parallax-item-in-planning">In Planning</span>,<br>
     <b>Status:</b> <span class = "status tertiary">Tertiary Project</span>
     <div class = "contents">
@@ -527,7 +539,7 @@ config.homepage.gallery.tiles = {
     y: 28,
     
     colour: "dark-blurple",
-    content: `<div class = "parallax-item-content-panel-title">System Dynamics</div>
+    content: `<div class = "title">System Dynamics</div>
     <b>Development:</b> <span class = "parallax-item-complete">Complete</span>,<br>
     <span class = "date">10 June 2021 - 28 April 2023</span><br>
     <b>Status:</b> <span class = "status secondary">Secondary Project</span>
@@ -591,7 +603,7 @@ config.homepage.gallery.tiles = {
     background_image: `gfx/interface/tiles/1159_logo.jpg`,
     background_opacity: 0.4,
     colour: "midnight-blue",
-    content: `<div class = "parallax-item-content-panel-title">11:59</div>
+    content: `<div class = "title">11:59</div>
     <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-complete">Complete</span>,<br>
     <span class = "date">22 November 2018 - 17 March 2020</span><br>
@@ -652,7 +664,7 @@ config.homepage.gallery.tiles = {
     y: 88,
     
     colour: "copper",
-    content: `<div class = "parallax-item-content-panel-title">Universal Framework</div>
+    content: `<div class = "title">Universal Framework</div>
     <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-complete">Complete, Ongoing</span>,<br>
     <span class = "date">15 March 2024 -</span><br>
@@ -703,7 +715,7 @@ config.homepage.gallery.tiles = {
     y: 88,
     
     colour: "light-purple",
-    content: `<div class = "parallax-item-content-panel-title">Scriptly</div>
+    content: `<div class = "title">Scriptly</div>
     <hr class = "divider">
     <b>Development:</b> <span class = "parallax-item-complete">Complete (Ongoing)</span>,<br>
     <span class = "date">5 November 2024</span><br>
@@ -742,6 +754,18 @@ config.homepage.gallery.tiles = {
     y: 28,
     
     colour: "orange",
+    content: `<div class = "title">CAD</div>
+    <hr class = "divider">
+    <div class = "contents">
+      <b>Confoederatio, Artistic Division</b>, also known as <u>CAD</u>, focuses on developing artistic assets, UI/UX, as well as cultural initiatives (art for art's sake), such as 3D digital twins, experimental worldbuilding (i.e. analogue countries to remove real-world political references, for use in wargaming/simulation), and traditional art.
+      <br><br>
+      Unlike other Divisions, it typically does not produce dedicated projects, but rather art series that try to expand the digital commons in a manner explicitly tailored for Confoederatio's needs.
+      <br><br>
+      <hr class = "divider">
+      <br>
+      <img src = "gfx/interface/logos/cad_coat_of_arms_logo.png" width = "100%">
+    </div>
+    `,
     dependencies: ["art_gallery", "preserves", "gearth_mc"],
   },
   art_gallery: {
@@ -774,6 +798,18 @@ config.homepage.gallery.tiles = {
     background_image: `gfx/interface/tiles/adriatic_square.png`,
     background_opacity: 0.6,
     colour: "sepia",
+    content: `<div class = "title">Preservés</div>
+    <hr class = "divider">
+    <div class = "contents">
+      Ré <b>Preservés des Confoederatio</b>, also known as the <u>Preservés</u>, is the physical and digital archives wing of Confoederatio, focused on the digitisation, translation, and preservation of historical and scientific works from the 19th to 21st centuries.
+      <br><br>
+      It is the only Division to maintain significant physical holdings, and exists to support research. Private inquests for academic resources in inventory can be made by emailing <a href = "mailto:vf@confoederatio.org">vf@confoederatio.org</a>.
+      <br><br>
+      <hr class = "divider">
+      <br>
+      <img src = "gfx/interface/logos/preserves_coat_of_arms_logo.png" width = "100%">
+    </div>
+    `,
     dependencies: ["digital_holdings", "physical_holdings"],
   },
   gearth_mc: {
@@ -802,7 +838,7 @@ config.homepage.gallery.tiles = {
     
     colour: "yellow",
     content: `
-    <div class = "parallax-item-content-panel-title">Physical Holdings</div>
+    <div class = "title">Physical Holdings</div>
     <hr class = "divider">
     <div class = "contents">
       The Physical Holdings of the Preservés are held in physical edition by the Preservés des Confoederatio. They are available by private inquiry if needed, with current digitisation and translation efforts working on bringing these collections to the Digital Preservés.
@@ -872,7 +908,7 @@ config.homepage.gallery.tiles = {
     
     colour: "light-grey",
     content: `
-    <div class = "parallax-item-content-panel-title">Digital Preservés</div>
+    <div class = "title">Digital Preservés</div>
     <hr class = "divider">
     <div class = "contents">
       The Digital Preservés refer to the digital holdings of the Preservés des Confoederatio, typically backed up on multiple mirrors and fully available for download and viewing. You can access the Digital Preservés either through Confoederatio Docs, on Discord, or on Gdrive as backup mirrors.

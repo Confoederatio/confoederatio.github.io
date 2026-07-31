@@ -74,7 +74,7 @@ section#scene {
   font-family: var(--website-tertiary-font), sans-serif;
   font-size: 1rem;
   height: 0;
-  width: calc(clamp(20rem, 25rem, 50dvw));
+  width: clamp(calc(22.5*16px), 25rem, 35dvw);
 
   transition: all 0.5s ease;
   z-index: 3;

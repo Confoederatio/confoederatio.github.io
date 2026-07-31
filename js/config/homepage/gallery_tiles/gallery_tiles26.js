@@ -50,11 +50,11 @@ config.homepage.gallery.tiles = {
       <br><br>
       <b>Histmap:</b>
       <ul>
-        <li>Eoscala (Historical Economics), 10000BC-2023AD</li>
-        <li>
-        Velkscala (Historical Population), 10000BC-2023AD
+        <li>Atlas (Borders), 10000BC-2026AD: De Facto, De Jure</li>
+        <li>Eoscala (Economics), 10000BC-2023AD: GDP PPP/Gini</li>
+        <li>Velkscala (Population), 10000BC-2023AD: Demographics/Land Use
         <ul>
-          <li>Stadestér (Urban Growth & Statistics), 3000BC-2025AD</li>
+          <li>Stadestér (Cities), 3000BC-2025AD: Area, Extent, Population</li>
         </ul>
         </li>
       </ul>

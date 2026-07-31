@@ -67,6 +67,9 @@
     z-index: 3;
   }
 }
+.about-body-container {
+  font-size: 1rem;
+}
 
 /* -- About Me elements styling -- */
 #about-me-section {

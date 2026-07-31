@@ -1,30 +1,45 @@
 <style>
     html {
-        --navbar-rem: 16px;
+        --navbar-rem: clamp(10px, 1.5dvw, 16px);
     }
-    @media (max-width: 1200px) { ic-navbar { --navbar-rem: 14px; } }
-    @media (max-width: 1000px) { ic-navbar { --navbar-rem: 12px; } }
-    @media (max-width: 768px) { ic-navbar { --navbar-rem: 10px; } }
+
+    #navbar-container {
+        height: auto;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100dvw;
+        z-index: 99;
+        pointer-events: none;
+    }
+
     ic-navbar {
-        --height: calc(4*var(--navbar-rem));
-        --item-margin: calc(0.5*var(--navbar-rem));
-        --item-padding: calc(var(--item-margin)*2);
+        --height: calc(4 * var(--navbar-rem));
+        --item-margin: calc(0.5 * var(--navbar-rem));
+        --item-padding: calc(var(--item-margin) * 2);
         --bg-dropdown: rgba(255, 255, 255, 0.95);
         --text-dropdown: rgba(0, 0, 0, 0.85);
 
         display: flex;
         align-items: center;
-        position: fixed;
-        left: 0;
         height: var(--height);
-        top: 0;
-        width: 100dvw;
-        background-color: rgba(0, 0, 0, 0.15);
-        backdrop-filter: blur(5px);
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         color: white;
         font-family: var(--website-primary-font), "Barlow", sans-serif;
-        z-index: 99;
+        width: 100dvw;
+        overflow-x: auto;
+        position: relative;
+        pointer-events: auto;
+
+        /* Background blur pseudo-element prevents backdrop-filter clipping fixed elements */
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(5px);
+            z-index: -1;
+        }
 
         /* Top Level Menu */
         > ul {
@@ -35,7 +50,7 @@
             list-style: none;
             margin: 0;
             padding: 0;
-            font-size: calc(1.5*var(--navbar-rem));
+            font-size: calc(1.5 * var(--navbar-rem));
             font-weight: 100;
             text-transform: uppercase;
 
@@ -52,6 +67,10 @@
                 height: 100%;
                 padding: 0 var(--item-padding);
                 position: relative;
+
+                /* Scope and assign anchor to each top-level list item */
+                anchor-scope: --nav-item;
+                anchor-name: --nav-item;
 
                 > a {
                     position: relative;
@@ -84,34 +103,20 @@
                 }
             }
             > li:has(+ line) {
-                padding-right: calc(var(--item-padding) + var(--item-margin));
-                
-                > ul {
-                    left: auto;
-                    right: 0;
-                    padding-right: var(--item-margin);
-                }
+                padding-right: calc(
+                        var(--item-padding) + var(--item-margin)
+                );
             }
-            > line { margin-left: auto; }
+            > line {
+                margin-left: auto;
+            }
             > line ~ li {
                 padding-left: calc(var(--item-padding) + var(--item-margin));
-                
-                > ul {
-                    left: 0;
-                    right: auto;
-                }
-            }
-            > line ~ li ul li ul {
-                left: 100%;
-                right: auto;
             }
         }
 
         /* General Dropdown Container */
         ul li ul {
-            position: absolute;
-            display: grid;
-            grid-template-columns: max-content;
             background-color: var(--bg-dropdown);
             backdrop-filter: blur(10px);
             color: rgba(0, 0, 0, 0);
@@ -126,17 +131,21 @@
             width: max-content;
             z-index: 100;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            
+
             transition: all 0.8s ease, opacity 0.4s ease;
         }
 
-        /* LEVEL 1: Directly under the navbar */
+        /* LEVEL 1: Fixed positioning anchored to top-level menu items */
         > ul > li > ul {
-            top: 100%;
+            position: fixed;
+            position-anchor: --nav-item;
+            top: anchor(bottom);
+            left: anchor(left);
         }
 
         /* LEVEL 2+: Flyouts to the side */
         ul li ul li ul {
+            position: absolute;
             top: 0;
             left: 100%;
         }
@@ -154,7 +163,7 @@
             padding: var(--item-padding);
             position: relative;
             display: block;
-            min-width: calc(10*var(--navbar-rem));
+            min-width: calc(10 * var(--navbar-rem));
             width: 100%;
             box-sizing: border-box;
 
@@ -188,18 +197,22 @@
                 }
             }
         }
-        ul li ul li:hover > a::after { transform: scaleX(1); }
+        ul li ul li:hover > a::after {
+            transform: scaleX(1);
+        }
 
         /* Two-column layout class */
         ul li ul.two-col {
+            display: grid;
             grid-template-columns: repeat(2, max-content);
             column-gap: calc(var(--navbar-rem));
         }
 
         .logo {
-            height: calc(3*var(--navbar-rem));
-            width: calc(3*var(--navbar-rem));
+            height: calc(3 * var(--navbar-rem));
+            width: calc(3 * var(--navbar-rem));
             margin: var(--item-margin);
+            flex-shrink: 0;
         }
         .logo:hover {
             content: url("gfx/interface/logos/confoederatio_logo.gif");
@@ -207,72 +220,74 @@
     }
 </style>
 
-<ic-navbar>
-  <a href = "https://confoederatio.org"><img src = "gfx/interface/logos/confoederatio_icon.png" class = "logo" draggable = "false"></a>
-  <ul>
-    <li>
-      <a>Datasets</a>
-      <ul> <!--class = "two-col"-->
-        <li><a href = "https://confoederatio.org/pages/dataview.html" target = "_blank">Atlas</a></li>
-        <li><a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala" target = "_blank">Eoscala</a></li>
-        <li><a href = "https://github.com/ConfoederatioVF/Collation" target = "_blank">Livemap/Collation</a></li>
-        <li><a href = "https://github.com/ConfoederatioVF/Stadester" target = "_blank">Stadestér</a></li>
-        <li><a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala" target = "_blank">Velkscala</a></li>
-      </ul>
-    </li>
-    <li>
-      <a>Tools</a>
-      <ul>
-        <li><a href = "https://github.com/ConfoederatioVF/AnalyticalEngine" target = "_blank">AnalyticalEngine</a></li>
-        <li><a href = "https://github.com/ConfoederatioVF/Naissance" target = "_blank">Naissance HGIS</a></li>
-        <li><a href = "https://github.com/ConfoederatioVF/Vercengen" target = "_blank">Scriptly IDE</a></li>
-        <li><a href = "https://confoederatio.org/pages/unitel" target = "_blank">Unitel</a></li>
-        <li><a href = "https://github.com/ConfoederatioVF/Vercengen/" target = "_blank">Vercengen</a></li>
-      </ul>
-    </li>
-    <line></line>
-    <li><a href = "https://confoederatiodocs.info/%F0%9F%93%B0+Blogs/Blogs" target = "_blank">Blogs</a></li>
-    <li>
-      <a>Documentation</a>
-      <ul>
-        <li><a href = "https://confoederatiodocs.info/" target = "_blank">Confoederatio Docs (Publish)</a></li>
-        <li><a href = "https://docs.confoederatio.org/" target = "_blank">Confoederatio Docs (Wiki)</a></li>
-        <li>
-          <a>CAD (Artistic) &raquo;</a>
-          <ul>
-            <li><a href = "https://github.com/ConfoederatioVF" target = "_blank">G-Earth/MC</a></li>
-            <li><a href = "https://github.com/ConfoederatioVF" target = "_blank">Preservés</a></li>
-          </ul>
-        </li>
-        <li>
-          <a>CRD (Research) &raquo;</a>
-          <ul>
-            <li><a href = "https://confoederatiodocs.info/CRD+(Confoederatio%2C+Research+Division)/Documentation/Histmap/Complex+Data+Schema" target = "_blank">Data Schema</a></li>
-            <li><a href = "https://confoederatiodocs.info/CRD+(Confoederatio%2C+Research+Division)/Documentation/Software/Naissance+HGIS/Naissance+HGIS" target = "_blank">Naissance HGIS</a></li>
-          </ul>
-        </li>
-        <li>
-          <a>CTD (Technical) &raquo;</a>
-          <ul>
-            <li><a href = "https://confoederatiodocs.info/CTD+(Confoederatio%2C+Technical+Division)/Documentation/Games/Analytical+Engine/Analytical+Engine" target = "_blank">AnalyticalEngine</a></li>
-            <li><a href = "https://github.com/Confoederatio/TriumphAndTragedy" target = "_blank">Gamechanger</a></li>
-            <li><a href = "https://confoederatio.org/Vercengen/" target = "_blank">Vercengen</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <a>Links</a>
-      <ul>
-        <li><a href = "https://forms.gle/RYfKbGJQLbJGY9kt7" target = "_blank">Apply for Membership</a></li>
-        <li><a href = "https://element.confoederatio.org/" target = "_blank">Confoederatio Element</a></li>
-        <li><a href = "https://discord.gg/midnight-548994743925997570" target = "_blank">Discord</a></li>
-        <li><a href = "mailto:vf@confoederatio.org" target = "_blank">Email</a></li>
-        <li><a href = "https://github.com/ConfoederatioVF" target = "_blank">GitHub</a></li>
-        <li><a href = "https://gitlab.com/confoederatio" target = "_blank">GitLab</a></li>
-        <li><a href = "https://www.youtube.com/@Confoederatio" target = "_blank">YouTube</a></li>
-        <li><a href = "https://zenodo.org/communities/confoederatio/" target = "_blank">Zenodo</a></li>
-      </ul>
-    </li>
-  </ul>
-</ic-navbar>
+<div id = "navbar-container">
+  <ic-navbar>
+    <a href = "https://confoederatio.org"><img src = "gfx/interface/logos/confoederatio_icon.png" class = "logo" draggable = "false"></a>
+    <ul>
+      <li>
+        <a>Datasets</a>
+        <ul> <!--class = "two-col"-->
+          <li><a href = "https://confoederatio.org/pages/dataview.html" target = "_blank">Atlas</a></li>
+          <li><a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala" target = "_blank">Eoscala</a></li>
+          <li><a href = "https://github.com/ConfoederatioVF/Collation" target = "_blank">Livemap/Collation</a></li>
+          <li><a href = "https://github.com/ConfoederatioVF/Stadester" target = "_blank">Stadestér</a></li>
+          <li><a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala" target = "_blank">Velkscala</a></li>
+        </ul>
+      </li>
+      <li>
+        <a>Tools</a>
+        <ul>
+          <li><a href = "https://github.com/ConfoederatioVF/AnalyticalEngine" target = "_blank">AnalyticalEngine</a></li>
+          <li><a href = "https://github.com/ConfoederatioVF/Naissance" target = "_blank">Naissance HGIS</a></li>
+          <li><a href = "https://github.com/ConfoederatioVF/Vercengen" target = "_blank">Scriptly IDE</a></li>
+          <li><a href = "https://confoederatio.org/pages/unitel" target = "_blank">Unitel</a></li>
+          <li><a href = "https://github.com/ConfoederatioVF/Vercengen/" target = "_blank">Vercengen</a></li>
+        </ul>
+      </li>
+      <line></line>
+      <li><a href = "https://confoederatiodocs.info/%F0%9F%93%B0+Blogs/Blogs" target = "_blank">Blogs</a></li>
+      <li>
+        <a>Documentation</a>
+        <ul>
+          <li><a href = "https://confoederatiodocs.info/" target = "_blank">Confoederatio Docs (Publish)</a></li>
+          <li><a href = "https://docs.confoederatio.org/" target = "_blank">Confoederatio Docs (Wiki)</a></li>
+          <li>
+            <a>CAD (Artistic) &raquo;</a>
+            <ul>
+              <li><a href = "https://github.com/ConfoederatioVF" target = "_blank">G-Earth/MC</a></li>
+              <li><a href = "https://github.com/ConfoederatioVF" target = "_blank">Preservés</a></li>
+            </ul>
+          </li>
+          <li>
+            <a>CRD (Research) &raquo;</a>
+            <ul>
+              <li><a href = "https://confoederatiodocs.info/CRD+(Confoederatio%2C+Research+Division)/Documentation/Histmap/Complex+Data+Schema" target = "_blank">Data Schema</a></li>
+              <li><a href = "https://confoederatiodocs.info/CRD+(Confoederatio%2C+Research+Division)/Documentation/Software/Naissance+HGIS/Naissance+HGIS" target = "_blank">Naissance HGIS</a></li>
+            </ul>
+          </li>
+          <li>
+            <a>CTD (Technical) &raquo;</a>
+            <ul>
+              <li><a href = "https://confoederatiodocs.info/CTD+(Confoederatio%2C+Technical+Division)/Documentation/Games/Analytical+Engine/Analytical+Engine" target = "_blank">AnalyticalEngine</a></li>
+              <li><a href = "https://github.com/Confoederatio/TriumphAndTragedy" target = "_blank">Gamechanger</a></li>
+              <li><a href = "https://confoederatio.org/Vercengen/" target = "_blank">Vercengen</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a>Links</a>
+        <ul>
+          <li><a href = "https://forms.gle/RYfKbGJQLbJGY9kt7" target = "_blank">Apply for Membership</a></li>
+          <li><a href = "https://element.confoederatio.org/" target = "_blank">Confoederatio Element</a></li>
+          <li><a href = "https://discord.gg/midnight-548994743925997570" target = "_blank">Discord</a></li>
+          <li><a href = "mailto:vf@confoederatio.org" target = "_blank">Email</a></li>
+          <li><a href = "https://github.com/ConfoederatioVF" target = "_blank">GitHub</a></li>
+          <li><a href = "https://gitlab.com/confoederatio" target = "_blank">GitLab</a></li>
+          <li><a href = "https://www.youtube.com/@Confoederatio" target = "_blank">YouTube</a></li>
+          <li><a href = "https://zenodo.org/communities/confoederatio/" target = "_blank">Zenodo</a></li>
+        </ul>
+      </li>
+    </ul>
+  </ic-navbar>
+</div>

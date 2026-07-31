@@ -92,6 +92,8 @@ section#scene {
   margin-right: 0;
   max-height: calc(99% - 3dvh);
   overflow: auto;
+  scrollbar-color: white transparent;
+  scrollbar-width: thin;
 }
 .parallax-item-content-panel.maximised > .content-wrapper {
   max-height: calc(100% - 20dvh - 8px);

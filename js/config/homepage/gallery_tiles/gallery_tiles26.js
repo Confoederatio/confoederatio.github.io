@@ -50,17 +50,17 @@ config.homepage.gallery.tiles = {
       <br><br>
       <b>Histmap:</b>
       <ul>
-        <li>Atlas (Borders), 10000BC-2026AD: De Facto, De Jure</li>
-        <li>Eoscala (Economics), 10000BC-2023AD: GDP PPP/Gini</li>
-        <li>Velkscala (Population), 10000BC-2023AD: Demographics/Land Use
+        <li><a href = "https://docs.confoederatio.org/en/Atlas">Atlas (Borders)</a>, 10000BC-2026AD: De Facto, De Jure</li>
+        <li><a href = "https://docs.confoederatio.org/en/Eoscala">Eoscala (Economics)</a>, 10000BC-2023AD: GDP PPP/Gini</li>
+        <li><a href = "https://docs.confoederatio.org/en/Velkscala">Velkscala (Population)</a>, 10000BC-2023AD: Demographics/Land Use
         <ul>
-          <li>Stadestér (Cities), 3000BC-2025AD: Area, Extent, Population</li>
+          <li><a href = "https://docs.confoederatio.org/en/Stadester">Stadestér (Cities)</a>, 3000BC-2025AD: Area, Extent, Population</li>
         </ul>
         </li>
       </ul>
       <b>Livemap:</b>
       <ul>
-        <li>Collation (OSINT), 2026AD-</li>
+        <li><a href = "https://docs.confoederatio.org/en/Collation">Collation (OSINT)</a>, 2026AD-</li>
       </ul>
     </div>
     `,
@@ -79,7 +79,7 @@ config.homepage.gallery.tiles = {
     y: 32,
     
     colour: "transparent-sepia",
-    dependencies: ["atlas", "eoscala", "stadester", "velkscala"],
+    dependencies: ["atlas", "eoscala", "stadester", "velkscala"]
   },
   
   livemap_collation: {

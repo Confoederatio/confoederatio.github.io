@@ -565,7 +565,7 @@ config.homepage.gallery.tiles = {
     name: "Unitel",
     animation: "unitel",
     background_image: `gfx/interface/logos/unitel_logo.png`,
-    background_opacity: 0.2,
+    background_opacity: 0.3,
     default_bookmark: true,
     default_pin: true,
     font_position: "top-left",

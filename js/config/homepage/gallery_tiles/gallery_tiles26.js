@@ -98,10 +98,17 @@ config.homepage.gallery.tiles = {
     background_opacity: 0.3,
     content: `<div id = "georeferencer-content-wrapper" class = "title">Livemap/Collation</div>
     <hr class = "divider">
+    <b>Development:</b> <span class = "parallax-item-beta-ongoing">Beta (Ongoing)</span>,<br>
+    <span class = "date">13 February 2026-</span>
+    <b>Status:</b> <span class = "status secondary">Secondary Project</span>
     <div class = "contents">
       <div id = "collation-preview" class = "preview-image-container">
         <img src = "https://docs.confoederatio.org/crd/collation/collation.jpg" class = "preview-image" id = "collation">
       </div>
+      <b>Collation</b>, sometimes called <u>Naissance Collation</u>, is our OSINT suite for  geospatialised news aggregation and tracking live events and ORBATs. Because its data pipelines are currently being consolidated, it requires local self-hosting and is mainly intended for developer use at its current stage.
+      <br><br>
+      Like the name suggests, Collation collates and hybridises various live data layers into a single intelligence/aggregation interface on a real-world map. Automated georeferencing from live browser scrapes is based on <b>Deprojector</b>.
+      <br><br>
       <div id = "georeferencer-preview" class = "preview-image-container">
         <img src = "gfx/interface/tiles/31.georeferencer.jpg" class = "preview-image" id = "georeferencer">
       </div>

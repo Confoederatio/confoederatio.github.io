@@ -1003,9 +1003,11 @@ config.homepage.gallery.tiles = {
       <hr class = "divider">
       <b>World Atlases:</b> Sorted by <u>[Period Covered] - Name, Year of Publication - Quality. Language.</u>
       <ul>
+        <li>Großer Historischer Weltatlas 1981 - [600000BC-1981AD] - Q-High. German. | Preservés | Discord | Datavault</li>
         <li>Westermann 1972 - [590000BC-1972AD] - Westermann Großer Atlas zur Weltgeschichte, 1972 - Q-HIGH. German. | Preservés | Discord | Gdrive</li>
         <li>Westermann 1995 - [590000BC-1995AD] - Westermann Großer Atlas zur Weltgeschichte, 1995 - Q-HIGH. German. | Preservés | Discord | Gdrive</li>
         <li>Gran Atlas Aguílar [1815AD-1954AD], Gran Atlas Aguílar - Q-HIGH. Spanish. | Preservés | Discord | Gdrive</li>
+        <li>Harmsworth [1907AD] - Harmsworth Universal Atlas and Gazetteer, 1907 - Q-MEDIUM. English. | Preservés | Discord</li>
         <li>Atlas Larousse Illustré [1900AD] - Atlas Larousse Illustré, 1900 - Q-MEDIUM. French. | Preservés | Discord | Gdrive</li>
         <li>Stielers Hand-Atlas [1901AD] - Stielers Hand-Atlas, 1901 - Q-HIGH. German. | Preservés | Discord | Gdrive</li>
         <li>The Historical Atlas of World War II [1937AD-1945AD] - The Historical Atlas of World War I, 2007  - Q-MEDIUM. English. | Preservés | Discord | Gdrive</li>

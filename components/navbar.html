@@ -1,6 +1,6 @@
 <style>
     html {
-        --navbar-rem: clamp(10px, 1.5dvw, 16px);
+        --navbar-rem: clamp(12px, 2.5vw, 16px);
     }
 
     #navbar-container {
@@ -8,14 +8,14 @@
         position: fixed;
         left: 0;
         top: 0;
-        width: 100dvw;
+        width: 100%;
         z-index: 99;
         pointer-events: none;
     }
 
     ic-navbar {
         --height: calc(4 * var(--navbar-rem));
-        --item-margin: calc(0.5*var(--navbar-rem));
+        --item-margin: calc(0.5 * var(--navbar-rem));
         --item-padding: calc(var(--item-margin) * 2);
         --bg-dropdown: rgba(255, 255, 255, 0.95);
         --text-dropdown: rgba(0, 0, 0, 0.85);
@@ -26,19 +26,33 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         color: white;
         font-family: var(--website-primary-font), "Barlow", sans-serif;
-        width: 100dvw;
-        overflow-x: scroll;
+        width: 100%;
+        overflow-x: auto;
         position: relative;
         pointer-events: auto;
+        box-sizing: border-box;
 
-        /* Background blur pseudo-element prevents backdrop-filter clipping fixed elements */
+        /* Hide scrollbars on mobile to prevent height squishing */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+
+        &::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        /* Background blur pseudo-element */
         &::before {
             content: "";
             height: var(--height);
             position: absolute;
             inset: 0;
             background-color: rgba(0, 0, 0, 0.15);
+
+            /* Webkit prefix + Hardware Acceleration trigger for Chrome Mobile */
+            -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
+            transform: translateZ(0);
+
             z-index: -1;
         }
 
@@ -104,9 +118,7 @@
                 }
             }
             > li:has(+ line) {
-                padding-right: calc(
-                        var(--item-padding) + var(--item-margin)
-                );
+                padding-right: calc(var(--item-padding) + var(--item-margin));
             }
             > line {
                 margin-left: auto;
@@ -119,6 +131,7 @@
         /* General Dropdown Container */
         ul li ul {
             background-color: var(--bg-dropdown);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             color: rgba(0, 0, 0, 0);
             list-style: none;
@@ -133,7 +146,9 @@
             z-index: 100;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
-            transition: all 0.8s ease, opacity 0.4s ease;
+            transition:
+                    all 0.8s ease,
+                    opacity 0.4s ease;
         }
 
         /* LEVEL 1: Fixed positioning anchored to top-level menu items */
@@ -213,7 +228,7 @@
             height: calc(3 * var(--navbar-rem));
             width: calc(3 * var(--navbar-rem));
             margin-left: var(--item-margin);
-            margin-top: calc(var(--item-margin)/2);
+            margin-top: calc(var(--item-margin) / 2);
             flex-shrink: 0;
         }
         .logo:hover {

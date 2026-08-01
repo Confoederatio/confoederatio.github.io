@@ -799,6 +799,16 @@ config.homepage.gallery.tiles = {
     y: 72,
     
     colour: "yellow",
+    content: `<div class = "title">Geospatiale</div>
+    <hr class = "divider">
+    <b>Development:</b> <span class = "parallax-item-complete">Complete</span>,<br>
+    <span class = "date">2 April 2025 -</span><br>
+    <div class = "contents">
+      <b>Geospatiale</b> is <u>Vercengen</u>'s built in heavy geoprocessing and render suite, used for raster timeseries, dasymetric mapping, neighbourhood physics, kNN-binning, OLS analysis, and other tasks. It is equally capable of georeferencing, warping, and rendering 3D geometries.
+      <br><br>
+      Geospatiale principally acts as a one-to-many translator through GeoJSON/GeoPNG (which serves as a vector-to-raster bridge). Less specialised operations rely on <a href =  "https://projects.confoederatio.org/Confoederatio/Turf.performant">Turf.performant</a>, our fork of <b>Turf.js</b>. Geospatiale is capable of tying into <b>Blacktraffic</b> via geospatial Ontologies.
+    </div>
+    `
   },
   universal_framework: {
     name: "UF",

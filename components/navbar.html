@@ -150,6 +150,7 @@
             position-anchor: --nav-item;
             top: anchor(bottom);
             left: anchor(left);
+            position-try-fallbacks: flip-inline;
         }
 
         /* LEVEL 2+: Flyouts to the side */
@@ -157,6 +158,7 @@
             position: absolute;
             top: 0;
             left: 100%;
+            position-try-fallbacks: flip-inline;
         }
 
         /* Show on Hover */
@@ -227,6 +229,23 @@
         .logo:hover {
             content: url("gfx/interface/logos/confoederatio_logo.gif");
         }
+    }
+
+    /* Remove all artificial margin hacks from top-level list items */
+    ic-navbar > ul > li {
+        padding: 0 var(--item-padding);
+    }
+
+    /* 1. Right-align Level 1 dropdowns for the last 2 menu items */
+    ic-navbar > ul > li:nth-last-child(-n + 2) > ul {
+        left: auto;
+        right: anchor(right);
+    }
+
+    /* 2. Open Level 2 flyouts to the LEFT for the last 2 menu items */
+    ic-navbar > ul > li:nth-last-child(-n + 2) ul li ul {
+        left: auto;
+        right: 100%;
     }
 </style>
 

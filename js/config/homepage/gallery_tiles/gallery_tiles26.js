@@ -163,15 +163,18 @@ config.homepage.gallery.tiles = {
     <span class = "date">6 April 2023 -</span><br>
     <b>Status:</b> <span class = "status primary">Primary Project</span>
     <div class = "contents">
-      Naissance is an open-source historical 3D GIS built for proxy modelling, raster input and wrangling, simulation and statistical analysis with undo/redo trees and version control with user-first UI design. We aim to eventually enable modernised data visualisation and mapmaking to create interactive atlases, different mapmodes, and 3/video export options, alongside full-spectrum gridmap editing.
+      <div id = "naissance-preview" class = "preview-image-container">
+        <img src = "https://i.postimg.cc/4N8J8bGz/58-naissance-gibraltar.png" class = "preview-image" id = "naissance">
+      </div>
+      Naissance is an open-source 4D GIS built for proxy modelling, raster input and wrangling, simulation and statistical analysis, with user-first UI design. We aim to enable modernised data visualisation and mapmaking to create interactive atlases, different mapmodes, and 3/video export options, alongside full-spectrum gridmap editing.
       <br><br>
-      All generated files by Naissance are currently stored in JSON, with GeoJSON beeing supported for import. Saved Naissance files may be found in ./saves/. A default initialisation file, ./saves/autosave.js, is loaded for compatibility testing in non-release versions.
+      All generated files by Naissance are currently stored in JSON, with GeoJSON beeing supported for import. Saved Naissance files may be found in ./saves/. Naissance can be downloaded <a href = "https://datavault.confoederatio.org/s/RmGA9zoZmYdnebT" target = "_blank">here</a> by selecting a release version of your choice, extracting the <kbd>.zip</kbd> file, and running <kbd>naissance.exe</kbd>.
       <hr class = "divider">
-      <b>Links:</b> <a href = "https://github.com/Confoederatio/Naissance/archive/refs/heads/master.zip">Download</a></li> | <a href = "https://github.com/Confoederatio/Naissance">GitHub</a></li>
+      <b>Links:</b> <a href = "https://github.com/Confoederatio/Naissance">GitHub</a></li> | <a href = "https://projects.confoederatio.org/Confoederatio/Naissance">Projects</a> | <a href = "https://docs.confoederatio.org/Naissance">Wiki</a><br>
       <b>Releases:</b>
       <ul>
-        <li>1.0b Caspian | <a href = "https://github.com/Confoederatio/Naissance/archive/refs/tags/1.0b-caspian.zip">Download</a> | <a href = "https://github.com/Confoederatio/Naissance/releases/tag/1.0b-caspian">GitHub</a></li>
-        <li>1.0pa Beginnes | <a href = "https://github.com/Confoederatio/Naissance/archive/refs/tags/1.0pa-beginnes.zip">Download</a> | <a href = "https://github.com/Confoederatio/Naissance/releases/tag/1.0pa-beginnes">GitHub</a></li>
+        <li><a href = "https://datavault.confoederatio.org/s/RmGA9zoZmYdnebT">Downloads</a></li>
+        <li><a href = "https://github.com/ConfoederatioVF/Naissance/releases">Source Code, GitHub</a></li>
       </ul>
     </div>
     `,

@@ -554,7 +554,7 @@ window.HomepageGallery = class extends window.WebComponent {
 				}
 			},
 			{ passive: false }, // Must be non-passive to allow preventDefault
-		);
+		); //Why is this not updating?
 	}
 	
 	initGalleryTiles () {

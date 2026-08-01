@@ -236,7 +236,7 @@ config.homepage.gallery.tiles = {
     <span class = "date">19 March 2026 -</span><br>
     <b>Status:</b> <span class = "status primary">Primary Project</span>
     <div class = "contents">
-      <center><iframe src="https://www.youtube.com/embed/Kc0zNfiAd8c" title="The History of the World: Every Year (3300BC-2014AD)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+      <center><iframe src="https://www.youtube.com/embed/Kc0zNfiAd8c" title="The History of the World: Every Year (3300BC-2014AD)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen height="50%" width="100%"></iframe></center>
       <br><br>
       De facto polity extents from 3300BC-2014AD, GeoJSON. Global extent. Sub-yearly resolution. De jure polity extents from C-Shapes 2.0.
       <br><br>

@@ -268,12 +268,15 @@ config.homepage.gallery.tiles = {
     <span class = "date">1 March 2025 -</span><br>
     <b>Status:</b> <span class = "status primary">Primary Project</span>
     <div class = "contents">
-      Gridded population and demographic statistics from 10000BC to the present. Time intervals are provided at 1000-year intervals from 10000BC to 1AD, at 100-year intervals from 1AD to 1700AD, at 10-year intervals from 1700AD to 1950AD, and at 1-year intervals from 1950AD onwards. All data is provided at 5-arcminute resolution on WGS84 Equirectangular.
+      Gridded population, land use, and demographic statistics from 10000BC to the present. Time intervals are provided at 1000-year intervals from 10000BC to 1AD, at 100-year intervals from 1AD to 1700AD, at 10-year intervals from 1700AD to 1950AD, and at 1-year intervals from 1950AD onwards. All data is provided at 5-arcminute resolution on WGS84 Equirectangular.
       <br><br>
-      Velkscala should be approached with caution in its current state. Its data is inherently scalable, but there may exist datapoint anomalies, especially regarding past urban settlements. We intend to resolve these issues following a general-purpose refactor and revamped methodology. Since 2024, Velkscala has been managed by CRD. Velkscala currently relies on hybridised HYDE3.3/McEvedy data.
+      Since the introduction of Stadestér 1.0, Velkscala also now includes reliable urban settlement data from 3000BC-2026AD, and takes this into account. Due to issues with int vs. float geoprocessing, lower-population regions in earlier years may be slightly inflated. We are currently working on resolving these issues.
       <hr class = "divider">
       <b>Releases:</b>
       <ul>
+        <li>Velkscala 0.8 | <a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala/archive/refs/tags/eoscala-1.3-velkscala-0.8.zip">Download</a> | <a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala/releases/tag/eoscala-1.3-velkscala-0.8">GitHub</a></li>
+        <li>Velkscala 0.7 | <a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala/archive/refs/tags/eoscala-1.2-velkscala-0.7.zip">Download</a> | <a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala/releases/tag/eoscala-1.2-velkscala-0.7">GitHub</a></li>
+        <li>Velkscala 0.6 | <a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala/archive/refs/tags/eoscala-1.1-velkscala-0.6.zip">Download</a> | <a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala/releases/tag/eoscala-1.1-velkscala-0.6">GitHub</a></li>
         <li>Velkscala 0.5 | <a href = "https://github.com/Confoederatio/Eoscala-Velkscala/archive/refs/tags/eoscala-1.0-velkscala-0.5.zip">Download</a> | <a href = "https://github.com/Confoederatio/Eoscala-Velkscala/tree/main">GitHub</a></li>
       </ul>
     </div>
@@ -285,6 +288,31 @@ config.homepage.gallery.tiles = {
     animation: "stadester",
     background_image: "gfx/interface/tiles/stadester.png",
     background_opacity: 0.2,
+    content: `<div class = "title">Stadester</div>
+    <hr class = "divider">
+    <b>Development:</b> <span class = "parallax-item-complete-ongoing">Complete (Ongoing)</span>,<br>
+    <span class = "date">18 March 2025 -</span><br>
+    <b>Status:</b> <span class = "status primary">Primary Project</span>
+    <div class = "contents">
+      <div id = "stadester-preview" class = "preview-image-container">
+        <img src = "https://i.postimg.cc/cJn6F4hc/stadester-japan-1900-2020.png" class = "preview-image" id = "stadester">
+      </div>
+      Human settlements from 3000BC-2025AD provided in JSON, total/urban/rural population rasters provided separately at 5-arcmin. resolution. Global extent. Population/urban data after 1975AD drawn from GHSL.
+      <br><br>
+      <b>Stadestér</b> is an urban population database of ~40k+ global cities and their populations from 3000BC to the present day as taken from Chandler, Modelski, Reba et al., Buringh, DeVries, Populstat, GHSL, and Wikipedia. Resultant demographic inormation was hybridised, standardised, geolocated, cubic spline interpolated, and calculated at 1-year intervals utilising geomean scalars and agglomerative correction techniques. 
+      <br><br>
+      Area, density, RNI, and geospatial distributions of population within cities are also available at annual resolution starting from 1800AD. Note that rasters have only been outputted for the subset of HYDE years from 3000BC-2025AD, and that you must dynamically generate rasters outside of this subset via the provided CLI in autorun.bat. Rural, urban, and total population rasters at 5-arcmin resolution are available from 10000BC-2025AD at a global level.
+      <br><br>
+      To avoid double counting, metropolitan networks were corrected for in the data by subtracting suburban populations from their metro area, and redistributing any negative numbers held by the metropolitan area back to their suburbs in a proportional manner. Area/density calculations were derived from Angel (2011), Bairoch (1991), Clark (1951), Pasciuti and Chase-Dunn (2002), and Stanilov and Sykora (2014). Hanson and Ortman's work on classical populations have not yet been incorporated.
+      <hr class = "divider">
+      <b>Download:</b>
+      <ul>
+        <li>DOI: <a href = "https://doi.org/10.5281/zenodo.17180328">https://doi.org/10.5281/zenodo.17180328</a></li>
+        <li>Data files are hosted on <a href = "https://zenodo.org/records/17180328">Zenodo</a></li>
+        <li><a href = "https://confoederatio.org/papers/Stadestér%201.0%20-%20A%20Global%20Database%20of%2041000%2B%20Cities%20From%203000BC%20to%20the%20Present.pdf">Methodology Report, 1.0</a></li>
+      </ul>
+    </div>
+    `,
     default_pin: true,
     font_position: "centre",
     font_size: 1,

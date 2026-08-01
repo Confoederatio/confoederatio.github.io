@@ -28,12 +28,14 @@
         font-family: var(--website-primary-font), "Barlow", sans-serif;
         width: 100dvw;
         overflow-x: auto;
+        overflow-y: hidden;
         position: relative;
         pointer-events: auto;
 
         /* Background blur pseudo-element prevents backdrop-filter clipping fixed elements */
         &::before {
             content: "";
+            height: var(--height);
             position: absolute;
             inset: 0;
             background-color: rgba(0, 0, 0, 0.15);

@@ -69,30 +69,30 @@
     opacity: 0.2;
 }
 .parallax-item.large-square {
-    height: 32dvh;
-    width: 32dvh;
+    height: 32vh;
+    width: 32vh;
     box-shadow: 0px 0px 4dvh rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
 .parallax-item.sublarge-square {
-    height: 28dvh;
-    width: 28dvh;
+    height: 28vh;
+    width: 28vh;
 }
 .parallax-item.medium-square {
-    height: 24dvh;
-    width: 24dvh;
+    height: 24vh;
+    width: 24vh;
 }
 .parallax-item.submedium-square {
-    height: 18dvh;
-    width: 18dvh;
+    height: 18vh;
+    width: 18vh;
 }
 .parallax-item.small-square {
-    height: 16dvh;
-    width: 16dvh;
+    height: 16vh;
+    width: 16vh;
 }
 .parallax-item.tiny-square {
-    height: 12dvh;
-    width: 12dvh;
+    height: 12vh;
+    width: 12vh;
 }
 .parallax-item .parallax-group-text, .parallax-item-preview .parallax-group-text {
     color: white;

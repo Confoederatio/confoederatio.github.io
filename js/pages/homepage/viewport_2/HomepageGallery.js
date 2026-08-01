@@ -519,11 +519,42 @@ window.HomepageGallery = class extends window.WebComponent {
 					var is_at_bottom =
 						panel.scrollTop + panel.offsetHeight >=
 						panel.scrollHeight && e.deltaY > 0;
-					if (!is_at_top && !is_at_bottom) e.stopPropagation();
+					if (!is_at_top && !is_at_bottom) {
+						e.stopPropagation();
+					}
 				}
 			},
 			{ passive: false },
 		);
+		
+		// Mirror the wheel scroll-containment logic for touch devices
+		let _touch_start_y = 0;
+		
+		gallery_obj.parallax_body.addEventListener(
+			"touchstart",
+			(e) => {
+				_touch_start_y = e.touches[0].clientY;
+			},
+			{ passive: true },
+		);
+		
+		gallery_obj.parallax_body.addEventListener(
+			"touchmove",
+			(e) => {
+				var panel = e.target.closest(".content-wrapper");
+				if (panel) {
+					var delta_y = _touch_start_y - e.touches[0].clientY;
+					var is_at_top = panel.scrollTop <= 0 && delta_y < 0;
+					var is_at_bottom =
+						panel.scrollTop + panel.offsetHeight >=
+						panel.scrollHeight && delta_y > 0;
+					if (!is_at_top && !is_at_bottom) {
+						e.stopPropagation();
+						e.preventDefault();
+					}
+				}
+			},
+			{ passive: false }, // Must be non-passive to allow preventDefault
 	}
 	
 	initGalleryTiles () {

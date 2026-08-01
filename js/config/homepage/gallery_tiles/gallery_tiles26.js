@@ -767,6 +767,15 @@ config.homepage.gallery.tiles = {
     name: "Blacktraffic",
     
     animation: "blacktraffic",
+    content: `<div class = "title">Blacktraffic</div>
+    <hr class = "divider">
+    <b>Development:</b> <span class = "parallax-item-complete">Complete</span>,<br>
+    <span class = "date">2 April 2025 -</span><br>
+    <b>Status:</b> <span class = "status tertiary">Tertiary Project</span>
+    <div class = "contents">
+      <b>Blacktraffic</b> is the internal 
+    </div>
+    `,
     font_position: "centre",
     font_size: 1,
     font_weight: 100,

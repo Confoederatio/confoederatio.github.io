@@ -230,6 +230,22 @@ config.homepage.gallery.tiles = {
     y: 48,
     
     colour: "gold",
+    content: `<div class = "title">Atlas</div>
+    <hr class = "divider">
+    <b>Development:</b> <span class = "parallax-item-beta-ongoing">Beta (Ongoing)</span>,<br>
+    <span class = "date">19 March 2026 -</span><br>
+    <b>Status:</b> <span class = "status primary">Primary Project</span>
+    <div class = "contents">
+      <center><iframe src="https://www.youtube.com/embed/Kc0zNfiAd8c" title="The History of the World: Every Year (3300BC-2014AD)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+      <br><br>
+      De facto polity extents from 3300BC-2014AD, GeoJSON. Global extent. Sub-yearly resolution. De jure polity extents from C-Shapes 2.0.
+      <br><br>
+      Atlas is our flagship dataset for mapping countries and borders over the long run, and is always under custom refinement. You may find it useful to edit the dataset yourself with Naissance HGIS for regional use-cases.
+      <br><br>
+      <b>Dataview:</b> <a href = "https://confoederatio.org/pages/dataview">Open Atlas in Dataview</a><br>
+      <i>Because</i> <b>Atlas</b> <i>is in beta, it is packaged by default when downloading Naissance HGIS.</i>
+    </div>
+    `
   },
   velkscala: {
     name: "Velkscala",

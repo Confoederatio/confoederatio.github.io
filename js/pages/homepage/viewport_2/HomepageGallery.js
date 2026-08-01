@@ -139,9 +139,6 @@ window.HomepageGallery = class extends window.WebComponent {
 	init () {
 		this.initGalleryTiles();
 		this.initGalleryUI();
-		this.gallery.parallax_body.addEventListener("mousemove", (e) =>
-			this.onParallaxHover(e),
-		);
 		
 		//Set up art previews
 		let all_art_preview_imgs = this.element.querySelectorAll(
@@ -646,21 +643,28 @@ window.HomepageGallery = class extends window.WebComponent {
 		var local_obj = gallery_obj.parallax_settings[arg0_element_id];
 		local_obj.animation_queue = local_obj.animation_queue || [];
 		local_obj.id = local_obj.id || arg0_element_id;
+		
 		local_obj.hide_function = () => {
 			local_obj.animation_queue.push(local_obj.animation);
-			local_obj.animation_queue = [...new Set(local_obj.animation_queue.reverse())].reverse();
+			local_obj.animation_queue = [
+				...new Set(local_obj.animation_queue.reverse()),
+			].reverse();
 		};
 		local_obj.show_function = () => {
 			local_obj.animation_queue.push(`${local_obj.animation}-shown`);
-			local_obj.animation_queue = [...new Set(local_obj.animation_queue.reverse())].reverse();
+			local_obj.animation_queue = [
+				...new Set(local_obj.animation_queue.reverse()),
+			].reverse();
 		};
+		
 		var dependency_amount = this.getDescendants(local_obj.id).length;
 		local_obj.logic = setInterval(() => {
 			var all_children_finished = true;
 			var descendants = this.getDescendants(local_obj.id);
 			for (let i = 0; i < descendants.length; i++) {
 				var d_obj = gallery_obj.parallax_settings[descendants[i]];
-				if (d_obj && d_obj.animation_queue.length > 0) all_children_finished = false;
+				if (d_obj && d_obj.animation_queue.length > 0)
+					all_children_finished = false;
 			}
 			if (all_children_finished && local_obj.animation_queue.length > 0) {
 				try {
@@ -668,23 +672,71 @@ window.HomepageGallery = class extends window.WebComponent {
 					var anim = local_obj.animation_queue[0];
 					el.setAttribute("animation", anim);
 					setTimeout(() => {
-						anim.includes("-shown") ? el.classList.remove("hidden") : el.classList.add("hidden");
+						anim.includes("-shown")
+							? el.classList.remove("hidden")
+							: el.classList.add("hidden");
 						local_obj.animation_queue.shift();
 					}, 750);
 				} catch (e) {}
 			}
 		}, 750 - dependency_amount);
+		
 		var local_el = this.element.querySelector(`#${local_obj.id}`);
 		local_el.setAttribute("animation", local_el.id + "-shown");
 		local_el.onclick = () => {
 			this.toggleContentPanel(local_el.id);
 			this.selectParallaxItem(local_el.id);
 		};
+		
+		// --- MOUSE & TOUCH HOVER LOGIC ---
+		let hover_timer = null;
+		
+		const startHover = (delay = 500) => {
+			if (hover_timer) clearTimeout(hover_timer);
+			hover_timer = setTimeout(() => {
+				if (!gallery_obj.parallax_selected.includes(local_el.id)) {
+					gallery_obj.parallax_selected = [local_el.id];
+					this.updateHiddenElements();
+				}
+				hover_timer = null;
+			}, delay);
+		};
+		
+		const cancelHover = () => {
+			if (hover_timer) {
+				clearTimeout(hover_timer);
+				hover_timer = null;
+			}
+		};
+		
+		// 1. Desktop Mouse Events
+		local_el.addEventListener("mouseenter", () => startHover(500));
+		local_el.addEventListener("mouseleave", cancelHover);
+		
+		// 2. Mobile Touch Events
+		// On touch screens, start timer on touch, cancel if finger moves/scrolls or lifts early
+		const isTouchDevice =
+			"ontouchstart" in window || navigator.maxTouchPoints > 0;
+		
+		local_el.addEventListener(
+			"touchstart",
+			() => {
+				// Use 0ms (instant unfold on tap) or 300ms (short hold) for mobile UX
+				startHover(isTouchDevice ? 0 : 500);
+			},
+			{ passive: true },
+		);
+		
+		local_el.addEventListener("touchend", cancelHover, { passive: true });
+		local_el.addEventListener("touchcancel", cancelHover, { passive: true });
+		local_el.addEventListener("touchmove", cancelHover, { passive: true });
+		
+		// Add buttons inside base nodes
 		if (local_obj.animation && !local_obj.is_base_node) {
 			local_el.innerHTML += `
-				<div class = "parallax-icon pin ${gallery_obj.parallax_pinned_items.includes(local_el.id) ? "pin-filled" : "pin-empty"}"></div>
-				<div id = "bookmark-btn-${local_el.id}" class = "parallax-icon bookmark bookmark-empty"></div>
-			`;
+      <div class = "parallax-icon pin ${gallery_obj.parallax_pinned_items.includes(local_el.id) ? "pin-filled" : "pin-empty"}"></div>
+      <div id = "bookmark-btn-${local_el.id}" class = "parallax-icon bookmark bookmark-empty"></div>
+    `;
 			local_el.querySelector(".pin").onclick = (e) => {
 				e.stopPropagation();
 				this.pinItem(local_el.id);

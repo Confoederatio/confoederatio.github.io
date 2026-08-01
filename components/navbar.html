@@ -49,8 +49,8 @@
         box-sizing: border-box;
 ;
         overscroll-behavior-x: contain;
-        overflow-x: scroll;
-        touch-action: pan-x;
+        overflow-x: auto;
+        touch-action: none;
         -webkit-overflow-scrolling: touch;
 
         /* Top Level Menu */
@@ -330,20 +330,23 @@
   </ic-navbar>
 
   <script>
-		document.addEventListener('DOMContentLoaded', () => {
+    console.log("hello")
+		setTimeout(() => {
 			const navbar = document.querySelector('ic-navbar');
 			if (!navbar) return;
 			
+			let isDown = false;
 			let startX = 0;
-			let scrollLeft = 0;
-			let isDragging = false;
+			let startY = 0;
+			let scrollStart = 0;
 			
 			navbar.addEventListener(
 				'touchstart',
 				(e) => {
-					isDragging = true;
+					isDown = true;
 					startX = e.touches[0].clientX;
-					scrollLeft = navbar.scrollLeft;
+					startY = e.touches[0].clientY;
+					scrollStart = navbar.scrollLeft;
 				},
 				{ passive: true },
 			);
@@ -351,21 +354,23 @@
 			navbar.addEventListener(
 				'touchmove',
 				(e) => {
-					if (!isDragging) return;
-					const currentX = e.touches[0].clientX;
-					const diffX = startX - currentX;
-					navbar.scrollLeft = scrollLeft + diffX;
+					if (!isDown) return;
+					
+					const dx = e.touches[0].clientX - startX;
+					const dy = e.touches[0].clientY - startY;
+					
+					// Only hijack clearly horizontal swipes
+					if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 5) {
+						e.preventDefault(); // Requires passive: false
+						navbar.scrollLeft = scrollStart - dx;
+						e.preventDefault();
+					}
 				},
-				{ passive: true },
+				{ passive: false }, // Must be false to allow preventDefault()
 			);
 			
-			navbar.addEventListener('touchend', () => {
-				isDragging = false;
-			});
-			
-			navbar.addEventListener('touchcancel', () => {
-				isDragging = false;
-			});
-		});
+			navbar.addEventListener('touchend', () => { isDown = false; });
+			navbar.addEventListener('touchcancel', () => { isDown = false; });
+		}, 100);
   </script>
 </div>

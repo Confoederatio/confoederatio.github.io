@@ -44,11 +44,14 @@
         color: white;
         font-family: var(--website-primary-font), "Barlow", sans-serif;
         width: 100%;
-        touch-action: pan-x;
-        overflow-x: scroll;
         position: relative;
         pointer-events: auto;
         box-sizing: border-box;
+;
+        overscroll-behavior-x: contain;
+        overflow-x: scroll;
+        touch-action: pan-x;
+        -webkit-overflow-scrolling: touch;
 
         /* Top Level Menu */
         > ul {

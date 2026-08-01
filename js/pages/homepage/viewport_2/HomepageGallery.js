@@ -476,27 +476,22 @@ window.HomepageGallery = class extends window.WebComponent {
 		this.saveOriginalPanelStyles();
 	}
 	
-	// Replace the existing initGalleryDesktopEventHandlers in your class
 	initGalleryDesktopEventHandlers () {
-		var gallery_obj = this.gallery;
+		let gallery_obj = this.gallery;
 		
 		// Keep the mouse perspective logic as it is specific to the gallery container
 		gallery_obj.parallax_body.addEventListener("mousemove", (e) => {
-			var half_width = gallery_obj.parallax_body.clientWidth / 2,
-				half_height = gallery_obj.parallax_body.clientHeight / 2,
-				mouse_x =
-					half_width + gallery_obj.parallax_body.offsetLeft - e.pageX,
-				mouse_y =
-					half_height + gallery_obj.parallax_body.offsetTop - e.pageY;
+			let half_width = gallery_obj.parallax_body.clientWidth / 2;
+			let half_height = gallery_obj.parallax_body.clientHeight / 2;
+			let mouse_x = half_width + gallery_obj.parallax_body.offsetLeft - e.pageX;
+			let mouse_y = half_height + gallery_obj.parallax_body.offsetTop - e.pageY;
 			if (gallery_obj.content_panel_update_paused) {
 				mouse_x /= 32;
 				mouse_y /= 32;
 			}
-			var max_deg = 1.25;
-			this.perspective_deg_x =
-				(mouse_y / half_height) * max_deg * -1 + max_deg / 2 + "deg";
-			this.perspective_deg_y =
-				(mouse_x / half_width) * max_deg * -1 + 2 + "deg";
+			let max_deg = 1.25;
+			this.perspective_deg_x = (mouse_y / half_height) * max_deg * -1 + max_deg / 2 + "deg";
+			this.perspective_deg_y = (mouse_x / half_width) * max_deg * -1 + 2 + "deg";
 			this.perspective_string = `rotateX(${this.perspective_deg_x}) rotateY(${this.perspective_deg_y})`;
 			gallery_obj.scene.style.transform = `perspective(20em) ${this.perspective_string}`;
 		});
@@ -513,12 +508,10 @@ window.HomepageGallery = class extends window.WebComponent {
 		gallery_obj.parallax_body.addEventListener(
 			"wheel",
 			(e) => {
-				var panel = e.target.closest(".content-wrapper");
-				if (panel) {
-					var is_at_top = panel.scrollTop <= 0 && e.deltaY < 0;
-					var is_at_bottom =
-						panel.scrollTop + panel.offsetHeight >=
-						panel.scrollHeight && e.deltaY > 0;
+				let panel_el = e.target.closest(".content-wrapper");
+				if (panel_el) {
+					let is_at_top = panel_el.scrollTop <= 0 && e.deltaY < 0;
+					let is_at_bottom = Math.ceil(panel_el.scrollTop + panel_el.offsetHeight) >= panel_el.scrollHeight - 1 && e.deltaY > 0;
 					if (!is_at_top && !is_at_bottom) {
 						e.stopPropagation();
 					}
@@ -528,12 +521,16 @@ window.HomepageGallery = class extends window.WebComponent {
 		);
 		
 		// Mirror the wheel scroll-containment logic for touch devices
-		let _touch_start_y = 0;
+		let touch_start_y = 0;
 		
 		gallery_obj.parallax_body.addEventListener(
 			"touchstart",
 			(e) => {
-				_touch_start_y = e.touches[0].clientY;
+				let panel_el = e.target.closest(".content-wrapper");
+				if (panel_el) {
+					e.stopPropagation();
+				}
+				touch_start_y = e.touches[0].clientY;
 			},
 			{ passive: true },
 		);
@@ -541,19 +538,18 @@ window.HomepageGallery = class extends window.WebComponent {
 		gallery_obj.parallax_body.addEventListener(
 			"touchmove",
 			(e) => {
-				var panel = e.target.closest(".content-wrapper");
-				if (panel) {
-					var delta_y = _touch_start_y - e.touches[0].clientY;
-					var is_at_top = panel.scrollTop <= 0 && delta_y < 0;
-					var is_at_bottom =
-						panel.scrollTop + panel.offsetHeight >=
-						panel.scrollHeight && delta_y > 0;
+				let panel_el = e.target.closest(".content-wrapper");
+				if (panel_el) {
+					let delta_y = touch_start_y - e.touches[0].clientY;
+					let is_at_top = panel_el.scrollTop <= 0 && delta_y < 0;
+					let is_at_bottom = Math.ceil(panel_el.scrollTop + panel_el.offsetHeight) >= panel_el.scrollHeight - 1 && delta_y > 0;
 					if (!is_at_top && !is_at_bottom) {
 						e.stopPropagation();
 					}
 				}
 			},
-			{ passive: false }); //Why is this not updating?
+			{ passive: false },
+		);
 	}
 	
 	initGalleryTiles () {

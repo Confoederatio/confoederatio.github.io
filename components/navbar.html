@@ -4,6 +4,8 @@
     }
 
     #navbar-container {
+        --height: calc(4 * var(--navbar-rem));
+        
         height: 100dvh;
         position: fixed;
         left: 0;
@@ -13,8 +15,22 @@
         pointer-events: none;
     }
 
+    ic-navbar-backdrop {
+        content: "";
+        height: var(--height);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.15);
+
+        /* Webkit prefix + Hardware Acceleration trigger for Chrome Mobile */
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        transform: translateZ(0);
+
+        z-index: -1;
+    }
     ic-navbar {
-        --height: calc(4 * var(--navbar-rem));
         --item-margin: calc(0.5 * var(--navbar-rem));
         --item-padding: calc(var(--item-margin) * 2);
         --bg-dropdown: rgba(255, 255, 255, 0.95);
@@ -31,24 +47,6 @@
         position: relative;
         pointer-events: auto;
         box-sizing: border-box;
-        
-        /* Background blur pseudo-element */
-        &::before {
-            content: "";
-            height: var(--height);
-            position: fixed;
-            top: 0;
-            left: 0;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.15);
-
-            /* Webkit prefix + Hardware Acceleration trigger for Chrome Mobile */
-            -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
-            transform: translateZ(0);
-
-            z-index: -1;
-        }
 
         /* Top Level Menu */
         > ul {
@@ -232,6 +230,7 @@
 </style>
 
 <div id = "navbar-container">
+  <ic-navbar-backdrop></ic-navbar-backdrop>
   <ic-navbar>
     <a href = "https://confoederatio.org"><img src = "gfx/interface/logos/confoederatio_icon.png" class = "logo" draggable = "false"></a>
     <ul>

@@ -364,6 +364,17 @@ config.homepage.gallery.tiles = {
     y: 28,
     
     colour: "blurple",
+    content: `<div class = "title">CTD Games</div>
+    <hr class = "divider">
+    <div class = "contents">
+      <b>CTD Games</b>, formerly <u>Confoederatio/Midnight Studios</u>, is an independent division of <b>CTD</b> that works on grand-strategy, economic, simulation games, and total overhaul mods. It was spun off as an independent division so as not to weigh on research decisions taken by either <b>CRD</b> or <b>CTD</b> and is staffed by different personnel.
+      <br><br>
+      CTD Games is most known for 11:59, Triumph & Tragedy, and AnlayticalEngine, with plans for future game launches. It also helps with technical testing, reverse-engineering, and scaling for the rest of CTD.
+      <br><br>
+      <hr class = "divider">
+      <br>
+      <img src = "gfx/interface/logos/ctd_coat_of_arms_logo.png" width = "100%">
+    </div>`,
     dependencies: [
       "triumph_and_tragedy_one",
       "analytical_engine",
@@ -636,6 +647,44 @@ config.homepage.gallery.tiles = {
     y: 60,
     
     colour: "blurple",
+    content: `<div class = "title">Vercengen</div>
+    <b>Development:</b> <span class = "parallax-item-complete-ongoing">Complete (Ongoing)</span>,<br>
+    <b>Status:</b> <span class = "status primary">Primary Project</span>
+    <div class = "contents">
+      <a href = "https://confoederatio.org/Vercengen">Documentation</a> | <a href = "https://projects.confoederatio.org/Confoederatio/Vercengen">Projects</a> | <a href = "https://github.com/ConfoederatioVF/Vercengen/releases">Releases</a>
+      <br><br>
+      <kbd>UI ⊆ State.</kbd>
+      <br><br>
+      <b>Vercengen</b> is the backend/frontend software engine that powers Confoederatio applications. Game studios have game engines. We have software engines.
+      <br><br>
+      <b>Frontend.</b> This low-code framework is batteries included, and meant for dealing with complex state (IDEs, GIS, custom game engines), but is principally <u>Electron-based</u>.
+      <br><br>
+      Currently supported locales: DE, EN-GB (Default), FR.
+      <br><br>
+      Default <b>Features</b> (9):
+      <ul>
+        <li>Confirm, ContextMenu, Modal, Navbar, PageMenuWindow, Scene, Toast, Tooltip, Window</li>
+      </ul>
+      Default <b>Components</b> (50):
+      <ul>
+        <li>Button, Checkbox, Colour, CRUD, Datalist, DatavisSuite, Date, DateLength, File, FileExplorer, FlexInterface, Graph, GraphLegend, GraphText, HTML, Hierarchy, HierarchyDatatype, Interface, List, Log, Map, MultiTag, NodeEditor, NodeEditorDatatype, Number, ObjectEditor, ObjectInspector, PageMenu, Password, Radio, Range, RawInterface, RichText, ScriptManager, ScriptManagerBlockly, ScriptManagerMonaco, SearchSelect, Select, Spreadsheet, Table, Telephone, Text, Time, Timeline, TimelineChronology, Toggle, URL, UndoRedo, Wiki, WordProcessor</li>
+      </ul>
+      <br><br>
+      <b>Backend.</b> Confoederatio also manages backend features via NDJSON for static databases, Ontologies for relational databases, and UF utils/multithreading for heavy data processing. Backend features are collectively codenamed <u>Blacktraffic</u>, as they also exist to perform frequent data scraping.
+      <br><br>
+      Ontologies are streamed from <kbd>.ontology</kbd> files at the device's maximum read-speed via inter-process communication (IPC). For most modern computers, this is ~1GB/s. They may be stream-queried in a separate process, piped to render, and disposed of as necessary.
+      <br><br>
+      Apart from large DBs which cannot be serialised into RAM and must be therefore be partitioned/pagefiled, Vercengen is designed to unify both frontend/backend concerns by embedding UI into data structures, halving the amount of work developers have to worry about.
+      <br><br>
+      <b>Getting Started.</b><br>
+      Bootstrap:
+      <ol>
+        <li>Download the <a href = "https://projects.confoederatio.org/Confoederatio/Vercengen">current repository</a>.</li>
+        <li>Run <kbd>npm install</kbd>.</li>
+        <li>Play with Vercengen!</li>
+      </ol>
+    </div>
+    `,
     dependencies: [
       "blacktraffic",
       "geospatiale",

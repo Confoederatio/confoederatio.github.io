@@ -55,6 +55,10 @@
 
         /* Top Level Menu */
         > ul {
+
+            flex-shrink: 0; /* Ensures the menu won't shrink to fit screen */
+            white-space: nowrap; /* Prevents menu items from wrapping */
+            
             display: flex;
             flex-direction: row;
             align-items: center;

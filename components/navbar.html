@@ -328,4 +328,44 @@
       </li>
     </ul>
   </ic-navbar>
+
+  <script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const navbar = document.querySelector('ic-navbar');
+			if (!navbar) return;
+			
+			let startX = 0;
+			let scrollLeft = 0;
+			let isDragging = false;
+			
+			navbar.addEventListener(
+				'touchstart',
+				(e) => {
+					isDragging = true;
+					startX = e.touches[0].clientX;
+					scrollLeft = navbar.scrollLeft;
+				},
+				{ passive: true },
+			);
+			
+			navbar.addEventListener(
+				'touchmove',
+				(e) => {
+					if (!isDragging) return;
+					const currentX = e.touches[0].clientX;
+					const diffX = startX - currentX;
+					navbar.scrollLeft = scrollLeft + diffX;
+				},
+				{ passive: true },
+			);
+			
+			navbar.addEventListener('touchend', () => {
+				isDragging = false;
+			});
+			
+			navbar.addEventListener('touchcancel', () => {
+				isDragging = false;
+			});
+		});
+  </script>
 </div>

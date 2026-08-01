@@ -74,13 +74,13 @@ section#scene {
   font-family: var(--website-tertiary-font), sans-serif;
   font-size: 1rem;
   height: 0;
-  width: 35vmin;
+  width: clamp(25rem, 35vmin, 35vmin);
 
   transition: all 0.5s ease;
   z-index: 3;
 }
 .parallax-item-content-panel.shown {
-  height: 50vmin;
+  height: clamp(35rem, 50vmin, 50vmin);
   padding-bottom: 0.5dvh;
 
   opacity: 1;

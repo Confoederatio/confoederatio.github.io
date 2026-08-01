@@ -203,10 +203,15 @@ config.homepage.gallery.tiles = {
       Gridded economic statistics from 10000BC to the present. Time intervals are provided at 1000-year intervals from 10000BC to 1AD, at 100-year intervals from 1AD to 1700AD, at 10-year intervals from 1700AD to 1950AD, and at 1-year intervals from 1950AD onwards. All data is provided at 5-arcminute resolution on WGS84 Equirectangular.
       <br><br>
       Eoscala is currently operable, with future routine updates to improve model and data accuracy alongside ease of reproducibility. Base Eoscala data are used to support the expansion of economic data and fidelity into the deep past. Since 2024, Eoscala has been managed by CRD.
+      <br><br>
+      You can also view this dataset over <a href = "https://projects.confoederatio.org/Confoederatio/EoscalaVelkscala">Confoederatio Projects</a>.
       <hr class = "divider">
       <b>Releases:</b>
       <ul>
-        <li>Eoscala 1.0 | <a href = "https://github.com/Confoederatio/Eoscala-Velkscala/archive/refs/tags/eoscala-1.0-velkscala-0.5.zip">Download</a> | <a href = "https://github.com/Confoederatio/Eoscala-Velkscala/tree/main">GitHub</a></li>
+        <li>Eoscala 1.3 | <a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala/archive/refs/tags/eoscala-1.3-velkscala-0.8.zip">Download</a> | <a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala/releases/tag/eoscala-1.3-velkscala-0.8">GitHub</a></li>
+        <li>Eoscala 1.2 | <a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala/archive/refs/tags/eoscala-1.2-velkscala-0.7.zip">Download</a> | <a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala/releases/tag/eoscala-1.2-velkscala-0.7">GitHub</a></li>
+        <li>Eoscala 1.1 | <a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala/archive/refs/tags/eoscala-1.1-velkscala-0.6.zip">Download</a> | <a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala/releases/tag/eoscala-1.1-velkscala-0.6">GitHub</a></li>
+        <li>Eoscala 1.0 | <a href = "https://github.com/Confoederatio/Eoscala-Velkscala/archive/refs/tags/eoscala-1.0-velkscala-0.5.zip">Download</a> | <a href = "https://github.com/ConfoederatioVF/EoscalaVelkscala/releases/tag/eoscala-1.0-velkscala-0.5">GitHub</a></li>
       </ul>
     </div>
     `,

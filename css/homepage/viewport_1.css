@@ -341,7 +341,7 @@ div[data-viewport="1"] {
   right: 4.25vw;
 
   height: 30dvh;
-  width: 30vw;
+  width: clamp(30rem, 30dvw, 30dvw);
 
   transition: all 0.5s ease;
 }
@@ -521,7 +521,7 @@ div[data-viewport="1"] {
   height: 40%;
   width: 30%;
   margin-right: 3%;
-  margin-top: 2%;
+  margin-top: 1.25rem;
   margin-bottom: 2.5%;
 
   border-radius: 0.25dvh;

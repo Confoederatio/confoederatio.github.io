@@ -550,7 +550,6 @@ window.HomepageGallery = class extends window.WebComponent {
 						panel.scrollHeight && delta_y > 0;
 					if (!is_at_top && !is_at_bottom) {
 						e.stopPropagation();
-						e.preventDefault();
 					}
 				}
 			},

@@ -773,7 +773,9 @@ config.homepage.gallery.tiles = {
     <span class = "date">2 April 2025 -</span><br>
     <b>Status:</b> <span class = "status tertiary">Tertiary Project</span>
     <div class = "contents">
-      <b>Blacktraffic</b> is the internal 
+      <b>Blacktraffic</b> is the internal automation, scraping, and backend suite for <b>Vercengen</b>, designed for autonomously fetching and wrangling data across web and software ecosystems. It features Node.js/R/Python/Jupyter integration, and is built for rapid iteration work.
+      <br><br>
+      Agent browsers in Blacktraffic depend on Puppeteer/Selenium to work, whilst agent toolcalls rely on LMStudio hosts (bring your own model). Blacktraffic Workers are multithreaded and stream Ontologies to their main process, running at set intervals with conditional checks.
     </div>
     `,
     font_position: "centre",

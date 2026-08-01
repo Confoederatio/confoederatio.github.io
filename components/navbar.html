@@ -4,7 +4,7 @@
     }
 
     #navbar-container {
-        height: auto;
+        height: 100dvh;
         position: fixed;
         left: 0;
         top: 0;
@@ -15,7 +15,7 @@
 
     ic-navbar {
         --height: calc(4 * var(--navbar-rem));
-        --item-margin: calc(0.5 * var(--navbar-rem));
+        --item-margin: calc(0.5*var(--navbar-rem));
         --item-padding: calc(var(--item-margin) * 2);
         --bg-dropdown: rgba(255, 255, 255, 0.95);
         --text-dropdown: rgba(0, 0, 0, 0.85);
@@ -27,8 +27,7 @@
         color: white;
         font-family: var(--website-primary-font), "Barlow", sans-serif;
         width: 100dvw;
-        overflow-x: auto;
-        overflow-y: hidden;
+        overflow-x: scroll;
         position: relative;
         pointer-events: auto;
 
@@ -213,7 +212,8 @@
         .logo {
             height: calc(3 * var(--navbar-rem));
             width: calc(3 * var(--navbar-rem));
-            margin: var(--item-margin);
+            margin-left: var(--item-margin);
+            margin-top: calc(var(--item-margin)/2);
             flex-shrink: 0;
         }
         .logo:hover {

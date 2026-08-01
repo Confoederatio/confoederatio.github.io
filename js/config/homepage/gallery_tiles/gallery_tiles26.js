@@ -242,8 +242,9 @@ config.homepage.gallery.tiles = {
       <br><br>
       Atlas is our flagship dataset for mapping countries and borders over the long run, and is always under custom refinement. You may find it useful to edit the dataset yourself with Naissance HGIS for regional use-cases.
       <br><br>
-      <b>Dataview:</b> <a href = "https://confoederatio.org/pages/dataview">Open Atlas in Dataview</a><br>
-      <i>Because</i> <b>Atlas</b> <i>is in beta, it is packaged by default when downloading Naissance HGIS.</i>
+      <b>Dataview:</b> <a href = "https://confoederatio.org/pages/dataview">Open Atlas in Dataview</a>
+      <br><br>
+      <i>Because Atlas is in beta, it is packaged by default when downloading Naissance HGIS.</i>
     </div>
     `
   },

@@ -649,6 +649,7 @@ config.homepage.gallery.tiles = {
     colour: "blurple",
     content: `<div class = "title">Vercengen</div>
     <b>Development:</b> <span class = "parallax-item-complete-ongoing">Complete (Ongoing)</span>,<br>
+    <span class = "date">2 April 2025 -</span><br>
     <b>Status:</b> <span class = "status primary">Primary Project</span>
     <div class = "contents">
       <a href = "https://confoederatio.org/Vercengen">Documentation</a> | <a href = "https://projects.confoederatio.org/Confoederatio/Vercengen">Projects</a> | <a href = "https://github.com/ConfoederatioVF/Vercengen/releases">Releases</a>
@@ -707,7 +708,23 @@ config.homepage.gallery.tiles = {
     x: 206,
     y: 60,
     
-    colour: "blue"
+    colour: "blue",
+    content: `<div class = "title">Unitel</div>
+    <b>Development:</b> <span class = "parallax-item-complete">Complete</span>,<br>
+    <b>Status:</b> <span class = "status secondary">Secondary Project</span>
+    <div class = "contents">
+      <b><a href = "https://unitel.confoederatio.org/">Unitel</a></b> is our alternative to big tech services such as Discord, Google, GitHub, or website builders. We make sure to physically own the servers our cloud services are hosted on. We also offer Tor onions that directly connect to these servers for those that need further anonymity.
+      <br><br>
+      <b>Services:</b>
+      <ul>
+        <li><a href = "https://bridge.confoederatio.org/">Bridge</a> (for bridging your Element and Discord)</li>
+        <li><a href = "https://element.confoederatio.org/">Element</a></li>
+        <li><a href = "https://datavault.confoederatio.org/">Datavault</a></li>
+        <li><a href = "https://projects.confoederatio.org/">Projects</a></li>
+        <li><a href = "https://webstudio.confoederatio.org/">Webstudio</a></li>
+      </ul>
+    </div>
+    `
   },
   eleven_fiftynine: {
     name: "",

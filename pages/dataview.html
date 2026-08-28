@@ -99,15 +99,50 @@
         },
         settings: {}
       };
-      window.map = new maptalks.Map("map", {
-				baseLayer: new maptalks.TileLayer('base', {
-					urlTemplate: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
-					subdomains: ["a","b","c","d"],
-					repeatWorld: false,
-				}),
+			window.map = new maptalks.Map("map", {
 				center: [0, 40],
 				zoom: 4,
-      });
+				baseLayer: (function () {
+					let esriLayer = new maptalks.TileLayer("base", {
+						urlTemplate:
+							"https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+						subdomains: ["a", "b", "c", "d"],
+						repeatWorld: false,
+						attribution: "&copy; Esri",
+					});
+					
+					// Handle the visual manipulation
+					esriLayer.on("renderercreate", (e) => {
+						e.renderer.loadTileImage = (img, url) => {
+							let remoteImage = new Image();
+							remoteImage.crossOrigin = "anonymous"; // Essential for Canvas security
+							
+							remoteImage.onload = () => {
+								let canvas = document.createElement("canvas");
+								canvas.width = remoteImage.width;
+								canvas.height = remoteImage.height;
+								let ctx = canvas.getContext("2d");
+								
+								// 1. Draw the original Esri tile
+								ctx.drawImage(remoteImage, 0, 0);
+								
+								// 2. Apply the darkening effect
+								// 'multiply' is usually better for darkening maps while keeping contrast
+								ctx.globalCompositeOperation = "soft-light";
+								ctx.fillStyle = "rgba(20, 20, 20, 0.8)"; // Adjust 0.6 to control darkness
+								ctx.fillRect(0, 0, canvas.width, canvas.height);
+								
+								// 4. Return the manipulated data back to the map tile
+								img.src = canvas.toDataURL("image/png");
+							};
+							
+							remoteImage.src = url;
+						};
+					});
+					
+					return esriLayer;
+				})(),
+			});
 			
 			function setDate (arg0_date) {
 				//Convert from parameters
